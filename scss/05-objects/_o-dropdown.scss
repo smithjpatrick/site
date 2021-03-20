@@ -1,0 +1,11 @@
+.o-dropdown {
+  list-style: none;
+  text-align: left;
+
+  &__item {
+    @include spacer(m, 1, b);
+    &:not(:last-child) {
+      @include spacer(m, 0, b);
+    }
+  }
+}

@@ -1,0 +1,197 @@
+// ----
+// Sass (v3.4.12)
+// Compass (v1.0.3)
+// ----
+
+// https://gist.github.com/napotopia/6890559
+
+//@import "../config/_variables.scss";
+// =============================================
+// Base :: Settings
+// =============================================
+
+$ui-ns: "sp" !default;
+
+// Base Margin / Padding
+$base-mp: $gh !default;
+$base-mp-qt: $base-mp / 4 !default;
+$base-mp-half: $base-mp / 2 !default;
+$base-mp-2x: $base-mp * 2 !default;
+$base-mp-3x: $base-mp * 3 !default;
+$base-mp-4x: $base-mp * 4 !default;
+$base-mp-6x: $base-mp * 6 !default;
+$base-mp-8x: $base-mp * 8 !default;
+$base-mp-10x: $base-mp * 10 !default;
+$base-mp-12x: $base-mp * 12 !default;
+
+//
+// MAPS
+//
+
+// Media Queries
+$mq-sizes: (
+  sm: "min-width: 35.5em",
+  md: "min-width: 48em",
+  lg: "min-width: 64em",
+  xl: "min-width: 80em",
+);
+
+$spacer-types: (
+  p: padding,
+  m: margin,
+);
+
+$spacer-sizes: (
+  p25: $base-mp-qt,
+  p5: $base-mp-half,
+  1: $base-mp,
+  2: $base-mp-2x,
+  3: $base-mp-3x,
+  4: $base-mp-4x,
+  6: $base-mp-6x,
+  8: $base-mp-8x,
+  10: $base-mp-10x,
+  12: $base-mp-12x,
+  n: 0,
+);
+
+// Spacer Positions
+$spacer-positions: (
+  _: null,
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  tb: (
+    t,
+    b,
+  ),
+  rl: (
+    r,
+    l,
+  ),
+);
+
+//@import "../config/_mixins.scss";
+// @mixin spacer
+// @description Generated a property-value pair of padding or margin for all sides, one site or opposite sides.
+// If the fourth argument is set to true, the output will also include a selector (currently a class name).
+// @param $type {String} Type of spacer to be generated: Margin or Padding.
+// @param $size {String} w One of four possible sizes: 0, 0.25, 0.5, 1.
+// @param $pos {String} _ One of the 4 possible positions (t, r, b, l).
+// If not passed '_' (default value) evaluates to 'null'.
+// param $generate-helpers {Boolean} false If this value is true the generated output
+// includes a selector as well as the property-value pair.
+// @usage
+//   =@include spacer(p);
+//   =@include spacer(p w t);
+//   =@include spacer(p n);
+//   =@include spacer(p n l);
+
+@mixin spacer($type: "", $size: w, $pos: _, $generate-helpers: false) {
+  $type-long: map-get($spacer-types, $type);
+  $value: map-get($spacer-sizes, $size);
+  $property: _spacer--property($pos, $type-long, $size);
+
+  @if ($generate-helpers) {
+    $class-name: _spacer--classname($pos, $type, $size);
+
+    .#{$class-name} {
+      @include _spacer--prop-value($pos, $type-long, $value, $property);
+    }
+  } @else {
+    @include _spacer--prop-value($pos, $type-long, $value, $property);
+  }
+}
+
+@function _spacer--property($pos, $type, $size) {
+  $position: map-get($spacer-positions, $pos);
+  $property: #{$type}-#{$position};
+
+  // '_' is a reference to the null value defined in $spacer-positions
+  @if ($pos == _) {
+    @if ($size == w) {
+      $property: #{$type};
+    } @else {
+      $property: #{$type};
+    }
+  }
+
+  @return $property;
+}
+
+@mixin _spacer--prop-value($pos, $type, $value, $property) {
+  $pos: map-get($spacer-positions, $pos);
+
+  @if type-of($pos) == list {
+    @each $p in $pos {
+      $_pos: #{map-get($spacer-positions, $p)};
+      #{$type}-#{$_pos}: $value;
+    }
+  } @else {
+    #{$property}: $value;
+  }
+}
+
+@function _spacer--classname($pos, $type, $size) {
+  $class-name: null;
+
+  // '_' is a reference to the null value defined in $spacer-positions
+  @if ($pos == _) {
+    @if ($size == w) {
+      $class-name: "#{$ui-ns}-#{$type}";
+    } @else {
+      $class-name: "#{$ui-ns}-#{$type}-#{$size}";
+    }
+  } @else {
+    @if ($size == w) {
+      $class-name: "#{$ui-ns}-#{$type}-"+concat($pos);
+    } @else {
+      $class-name: "#{$ui-ns}-#{$type}-#{$size}-"+concat($pos);
+    }
+  }
+
+  @return $class-name;
+}
+
+@function number($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+/// Concatenate strings provided in $list.
+///
+/// @param {List} $list List of strings to concatenate.
+///
+/// @example scss Usage
+///   .#{concat(mui-, p)}{
+///     padding: 1em;
+///   }
+///
+/// @example css Output
+///   .mui-p {
+///     padding: 1em;
+///   }
+@function concat($list) {
+  $output: "";
+  @each $item in $list {
+    $output: $output + "#{$item}";
+  }
+  @return $output;
+}
+
+// ==============================================
+// Padding & Margin
+// ==============================================
+
+// see 07-margin-padding-generator for styles
+
+// ==============================================
+// Syntax
+// ==============================================
+//  .sp-[m/p]-[spacer-size]-[direction]
+
+//  m/p - margin or padding
+//  spacer-size - multiplier of basegrid
+//  direction - t(op), b(ottom), tb(top & bottom), r(ight), l(eft), rl(right & left)
+
+//  e.g. .sp-p-2-r --> right padding of 2*8 = 16px

@@ -1,0 +1,111 @@
+$menu-padding: 1.5rem;
+
+.menu {
+  font-family: $secondary-type;
+
+  &--row,
+  &--col {
+    list-style: none;
+  }
+
+  &--row {
+    & > * {
+      display: inline-block;
+    }
+  }
+
+  &--col {
+    padding: $menu-padding 0;
+
+    & .menu__item:not(:last-child) {
+      @include spacer(m, 1, b);
+    }
+  }
+
+  &__link,
+  &__btn {
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--full-width {
+      padding: 0.5rem $menu-padding;
+      // margin: 0 ($menu-padding * -1);
+    }
+  }
+  &__icon {
+    stroke: inherit;
+  }
+
+  &__btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--col .menu__link:hover,
+  &--col .menu__link:focus {
+    background-color: #ceebf8;
+    outline: 0;
+  }
+}
+
+//////////////////////
+// Animation
+//////////////////////
+
+#popup {
+  width: 16rem;
+  position: absolute;
+  left: 11.5rem;
+  top: 3rem;
+  z-index: 2;
+  transition: transform 0.5s;
+  transform-origin: 10% 0;
+  transform: scale(0, 0);
+
+  & .menu__item:nth-child(1) {
+    transform: translate(-8px, -8px);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s 0.2s, opacity 0.2s 0.2s, transform 0.2s 0.2s;
+  }
+  & .menu__item:nth-child(2) {
+    transform: translate(-8px, -8px);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s 0.15s, opacity 0.2s 0.15s, transform 0.2s 0.15s;
+  }
+  & .menu__item:nth-child(3) {
+    transform: translate(-8px, -8px);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s 0.1s, opacity 0.2s 0.1s, transform 0.2s 0.1s;
+  }
+}
+#popup.visible {
+  // display: initial;
+  transform-origin: 10% 0;
+  transform: scale(1, 1);
+  transition: transform 0.5s;
+
+  & .menu__item:first-child {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: visibility 0.25s 0.2s, opacity 0.25s 0.2s, transform 0.25s 0.2s;
+  }
+  & .menu__item:nth-child(2) {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: visibility 0.25s 0.3s, opacity 0.25s 0.3s, transform 0.25s 0.3s;
+  }
+  & .menu__item:nth-child(3) {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: visibility 0.25s 0.4s, opacity 0.25s 0.4s, transform 0.25s 0.4s;
+  }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="envelope" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g id="border">
+	<path fill="#FFFFFF" d="M24,47C11.318,47,1,36.682,1,24C1,11.318,11.318,1,24,1c12.682,0,23,10.318,23,23
+		C47,36.682,36.682,47,24,47z"/>
+	<path d="M24,2c12.131,0,22,9.869,22,22s-9.869,22-22,22S2,36.131,2,24S11.869,2,24,2 M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24
+		s24-10.745,24-24S37.255,0,24,0L24,0z"/>
+</g>
+<g>
+	<g id="paper">
+		
+			<polyline fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			36.645,33.672 36.645,17.641 11.357,17.641 11.357,33.672 		"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="15.571" y1="27.525" x2="32.429" y2="27.525"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="15.571" y1="32.254" x2="32.429" y2="32.254"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="15.571" y1="22.797" x2="32.429" y2="22.797"/>
+	</g>
+	<g id="envelopebody">
+		
+			<polygon id="envelope_front" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			38.75,17.639 24,26.384 9.25,17.639 9.25,33.673 38.75,33.673 		"/>
+		<g>
+			<polyline fill="#FFFFFF" points="38.75,32.741 26.216,24.43 21.776,24.436 9.25,32.741 			"/>
+			<path d="M9.25,34.673c-0.307,0-0.61-0.141-0.806-0.406c-0.328-0.444-0.233-1.071,0.211-1.398l12.527-9.236
+				c0.171-0.126,0.379-0.195,0.592-0.195l4.44-0.006h0.001c0.214,0,0.422,0.068,0.594,0.195l12.534,9.243
+				c0.444,0.327,0.539,0.954,0.211,1.398s-0.954,0.539-1.398,0.211l-12.269-9.047l-3.782,0.006L9.843,34.478
+				C9.665,34.609,9.457,34.673,9.25,34.673z"/>
+		</g>
+	</g>
+	
+		<polygon id="flap_2_" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		38.75,17.639 24,26.384 9.25,17.639 	"/>
+</g>
+</svg>

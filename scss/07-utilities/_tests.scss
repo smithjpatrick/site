@@ -1,0 +1,43 @@
+.o-dropdown {
+  // background-color: #aaa;
+}
+
+.codepen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker {
+  motion-path: path("M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0");
+  offset-path: path("M 5 5 m -4, 0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0");
+  animation: move 3s linear infinite;
+}
+
+.mover:hover {
+  motion-path: path(
+    "M18.45,58.46s52.87-70.07,101.25-.75,101.75-6.23,101.75-6.23S246.38,5.59,165.33,9.08s-15,71.57-94.51,74.56S18.45,58.46,18.45,58.46Z"
+  );
+  offset-path: path(
+    "M18.45,58.46s52.87-70.07,101.25-.75,101.75-6.23,101.75-6.23S246.38,5.59,165.33,9.08s-15,71.57-94.51,74.56S18.45,58.46,18.45,58.46Z"
+  );
+  motion-rotation: reverse;
+  animation: move 3s linear forwards;
+}
+@keyframes move {
+  0% {
+    motion-offset: 0%;
+    offset-distance: 0%;
+  }
+  100% {
+    motion-offset: 100%;
+    offset-distance: 100%;
+  }
+}
+
+.mover {
+  position: absolute;
+  left: 30%;
+  top: 100px;
+}

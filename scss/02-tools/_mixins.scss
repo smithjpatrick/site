@@ -1,0 +1,75 @@
+// CENTERING
+
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "vertical" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin link-hover($theme, $deg) {
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease;
+
+  @if $theme == "toast" {
+    background-image: linear-gradient(
+      $deg,
+      transparent 88%,
+      $color-toast-light 88%,
+      $color-toast-light 100%,
+      transparent 100%
+    );
+  } @else if $theme == "wmos" {
+    background-image: linear-gradient(
+      $deg,
+      transparent 88%,
+      $color-wmos-light 88%,
+      $color-wmos-light 100%,
+      transparent 100%
+    );
+  } @else if $theme == "canton" {
+    background-image: linear-gradient(
+      $deg,
+      transparent 88%,
+      $color-canton-light 88%,
+      $color-canton-light 100%,
+      transparent 100%
+    );
+  } @else if $theme == "primary" {
+    background-image: linear-gradient(
+      $deg,
+      transparent 88%,
+      $color-primary-light 88%,
+      $color-primary-light 100%,
+      transparent 100%
+    );
+  } @else if $theme == "" {
+    background-image: linear-gradient(
+      $deg,
+      transparent 88%,
+      $color-primary-light 88%,
+      $color-primary-light 100%,
+      transparent 100%
+    );
+  }
+
+  // &:hover {
+  //   background-size: 100% 100%;
+  // }
+}

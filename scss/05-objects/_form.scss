@@ -1,0 +1,93 @@
+.form {
+  border-radius: $gh / 2;
+  // max-width: 480px;
+  margin: 0 auto;
+
+  color: #333;
+  font-family: $secondary-type;
+
+  &__help-text {
+    font-weight: $light;
+    @include plumber(
+      $font-size: 0.9,
+      $baseline: $secondary-baseline,
+      $line-height: 1.5,
+      $leading-top: 0,
+      $leading-bottom: 0
+    );
+    @include spacer(m, p5, b);
+  }
+
+  & > *:not(:last-child) {
+    @include spacer(m, 1, b);
+  }
+
+  &__label {
+    display: block;
+    font-weight: $normal;
+    @include plumber(
+      $font-size: 1,
+      $baseline: $secondary-baseline,
+      $line-height: 1.5,
+      $leading-top: 0,
+      $leading-bottom: 0.5
+    );
+    // @include spacer(m, 1, b);
+  }
+
+  &__field {
+    color: darken($color-secondary-dark, 4);
+    // border: 1px solid rgb(181, 181, 181);
+    border: none;
+
+    background-color: rgba(white, 0.85);
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 0px 1px rgb(86, 86, 86);
+    padding: $gh/2;
+    // height: 5 * $gh;
+    display: block;
+    width: 100%;
+
+    font-family: $secondary-type;
+    font-size: 100%;
+    line-height: 1.5;
+
+    &--half-width {
+      width: 65%;
+    }
+
+    &--area {
+      line-height: 1.5;
+      height: 8 * $gh;
+      resize: vertical;
+    }
+
+    &:focus {
+      background-color: white;
+    }
+  }
+
+  &__submit {
+    background-color: $color-primary-light;
+    font-family: $secondary-type;
+    font-size: $base-font-size;
+    font-weight: $semibold;
+  }
+}
+
+.form__group {
+  &.error-item {
+    color: $color-error;
+
+    & .error:last-child {
+      display: block;
+      @include plumber(
+        $baseline: $secondary-baseline,
+        $font-size: 0.9,
+        $line-height: 1,
+        $leading-top: 0,
+        $leading-bottom: 0
+      );
+    }
+  }
+}

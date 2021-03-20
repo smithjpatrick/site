@@ -1,0 +1,9 @@
+.btn {
+  border-radius: $gh/2;
+  border: none;
+  padding: (1 * $gh) (1.5 * $gh);
+  line-height: 1;
+  background-color: $color-white;
+  color: $color-txt-primary;
+  cursor: pointer;
+}

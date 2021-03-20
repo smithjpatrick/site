@@ -1,0 +1,30 @@
+.icon {
+  &--outline > * {
+    stroke: $color-txt-primary;
+  }
+
+  & #ext-arrow,
+  & #doc-1,
+  & #doc-2 {
+    transition: 0.15s all;
+  }
+}
+
+/////////////////////////
+// animate icons
+/////////////////////////
+
+.animate-icon:hover {
+  // ext-copy SVG arrow animation
+  & #ext-arrow {
+    transform: translate(2px, -2px);
+  }
+
+  // ext-copy SVG arrow animation
+  & #doc-1 {
+    transform: translate(-1px, -1px);
+  }
+  & #doc-2 {
+    transform: translate(1px, 1px);
+  }
+}

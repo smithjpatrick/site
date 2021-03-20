@@ -1,0 +1,46 @@
+.footer {
+  background-color: $color-secondary-dark;
+  color: $color-white;
+  text-align: center;
+  font-family: $secondary-type;
+  font-weight: $light;
+  @include spacer(p, 2, rl);
+  @include spacer(p, 2, tb);
+
+  &__logo {
+    line-height: 0;
+    margin: 0 auto;
+  }
+
+  &__menu {
+    background-color: transparent;
+    @include plumber(
+      $font-size: 1,
+      $line-height: 1.5,
+      $baseline: $secondary-baseline,
+      $leading-top: 0,
+      $leading-bottom: 0
+    );
+  }
+  &__item {
+    @include spacer(m, 1, l);
+  }
+
+  &__copyright {
+    // background-color: darken($color-secondary-dark, 2);
+    @include plumber(
+      $font-size: 1,
+      $line-height: 1.5,
+      $baseline: $secondary-baseline,
+      $leading-top: 0,
+      $leading-bottom: 0
+    );
+    font-weight: $light;
+    // font-size: 2rem;
+  }
+
+  &__logo,
+  &__menu {
+    @include spacer(m, 1, b);
+  }
+}

@@ -1,0 +1,103 @@
+//https://www.sitepoint.com/using-sass-build-custom-type-scale-vertical-rhythm/
+
+$bp-sizes: (
+  default: (
+    base-font-size: 1rem,
+    base-line-height: 1.5,
+    scale: 1.333,
+  ),
+  small: (
+    base-font-size: 1rem,
+    base-line-height: 1.5,
+    scale: 1.333,
+  ),
+  medium: (
+    base-font-size: 1rem,
+    base-line-height: 1.5,
+    scale: 1.333,
+  ),
+  large: (
+    base-font-size: 1rem,
+    base-line-height: 1.5,
+    scale: 1.333,
+  ),
+);
+
+$breakpoints: (
+  default: "",
+  small: 480px,
+  medium: 720px,
+  large: 960px,
+);
+
+$font-sizes: (base, s, m, l, xl, xxl, xxxl);
+$line-heights: (
+  "base": 1.5,
+  "s": 1.2,
+  "m": 1.2,
+  "l": 1.1,
+  "xl": 1.1,
+  "xxl": 1.1,
+  "xxxl": 1.1,
+);
+
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Invalid breakpoint `#{$name}`.";
+  } @else {
+    @if map-get($breakpoints, $name) == "" {
+      @content;
+    } @else {
+      @media (min-width: map-get($breakpoints, $name)) {
+        @content;
+      }
+    }
+  }
+}
+
+@function get-breakpoint-property($prop, $bp) {
+  @return map-get(map-get($bp-sizes, $bp), $prop);
+}
+
+@mixin generate-font-properties(
+  $label,
+  $scale,
+  $base-font-size,
+  $base-line-height
+) {
+  $line-height: map-get($line-heights, $label);
+  $scale-value: index($font-sizes, $label) - 1;
+  $value: 1;
+
+  @if $scale-value > 0 {
+    @for $i from 1 through $scale-value {
+      $value: $value * $scale;
+    }
+  }
+  $fs: $base-font-size * $value;
+  // $lh: ((round(($fs * $line-height * 16) / 4) * 4) / 16) / $fs;
+  // $lh: (round(16 * $fs * $line-height / 4) / 4);
+
+  $lh: $base-font-size * $base-line-height / $fs;
+
+  @while $lh < 1 {
+    $lh: $lh + $lh;
+  }
+
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@each $size, $data in $bp-sizes {
+  $bsf: get-breakpoint-property(base-font-size, $size);
+  $blh: get-breakpoint-property(base-line-height, $size);
+  $s: get-breakpoint-property(scale, $size);
+
+  @include breakpoint($size) {
+    @each $label in $font-sizes {
+      %#{$label} {
+        @include generate-font-properties($label, $s, $bsf, $blh);
+      }
+    }
+  }
+}

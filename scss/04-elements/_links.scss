@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  border: none;
+  outline: none;
+}
+
+a {
+  color: $color-txt-primary;
+}

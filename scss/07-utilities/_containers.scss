@@ -1,0 +1,21 @@
+.container {
+  max-width: $website-width;
+  margin: 0 auto;
+  // width: calc(100% - (2 * 32px));
+
+  @media all and (min-width: $tablet) {
+    padding: 0 1rem;
+  }
+  @media all and (min-width: $desktop) {
+    // width: 100%;
+    padding: 0 1.5rem;
+  }
+}
+
+.readable-container {
+  max-width: 525px;
+
+  &--centered {
+    margin: 0 auto;
+  }
+}

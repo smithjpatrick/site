@@ -1,0 +1,22 @@
+// ==============================================
+// Padding & Margin
+// ==============================================
+
+@each $type-key, $type in $spacer-types {
+  @each $position-key, $position in $spacer-positions {
+    @each $size-key, $size in $spacer-sizes {
+      @include spacer($type-key, $size-key, $position-key, true);
+    }
+  }
+}
+
+// ==============================================
+// Syntax
+// ==============================================
+//  .sp-[m/p]-[spacer-size]-[direction]
+
+//  m/p - margin or padding
+//  spacer-size - multiplier of basegrid
+//  direction - t(op), b(ottom), tb(top & bottom), r(ight), l(eft), rl(right & left)
+
+//  e.g. .sp-p-2-r --> right padding of 2*8 = 16px

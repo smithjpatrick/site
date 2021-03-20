@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="envelope" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g id="border">
+	<path fill="#FFFFFF" d="M24,47C11.318,47,1,36.682,1,24S11.318,1,24,1s23,10.318,23,23S36.682,47,24,47z"/>
+	<path d="M24,2c12.131,0,22,9.869,22,22s-9.869,22-22,22S2,36.131,2,24S11.869,2,24,2 M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24
+		s24-10.745,24-24S37.255,0,24,0L24,0z"/>
+</g>
+<g>
+	
+		<polyline id="envelope_back" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		11.523,21.875 11.523,35.438 36.477,35.438 36.477,21.875 	"/>
+	
+		<polyline id="flap" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		36.477,21.875 24,12.562 11.523,21.875 	"/>
+	<g id="paper">
+		
+			<polyline fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+			34.695,29.199 34.695,15.638 13.306,15.638 13.306,29.199 		"/>
+		
+			<line fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="16.87" y1="24" x2="31.13" y2="24"/>
+		
+			<line fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="16.87" y1="28" x2="31.13" y2="28"/>
+		
+			<line fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="16.87" y1="20" x2="31.13" y2="20"/>
+	</g>
+	
+		<polygon id="envelope_front" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		36.477,21.875 24,29.272 11.523,21.875 11.523,35.438 36.477,35.438 	"/>
+</g>
+</svg>

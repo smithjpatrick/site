@@ -1,0 +1,75 @@
+// COLORS
+// https://material.io/design/color/the-color-system.html#color-theme-creation
+
+$test-1: rgb(174, 255, 174);
+$test-2: #fff47a;
+$test-3: rgb(108, 211, 255);
+
+$color-primary-default: #e54442;
+$color-primary-light: #e37d7b;
+$color-primary-dark: #bf0805;
+
+$color-secondary-default: #42afe5;
+$color-secondary-light: #77c0e5;
+$color-secondary-dark: #097ab2;
+
+$color-toast-default: #e58e42;
+$color-toast-light: #f1b37d;
+$color-toast-dark: #d26403;
+
+$color-wmos-default: #dc35c3;
+$color-wmos-light: #e897dc;
+$color-wmos-dark: #a90f92;
+
+$color-canton-default: #2fb8ba;
+$color-canton-light: #86e0e1;
+$color-canton-dark: #0d8284;
+
+$default-theme: (
+  //key: value
+  primary: $color-primary-default,
+  secondary: $color-secondary-default,
+  toast: $color-toast-default,
+  wmos: $color-wmos-default,
+  canton: $color-canton-default
+);
+
+$light-theme: (
+  //key: value
+  primary: $color-primary-light,
+  secondary: $color-secondary-light,
+  toast: $color-toast-light,
+  wmos: $color-wmos-light,
+  canton: $color-canton-light
+);
+
+$dark-theme: (
+  //key: value
+  primary: $color-primary-dark,
+  secondary: $color-secondary-dark,
+  toast: $color-toast-dark,
+  wmos: $color-wmos-dark,
+  canton: $color-canton-dark
+);
+
+$color-black: #000;
+$color-white: #fff;
+
+$grey-50: #fafafa;
+$grey-100: #f5f5f5;
+$grey-200: #eee;
+$grey-300: #e0e0e0;
+$grey-400: #bdbdbd;
+$grey-500: #9e9e9e;
+$grey-600: #757575;
+$grey-700: #616161;
+$grey-800: #424242;
+$grey-900: #212121;
+
+$body-bg: $color-white;
+$color-txt-primary: #333;
+
+$color-error: #ba0000;
+
+$color-warning: #ba6c00;
+$color-success: #098100;

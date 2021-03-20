@@ -1,0 +1,39 @@
+// exponent function
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@function color($theme, $tone) {
+  @if $tone == "default" {
+    @if map-has-key($default-theme, $theme) {
+      @return map-get($default-theme, $theme);
+    }
+
+    @warn "Unknown `#{$theme}` in $colors.";
+    @return null;
+  }
+  @if $tone == "light" {
+    @if map-has-key($light-theme, $theme) {
+      @return map-get($light-theme, $theme);
+    }
+
+    @warn "Unknown `#{$theme}` in $colors.";
+    @return null;
+  }
+  @if $tone == "dark" {
+    @if map-has-key($dark-theme, $theme) {
+      @return map-get($dark-theme, $theme);
+    }
+
+    @warn "Unknown `#{$theme}` in $colors.";
+    @return null;
+  }
+}

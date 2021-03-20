@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io -->
+<svg 
+xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+class="icon__burger"
+style="isolation:isolate" 
+viewBox="0 0 24 24" 
+width="24px" 
+height="24px"><defs>
+<clipPath 
+id="_clipPath_AZLdtFmWS7t0XL3tfmMoxLM1QqgcSM0j">
+<rect 
+width="24" 
+height="24"/>
+</clipPath>
+</defs>
+<g 
+clip-path="url(#_clipPath_AZLdtFmWS7t0XL3tfmMoxLM1QqgcSM0j)">
+<path 
+class="burger-bottom"
+d="M 7 18 L 21 18 C 21.552 18 22 18.448 22 19 L 22 19 C 22 19.552 21.552 20 21 20 L 7 20 C 6.448 20 6 19.552 6 19 L 6 19 C 6 18.448 6.448 18 7 18 Z" 
+style="stroke:none;fill:#333333;stroke-miterlimit:10;"/>
+<path
+class="burger-middle" 
+d="M 3 11 L 21 11 C 21.552 11 22 11.448 22 12 L 22 12 C 22 12.552 21.552 13 21 13 L 3 13 C 2.448 13 2 12.552 2 12 L 2 12 C 2 11.448 2.448 11 3 11 Z" 
+style="stroke:none;fill:#333333;stroke-miterlimit:10;"/>
+<path 
+class="burger-top"
+d="M 7 4 L 21 4 C 21.552 4 22 4.448 22 5 L 22 5 C 22 5.552 21.552 6 21 6 L 7 6 C 6.448 6 6 5.552 6 5 L 6 5 C 6 4.448 6.448 4 7 4 Z" 
+style="stroke:none;fill:#333333;stroke-miterlimit:10;"/>
+</g>
+</svg>

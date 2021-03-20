@@ -1,0 +1,168 @@
+section.codepen {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.envelope-wrapper {
+  position: relative;
+  height: 0;
+}
+
+.envelope {
+  // width: 100px;
+  // height: 72px;
+  // background-color: white;
+  // border: 2px solid #333;
+
+  // overflow: hidden;
+}
+// // .cover {
+// //   position: absolute;
+// //   height: 0px;
+// //   width: 0px;
+// }
+
+.top {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  border-top: 12px solid #333;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  transform-origin: 50% 0%;
+  transition: transform 0.25s 0.25s, visibility 0.25ms 0.25s;
+}
+.top:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -9px;
+  top: -10.35px;
+  border-top: 7px solid #fff;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  transform-origin: 50% 1px;
+}
+
+.bottom {
+  position: absolute;
+  border-bottom: 12px solid #333;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  height: 0;
+  top: 8px;
+  left: 0;
+  width: 30px;
+}
+.bottom::after {
+  content: "";
+  position: absolute;
+  border-bottom: 8px solid #fff;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  height: 0;
+  top: 2px;
+  left: -7px;
+  width: 20px;
+}
+.left {
+  position: absolute;
+  border-bottom: 20px solid #333;
+  border-left: 0px solid transparent;
+  border-right: 28px solid transparent;
+  height: 0;
+  top: 0px;
+  left: 0;
+  width: 30px;
+}
+.left::after {
+  content: "";
+  position: absolute;
+  border-bottom: 16px solid #fff;
+  border-left: 0px solid transparent;
+  border-right: 22px solid transparent;
+  height: 0;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+}
+.right {
+  position: absolute;
+  border-bottom: 20px solid #333;
+  border-left: 28px solid transparent;
+  border-right: 0px solid transparent;
+  height: 0;
+  top: 0px;
+  left: 0;
+  width: 30px;
+}
+.right::after {
+  content: "";
+  position: absolute;
+  border-bottom: 16px solid #fff;
+  border-left: 22px solid transparent;
+  border-right: 0px solid transparent;
+  height: 0;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+}
+
+.letter {
+  transform-origin: center top;
+  transition: transform 0.25s;
+  transform: scale(0.1, 0.1) translate(149rem, -10rem);
+  animation: paper-out 1s;
+}
+
+.envelope:hover {
+  & .top {
+    transform: rotateX(180deg);
+    // visibility: hidden;
+    transition: transform 0.25s;
+  }
+  & .top.invisible {
+    transform: rotateX(180deg);
+    visibility: hidden;
+    transition: transform 0.25s, visibility 0.25s;
+  }
+
+  & .letter {
+    transform-origin: center top;
+    animation: paper 1s forwards ease;
+    animation-delay: 0.25s;
+    // transition: transform 0.25s 0.25s;
+  }
+}
+
+// @keyframes paper {
+//   0% {
+//     transform-origin: center top;
+//     transform: scale(0.1, 0.1) translate(149rem, -10rem);
+//   }
+//   50% {
+//     transform-origin: center top;
+//     transform: translate(15rem, -4rem) scale(0.1, 0.1);
+//   }
+//   100% {
+//     transform: translate(1rem, 3rem) scale(1, 1);
+//   }
+// }
+// @keyframes paper-out {
+//   0% {
+//     transform: translate(1rem, 3rem) scale(1, 1);
+//   }
+//   50% {
+//     transform-origin: center top;
+//     transform: translate(15rem, -4rem) scale(0.1, 0.1);
+//   }
+//   100% {
+//     transform-origin: center top;
+//     transform: scale(0.1, 0.1) translate(149rem, -10rem);
+//   }
+// }

@@ -1,0 +1,22 @@
+.o-sbs {
+  display: flex;
+  position: relative;
+  // height: 36rem;
+
+  &__child {
+    flex: 1;
+    @include spacer(m, 0, r);
+
+    // padding: 1.5rem;
+
+    &:first-child {
+      @include spacer(m, 3, r);
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
