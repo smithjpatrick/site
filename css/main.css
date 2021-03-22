@@ -1111,8 +1111,6 @@ section.codepen {
   z-index: 100;
   flex-wrap: wrap;
   margin: 0 auto; }
-  .nav > * {
-    border: 1px solid #333; }
   .nav > *:first-child {
     margin-left: 1rem; }
     @media all and (min-width: 600px) {

@@ -116,10 +116,6 @@ $nav-color: #eee;
   flex-wrap: wrap;
   margin: 0 auto;
 
-  & > * {
-    border: 1px solid #333;
-  }
-
   & > *:first-child {
     margin-left: 1rem;
     @media all and (min-width: $tablet) {
