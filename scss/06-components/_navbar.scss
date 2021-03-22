@@ -17,13 +17,6 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   justify-content: space-between;
   align-items: center;
 
-  &__logo {
-    height: inherit;
-    margin: 0;
-    padding: 0;
-    // background-color: lightcyan;
-  }
-
   &__menu {
     background-color: $color-white;
     margin: 0;
@@ -187,18 +180,25 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   ////////////
   &__menu {
     background: #eee;
-    position: absolute;
+    position: fixed;
+    left: 0;
     top: 0;
-    display: none;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
     order: 2;
     min-height: 100vh;
 
     &.active {
-      display: block;
+      visibility: visible;
+      opacity: 1;
     }
 
     @media all and (min-width: $tablet) {
+      visibility: visible;
+      opacity: 1;
+
       display: flex;
       justify-content: start;
       align-items: center;

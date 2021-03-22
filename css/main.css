@@ -1034,10 +1034,6 @@ section.codepen {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .navbar__logo {
-    height: inherit;
-    margin: 0;
-    padding: 0; }
   .navbar__menu {
     background-color: #fff;
     margin: 0;
@@ -1186,16 +1182,22 @@ section.codepen {
         fill: green; } }
   .nav__menu {
     background: #eee;
-    position: absolute;
+    position: fixed;
+    left: 0;
     top: 0;
-    display: none;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
     order: 2;
     min-height: 100vh; }
     .nav__menu.active {
-      display: block; }
+      visibility: visible;
+      opacity: 1; }
     @media all and (min-width: 600px) {
       .nav__menu {
+        visibility: visible;
+        opacity: 1;
         display: flex;
         justify-content: start;
         align-items: center;
