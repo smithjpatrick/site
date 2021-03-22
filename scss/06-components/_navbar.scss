@@ -1,9 +1,11 @@
 $navbar-height: 4 * $gh; /*-- see variables-widths.scss */
 $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
 
+$nav-color: #eee;
+
 .navigation {
   // background-color: $color-white;
-  background-color: #eee;
+  background-color: $nav-color;
   // position: fixed;
   width: 100%;
   font-family: $secondary-type;
@@ -101,7 +103,7 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
 
 .nav-wrapper {
   width: 100%;
-  background: #eee;
+  background: $nav-color;
 }
 .nav {
   font-family: $secondary-type;
@@ -179,7 +181,7 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   // Menu
   ////////////
   &__menu {
-    background: #eee;
+    background: $nav-color;
     position: fixed;
     left: 0;
     top: 0;
@@ -190,15 +192,15 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
     order: 2;
     min-height: 100vh;
 
-    &.active {
+    .mobile & {
       visibility: visible;
       opacity: 1;
+      transition: opacity 0.35s, visibility 0.35s;
     }
 
     @media all and (min-width: $tablet) {
       visibility: visible;
       opacity: 1;
-
       display: flex;
       justify-content: start;
       align-items: center;
@@ -214,8 +216,8 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   &__item {
     // position: relative;
     display: block;
-    width: 100%;
     line-height: 100%;
+    text-align: center;
 
     &:first-child {
       margin-top: 20vh;
@@ -248,9 +250,9 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   }
 
   &__link {
-    display: block;
+    display: inline-block;
     text-align: center;
-    width: 100%;
+    min-width: 48px;
     padding: 1rem 0;
 
     &.nav__link--icon {
@@ -284,32 +286,6 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
     line-height: 100%;
     margin-left: 0.5rem;
   }
-  /*
-    background: #333;
-    display: inline-block;
-    height: 2px;
-    width: 20px;
-    position: relative;
-    margin-left: 0.5rem;
-
-    &::before,
-    &::after {
-      background: #333;
-      content: "";
-      display: inline-block;
-      height: 2px;
-      width: 16px;
-      position: absolute;
-      right: 0;
-    }
-    &::before {
-      top: 6px;
-    }
-    &::after {
-      top: -6px;
-    }
-  }
-  */
 
   ///////////////
   // DD Menu
@@ -319,7 +295,6 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
     display: block;
     position: relative;
     margin-bottom: 0;
-    width: 100%;
     text-align: center;
     padding: 0;
     left: 0;
@@ -334,8 +309,8 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
     }
 
     & .nav__link {
-      display: block;
-      width: 100%;
+      display: inline-block;
+      min-width: 48px;
       padding: 1rem 0;
 
       @media all and (min-width: $tablet) {
@@ -352,7 +327,6 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   &__dd-item {
     display: block;
     position: relative;
-    width: 100%;
   }
   &__dd-item:not(:last-child) {
     margin-bottom: 0.5rem;
@@ -380,12 +354,11 @@ $navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
   & .burger-middle,
   & .burger-top,
   & .burger-bottom {
-    // transform-origin: 50% 50%;
     transition: transform 0.25s;
   }
 }
 
-.active + .nav__toggle .close .icon__burger {
+.mobile .nav__toggle .icon__burger {
   transform: rotate(-360deg);
   transition: transform 0.5s;
 
