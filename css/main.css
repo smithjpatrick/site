@@ -1244,7 +1244,8 @@ section.codepen {
         width: unset;
         padding: 1.5rem;
         left: -1.5rem;
-        border: 1px solid red; } }
+        border: 1px solid red;
+        text-align: left; } }
     .nav__dd-menu .nav__link {
       display: inline-block;
       min-width: 48px;
