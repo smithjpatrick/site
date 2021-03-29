@@ -2,6 +2,7 @@
   max-width: $website-width;
   margin: 0 auto;
   // width: calc(100% - (2 * 32px));
+  padding: 0 1rem;
 
   @media all and (min-width: $tablet) {
     padding: 0 1rem;

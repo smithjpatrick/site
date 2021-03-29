@@ -1037,16 +1037,6 @@ section.codepen {
   z-index: 100;
   flex-wrap: wrap;
   margin: 0 auto; }
-  .nav > *:first-child {
-    margin-left: 1rem; }
-    @media all and (min-width: 600px) {
-      .nav > *:first-child {
-        margin-left: 0; } }
-  .nav > *:nth-child(2) {
-    margin-right: 1rem; }
-    @media all and (min-width: 600px) {
-      .nav > *:nth-child(2) {
-        margin-right: 0; } }
   @media all and (min-width: 600px) {
     .nav {
       flex-wrap: nowrap; } }
@@ -1236,7 +1226,8 @@ section.codepen {
 
 .container {
   max-width: 72rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 1rem; }
   @media all and (min-width: 600px) {
     .container {
       padding: 0 1rem; } }

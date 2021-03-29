@@ -35,18 +35,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   //   transition: transform 2.1s 0.15s ease-out;
   // }
 
-  & > *:first-child {
-    margin-left: 1rem;
-    @media all and (min-width: $tablet) {
-      margin-left: 0;
-    }
-  }
-  & > *:nth-child(2) {
-    margin-right: 1rem;
-    @media all and (min-width: $tablet) {
-      margin-right: 0;
-    }
-  }
+  //
 
   @media all and (min-width: $tablet) {
     flex-wrap: nowrap;
