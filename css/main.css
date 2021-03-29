@@ -485,6 +485,7 @@ a {
     margin: 0 auto; }
   .footer__menu {
     background-color: transparent;
+    color: white;
     /*
   @if not -plumber-is-integer($leading-top) {
     @error '$leading-top parameter must be a non-negative integer, got 0 instead.';
@@ -502,7 +503,10 @@ a {
     padding-bottom: 0.6rem;
     margin-bottom: -1rem; }
   .footer__item {
+    display: inline;
     margin-left: 1rem; }
+  .footer__link {
+    color: #fff; }
   .footer__copyright {
     /*
   @if not -plumber-is-integer($leading-top) {

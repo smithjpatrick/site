@@ -14,6 +14,7 @@
 
   &__menu {
     background-color: transparent;
+    color: white;
     @include plumber(
       $font-size: 1,
       $line-height: 1.5,
@@ -23,7 +24,12 @@
     );
   }
   &__item {
+    display: inline;
     @include spacer(m, 1, l);
+  }
+
+  &__link {
+    color: $color-white;
   }
 
   &__copyright {
