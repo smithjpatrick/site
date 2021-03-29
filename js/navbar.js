@@ -1,4 +1,5 @@
 
+var html = document.querySelector("html");
 var nav = document.querySelector(".nav");
 var navToggle = document.querySelector(".nav__toggle");
 var navMenu = document.querySelector(".nav__menu");
@@ -6,14 +7,14 @@ var navBurger = document.querySelector(".nav__burger");
 var navBurgerText = document.querySelector(".nav__toggle-text");
 
 navToggle.addEventListener("click", function () {
-  if (nav.classList.contains("mobile")) {
+  if (html.classList.contains("mobile")) {
     console.log("remove");
-    nav.classList.remove("mobile");
+    html.classList.remove("mobile");
     
     navBurgerText.innerHTML = "Menu";
   } else {
     console.log("add");
-    nav.classList.add("mobile");
+    html.classList.add("mobile");
     
     navBurgerText.innerHTML = "Close";
   }
