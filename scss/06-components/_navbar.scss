@@ -1,7 +1,7 @@
-$navbar-height: 4 * $gh; /*-- see variables-widths.scss */
-$navbar-height--small: 3 * $gh; /*-- see variables-widths.scss */
+$navbar-height: 6rem; /*-- see variables-widths.scss */
+$navbar-height--small: 4rem; /*-- see variables-widths.scss */
 
-$nav-color: #eee;
+$nav-color: hsla(0, 0%, 100%, 1);
 
 ////////////////////////////////////
 // NEW NAV
@@ -11,6 +11,7 @@ $nav-color: #eee;
   width: 100%;
   background: $nav-color;
 }
+
 .nav {
   font-family: $secondary-type;
   max-width: $website-width - 2rem;
@@ -22,16 +23,17 @@ $nav-color: #eee;
   flex-wrap: wrap;
   margin: 0 auto;
 
-  &::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-image: linear-gradient(to bottom, transparent, #333);
-    position: relative;
-    bottom: 0rem;
-    left: 0;
-    margin: 0 1rem;
-  }
+  // &::after {
+  //   content: "";
+  //   width: 100%;
+  //   height: 2px;
+  //   background-image: linear-gradient(to bottom, transparent, #333);
+  //   position: relative;
+  //   bottom: 0rem;
+  //   left: 0;
+  //   margin: 0 1rem;
+  //   transition: transform 2.1s 0.15s ease-out;
+  // }
 
   & > *:first-child {
     margin-left: 1rem;
@@ -49,9 +51,12 @@ $nav-color: #eee;
   @media all and (min-width: $tablet) {
     flex-wrap: nowrap;
   }
-  /////////////
-  // Logo
-  /////////////
+}
+
+/////////////
+// Logo
+/////////////
+.nav {
   &__logo {
     z-index: 100;
     & > * {
@@ -73,27 +78,29 @@ $nav-color: #eee;
   }
 
   &__img {
-    height: 6rem;
+    height: $navbar-height;
     line-height: 100%;
     padding: 1.5rem 0;
     margin-right: 1rem;
     fill: coral;
 
     @media all and (min-width: $tablet) {
-      height: 4rem;
-      // padding: 0.75rem 0;
       fill: cornflowerblue;
     }
     @media all and (min-width: $desktop) {
       height: 5rem;
+      padding: 0.75rem 0;
       height: clamp(5rem, 8vh, 7rem);
       fill: green;
     }
   }
+}
 
-  ////////////
-  // Menu
-  ////////////
+////////////
+// Menu
+////////////
+
+.nav {
   &__menu {
     background: $nav-color;
     position: fixed;
@@ -104,13 +111,8 @@ $nav-color: #eee;
     width: 100%;
     order: 2;
     height: 0;
-    transition: height 0.35s, overflow 0s 1s;
-
-    .mobile & {
-      overflow: auto;
-      height: 100vh;
-      transition: height 0.35s, overflow 0s 1s;
-    }
+    transition: height 0.5s ease-out, overflow 0s 1s ease-out;
+    z-index: 99;
 
     @media all and (min-width: $tablet) {
       display: flex;
@@ -122,10 +124,15 @@ $nav-color: #eee;
       width: auto;
       height: auto;
       min-height: unset;
-      transition: opacity 0s, visibility 0s;
+      // transition: opacity 0s, visibility 0s;
     }
   }
+}
 
+//////////////////
+// Menu Items/Links
+//////////////////
+.nav {
   &__item {
     // position: relative;
     display: block;
@@ -178,33 +185,12 @@ $nav-color: #eee;
   &__icon {
     line-height: 100%;
   }
+}
 
-  &__toggle {
-    border: none;
-    z-index: 100;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    height: 3.5rem;
-    &:hover {
-      cursor: pointer;
-    }
-
-    @media all and (min-width: $tablet) {
-      order: unset;
-      display: none;
-    }
-  }
-
-  &__burger {
-    line-height: 100%;
-    margin-left: 0.5rem;
-  }
-
-  ///////////////
-  // DD Menu
-  ///////////////
-
+///////////////
+// DD Menu
+///////////////
+.nav {
   &__dd-menu {
     display: block;
     position: relative;
@@ -234,11 +220,6 @@ $nav-color: #eee;
       }
     }
   }
-
-  &__item:hover .nav__dd-menu {
-    display: block;
-  }
-
   &__dd-item {
     display: block;
     position: relative;
@@ -246,34 +227,105 @@ $nav-color: #eee;
   &__dd-item:not(:last-child) {
     margin-bottom: 0.5rem;
   }
+  &__item:hover .nav__dd-menu {
+    display: block;
+  }
 }
 
-.icon__burger {
-  transform-origin: 50% 50%;
-  transition: transform 0.5s;
+//////////////////
+//
+// BURGER
+//
+//////////////////
+.nav {
+  &__toggle {
+    border: none;
+    z-index: 100;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 3.5rem;
+    &:hover {
+      cursor: pointer;
+    }
 
-  & .burger-middle {
-    transform: scaleX(1);
+    @media all and (min-width: $tablet) {
+      order: unset;
+      display: none;
+    }
+  }
+
+  &__burger {
+    line-height: 100%;
+    margin-left: 0.5rem;
+  }
+
+  & .icon__burger {
     transform-origin: 50% 50%;
-    transition: transform 0.25s;
-  }
-  & .burger-top {
-    transform-origin: 79.167% 20.83%;
-    transform: rotate(0deg) scale(1, 1) translateX(0px);
-  }
+    transition: transform 0.5s;
 
-  & .burger-bottom {
-    transform-origin: 79.167% 79.167%;
-    transform: rotate(0deg) scale(1, 1) translateX(0px);
-  }
-  & .burger-middle,
-  & .burger-top,
-  & .burger-bottom {
-    transition: transform 0.25s;
+    & .burger-middle {
+      transform: scaleX(1);
+      transform-origin: 50% 50%;
+      transition: transform 0.25s;
+    }
+    & .burger-top {
+      transform-origin: 79.167% 20.83%;
+      transform: rotate(0deg) scale(1, 1) translateX(0px);
+    }
+
+    & .burger-bottom {
+      transform-origin: 79.167% 79.167%;
+      transform: rotate(0deg) scale(1, 1) translateX(0px);
+    }
+    & .burger-middle,
+    & .burger-top,
+    & .burger-bottom {
+      transition: transform 0.25s;
+    }
   }
 }
 
-.mobile .nav__toggle .icon__burger {
+// @mixin nav-link($total-time, $count, $order) {
+//   $delay: ($total-time/$count) * $order;
+//   transition: transform 0.25s calc(#{$delay}* (1s)) ease-in-out;
+// }
+
+// .nav__item:nth-of-type(1) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 1);
+// }
+// .nav__dd-item:nth-of-type(1) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 2);
+// }
+// .nav__dd-item:nth-of-type(2) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 3);
+// }
+// .nav__dd-item:nth-of-type(3) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 4);
+// }
+// .nav__item:nth-of-type(2) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 5);
+// }
+// .nav__item:nth-of-type(3) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 6);
+// }
+// .nav__item:nth-of-type(4) > .nav__link {
+//   outline: red 1px solid;
+//   @include nav-link(0.2, 7, 7);
+// }
+
+//////////////////
+//
+//Menu Open - Burger
+//
+//////////////////
+.mobile .icon__burger {
   transform: rotate(-360deg);
   transition: transform 0.5s;
 
@@ -293,83 +345,24 @@ $nav-color: #eee;
   }
 }
 
-// //NEW
+//////////////////
+//
+//Menu Open - Nav
+//
+//////////////////
 
-// /////////////
-// // Logo
-// /////////////
-// .nav__logo {
-//   z-index: 100;
-//   & > * {
-//     display: flex;
-//     justify-content: start;
-//     align-items: center;
-//     flex: 1;
-//     order: 0;
-//   }
-// }
+.mobile {
+  & .nav__menu {
+    overflow: auto;
+    height: 100vh;
+    transition: height 0.5s ease-out, overflow 0s 1s;
+    // border-bottom: 1px solid black;
+  }
 
-// .nav__title {
-//   font-size: 1.5rem;
-//   display: none;
-
-//   @media all and (min-width: $desktop) {
-//     display: inline-block;
-//   }
-// }
-
-// .nav__img {
-//   height: 3.5rem;
-//   line-height: 100%;
-//   padding: 0.5rem 0;
-//   margin-right: 1rem;
-//   fill: coral;
-
-//   @media all and (min-width: $tablet) {
-//     height: 4rem;
-//     // padding: 0.75rem 0;
-//     fill: cornflowerblue;
-//   }
-//   @media all and (min-width: $desktop) {
-//     height: 5rem;
-//     height: clamp(5rem, 8vh, 7rem);
-//     fill: green;
-//   }
-// }
-
-// .nav {
-//   background-color: skyblue;
-//   width: 100%;
-//   position: fixed;
-//   z-index: 3;
-// }
-
-// .nav .nav__menu {
-//   background-color: tan;
-//   overflow: hidden;
-// }
-
-// .nav .nav__menu .nav__link {
-//   display: inline-block;
-//   outline: 1px solid red;
-//   padding: 20px;
-
-//   &:hover {
-//     outline: 2px solid green;
-//   }
-// }
-
-// .nav__logo {
-//   float: left;
-//   display: block;
-// }
-
-// .nav__menu {
-//   clear: both;
-//   height: 0;
-//   transition: height 0.2s ease-out;
-// }
-
-// .nav.mobile .nav__menu {
-//   height: 100vh;
-// }
+  // &::after {
+  //   transform: translateY(100vh);
+  // }
+  // & .nav__link {
+  //   transform: translateY(1.5rem);
+  // }
+}
