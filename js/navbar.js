@@ -1,5 +1,6 @@
 
 var page = document.querySelector("html");
+var navWrap = document.querySelector(".nav-wrapper");
 var nav = document.querySelector(".nav");
 var logoImg = document.querySelector(".nav__img");
 var navToggle = document.querySelector(".nav__toggle");
@@ -32,7 +33,7 @@ w = window.innerWidth
   if (w > 600) {
     page.classList.remove("mobile");
     navBurgerText.innerHTML = "Menu";
-    nav.classList.remove("hidden-nav");
+    navWrap.classList.remove("hidden-nav");
   } 
 })
 
@@ -43,7 +44,6 @@ w = window.innerWidth
 var navHide = 100; //scroll distance that nav hides
 
 window.onscroll = function() {
-    console.log("screen-width: " + w)
     myFunction();
 }
 
@@ -51,9 +51,9 @@ function myFunction() {
   
     if (document.body.scrollTop > navHide || document.documentElement.scrollTop > navHide) {
       logoImg.classList.add("nav__img--small");
-      nav.classList.add("nav--scrolled");
+      navWrap.classList.add("nav--scrolled");
     } else {
-      nav.classList.remove("nav--scrolled");
+      navWrap.classList.remove("nav--scrolled");
       logoImg.classList.remove("nav__img--small");
       console.log("scrolled up")
     }
@@ -71,11 +71,11 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
    if (st > lastScrollTop && st > navHide ){
     // downscroll code 
 
-    nav.classList.add("hidden-nav");
+    navWrap.classList.add("hidden-nav");
 
   } else {
       // upscroll code
-      nav.classList.remove("hidden-nav");
+      navWrap.classList.remove("hidden-nav");
    }
   }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling

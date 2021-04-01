@@ -1023,6 +1023,9 @@ section.codepen {
 
 /*-- see variables-widths.scss */
 /*-- see variables-widths.scss */
+body > *:nth-child(2) {
+  margin-top: 6rem; }
+
 .mobile body {
   overflow: hidden; }
 
@@ -1031,24 +1034,25 @@ main.container {
 
 .nav-wrapper {
   width: 100%;
-  background: white; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s, box-shadow 0.3s; }
+
+.nav--scrolled {
+  box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07); }
 
 .nav {
+  background: white;
   font-family: "Poppins", Helvetica, Verdana, sans-serif;
   max-width: 70rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 100;
   flex-wrap: wrap;
-  margin: 0 auto;
-  transition: transform 0.3s, box-shadow 0.3s; }
-  .nav--scrolled {
-    box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07); }
+  margin: 0 auto; }
   @media all and (min-width: 600px) {
     .nav {
       flex-wrap: nowrap; } }
