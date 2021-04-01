@@ -7,6 +7,13 @@ $nav-color: hsla(0, 0%, 100%, 1);
 // NEW NAV
 ////////////////////////////////////
 
+.mobile body {
+  overflow: hidden;
+}
+
+main.container {
+  height: 200vh;
+}
 .nav-wrapper {
   width: 100%;
   background: $nav-color;
@@ -15,14 +22,23 @@ $nav-color: hsla(0, 0%, 100%, 1);
 .nav {
   font-family: $secondary-type;
   max-width: $website-width - 2rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 100;
   flex-wrap: wrap;
   margin: 0 auto;
+  transition: transform 0.3s, box-shadow 0.3s;
 
+  &--scrolled {
+    box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024),
+      0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046),
+      0 0px 80px rgba(0, 0, 0, 0.07);
+  }
   // &::after {
   //   content: "";
   //   width: 100%;
@@ -40,6 +56,13 @@ $nav-color: hsla(0, 0%, 100%, 1);
   @media all and (min-width: $tablet) {
     flex-wrap: nowrap;
   }
+}
+
+.mobile .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 /////////////
@@ -72,6 +95,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
     padding: 1.5rem 0;
     margin-right: 1rem;
     fill: coral;
+    transition: height 0.2s, padding 0.2s;
 
     @media all and (min-width: $tablet) {
       fill: cornflowerblue;
@@ -234,13 +258,22 @@ $nav-color: hsla(0, 0%, 100%, 1);
     justify-content: end;
     align-items: center;
     height: 3.5rem;
+
     &:hover {
       cursor: pointer;
+    }
+
+    &:active {
+      outline: none;
     }
 
     @media all and (min-width: $tablet) {
       order: unset;
       display: none;
+    }
+
+    &-text {
+      font-size: 1rem;
     }
   }
 
@@ -354,4 +387,13 @@ $nav-color: hsla(0, 0%, 100%, 1);
   // & .nav__link {
   //   transform: translateY(1.5rem);
   // }
+}
+
+.nav__img--small {
+  height: $navbar-height--small;
+  padding: 0.5rem 0;
+}
+
+.hidden-nav {
+  transform: translateY(-6rem);
 }
