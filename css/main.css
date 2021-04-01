@@ -1027,23 +1027,45 @@ section.codepen {
 
 /*-- see variables-widths.scss */
 /*-- see variables-widths.scss */
+body > *:nth-child(2) {
+  margin-top: 6rem; }
+
+.mobile body {
+  overflow: hidden; }
+
+main.container {
+  height: 200vh; }
+
 .nav-wrapper {
   width: 100%;
-  background: white; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s, box-shadow 0.3s; }
+
+.nav--scrolled {
+  box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07); }
 
 .nav {
+  background: white;
   font-family: "Poppins", Helvetica, Verdana, sans-serif;
   max-width: 70rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   z-index: 100;
   flex-wrap: wrap;
   margin: 0 auto; }
   @media all and (min-width: 600px) {
     .nav {
       flex-wrap: nowrap; } }
+
+.mobile .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
 
 .nav__logo {
   z-index: 100; }
@@ -1066,7 +1088,8 @@ section.codepen {
   line-height: 100%;
   padding: 1.5rem 0;
   margin-right: 1rem;
-  fill: coral; }
+  fill: coral;
+  transition: height 0.2s, padding 0.2s; }
   @media all and (min-width: 600px) {
     .nav__img {
       fill: cornflowerblue; } }
@@ -1183,10 +1206,14 @@ section.codepen {
   height: 3.5rem; }
   .nav__toggle:hover {
     cursor: pointer; }
+  .nav__toggle:active {
+    outline: none; }
   @media all and (min-width: 600px) {
     .nav__toggle {
       order: unset;
       display: none; } }
+  .nav__toggle-text {
+    font-size: 1rem; }
 
 .nav__burger {
   line-height: 100%;
@@ -1227,6 +1254,13 @@ section.codepen {
   overflow: auto;
   height: 100vh;
   transition: height 0.5s ease-out, overflow 0s 1s; }
+
+.nav__img--small {
+  height: 4rem;
+  padding: 0.5rem 0; }
+
+.hidden-nav {
+  transform: translateY(-6rem); }
 
 .container {
   max-width: 72rem;
