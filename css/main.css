@@ -1076,6 +1076,9 @@ main.container {
     flex: 1;
     order: 0; }
 
+.nav__logo-link:hover {
+  color: blueviolet; }
+
 .nav__title {
   font-size: 1.5rem;
   display: none; }
@@ -1100,6 +1103,12 @@ main.container {
       height: clamp(5rem, 8vh, 7rem);
       fill: green; } }
 
+.nav__logo-link:hover .nav__img {
+  fill: blueviolet; }
+
+.nav__logo-link:hover .logo__img--eyebrows {
+  transform: translateY(-3px); }
+
 .nav__menu {
   background: white;
   position: fixed;
@@ -1122,7 +1131,8 @@ main.container {
       z-index: 99;
       width: auto;
       height: auto;
-      min-height: unset; } }
+      min-height: unset;
+      overflow: visible; } }
 
 .nav__item {
   display: block;
@@ -1172,12 +1182,23 @@ main.container {
   @media all and (min-width: 600px) {
     .nav__dd-menu {
       display: none;
-      position: Absolute;
-      width: unset;
-      padding: 1.5rem;
+      position: absolute;
       left: -1.5rem;
-      border: 1px solid red;
-      text-align: left; } }
+      top: 4rem;
+      padding: 1.5rem;
+      text-align: left;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07); } }
+  @media all and (min-width: 600px) {
+    .nav__dd-menu::before {
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 1rem; } }
   .nav__dd-menu .nav__link {
     display: inline-block;
     min-width: 48px;
@@ -1194,8 +1215,9 @@ main.container {
 .nav__dd-item:not(:last-child) {
   margin-bottom: 0.5rem; }
 
-.nav__item:hover .nav__dd-menu {
-  display: block; }
+@media all and (min-width: 600px) {
+  .nav__item:hover .nav__dd-menu {
+    display: block; } }
 
 .nav__toggle {
   border: none;
