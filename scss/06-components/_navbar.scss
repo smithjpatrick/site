@@ -210,10 +210,20 @@ main.container {
       justify-content: center;
       align-items: center;
     }
-  }
 
-  &__icon {
-    line-height: 100%;
+    &.nav__link--icon .nav__icon {
+      line-height: 100%;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: red;
+
+      &.nav__link--icon .nav__icon {
+        fill: red;
+        transform: rotate(180deg);
+      }
+    }
   }
 }
 

@@ -1168,9 +1168,14 @@ main.container {
     display: flex;
     justify-content: center;
     align-items: center; }
-
-.nav__icon {
-  line-height: 100%; }
+  .nav__link.nav__link--icon .nav__icon {
+    line-height: 100%;
+    transition: all 0.2s; }
+  .nav__link:hover {
+    color: red; }
+    .nav__link:hover.nav__link--icon .nav__icon {
+      fill: red;
+      transform: rotate(180deg); }
 
 .nav__dd-menu {
   display: block;
