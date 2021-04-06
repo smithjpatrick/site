@@ -4,7 +4,29 @@ $navbar-height--small: 4rem; /*-- see variables-widths.scss */
 $nav-color: hsla(0, 0%, 100%, 1);
 
 ////////////////////////////////////
-// NEW NAV
+// || Typography
+////////////////////////////////////
+.nav {
+  font-family: $secondary-type;
+}
+
+.nav__title,
+.nav__link {
+  line-height: 100%;
+  font-size: 150%;
+  @media all and (min-width: $tablet) {
+    font-size: 100%;
+  }
+}
+
+.nav__dd-menu .nav__link,
+.nav__toggle-text {
+  font-size: 100%;
+  line-height: 100%;
+}
+
+////////////////////////////////////
+// || NEW NAV
 ////////////////////////////////////
 body > *:nth-child(2) {
   margin-top: 12rem;
@@ -31,7 +53,6 @@ main.container {
 
 .nav {
   background: $nav-color;
-  font-family: $secondary-type;
   max-width: $website-width - 2rem;
   width: 100%;
   display: flex;
@@ -68,7 +89,7 @@ main.container {
 }
 
 /////////////
-// Logo
+// || Logo
 /////////////
 .nav {
   &__logo {
@@ -82,12 +103,7 @@ main.container {
     }
   }
 
-  &__logo-link:hover {
-    color: blueviolet;
-  }
-
   &__title {
-    font-size: 1.5rem;
     display: none;
 
     @media all and (min-width: $desktop) {
@@ -113,20 +129,10 @@ main.container {
       fill: green;
     }
   }
-
-  &__logo-link:hover {
-    & .nav__img {
-      fill: blueviolet;
-    }
-
-    & .logo__img--eyebrows {
-      transform: translateY(-3px);
-    }
-  }
 }
 
 ////////////
-// Menu
+// || Menu
 ////////////
 
 .nav {
@@ -140,7 +146,8 @@ main.container {
     width: 100%;
     order: 2;
     height: 0;
-    transition: height 0.5s ease-out, overflow 0s 1s ease-out;
+    transition: height 0.5s ease-out, overflow 0s 1s ease-out, visibility 0s 1s;
+    visibility: hidden;
     z-index: 99;
 
     @media all and (min-width: $tablet) {
@@ -153,13 +160,13 @@ main.container {
       height: auto;
       min-height: unset;
       overflow: visible;
-      // transition: opacity 0s, visibility 0s;
+      visibility: visible;
     }
   }
 }
 
 //////////////////
-// Menu Items/Links
+// || Menu Items/Links
 //////////////////
 .nav {
   &__item {
@@ -179,10 +186,10 @@ main.container {
       content: "";
       position: relative;
       display: block;
-      width: 20%;
-      min-width: 6rem;
+      width: 15%;
+      min-width: 3rem;
       height: 1px;
-      background-color: #ddd;
+      background-color: #dfdfdf;
       margin: 0.5rem auto;
 
       @media all and (min-width: $tablet) {
@@ -203,9 +210,6 @@ main.container {
     min-width: 48px;
     padding: 1rem 0;
     z-index: 100;
-    line-height: 1.5rem;
-    // background-size: 0% 100%;
-    // transition: background-size 0.3s ease;
 
     &.nav__link--icon {
       display: inline-flex;
@@ -219,16 +223,12 @@ main.container {
     }
   }
 
-  &__item:hover .nav__link--icon .nav__icon {
-    transform: rotate(180deg);
-  }
-
   &__item > .nav__link,
   &__dd-item > .nav__link {
     background-image: linear-gradient(
       180deg,
-      transparent 65%,
-      $color-primary-light 65%,
+      transparent 70%,
+      $color-primary-light 70%,
       $color-primary-light 75%,
       transparent 75%
     );
@@ -236,14 +236,10 @@ main.container {
     background-size: 0% 100%;
     transition: background-size 0.3s ease;
   }
-
-  &__item:hover > .nav__link {
-    background-size: 100% 100%;
-  }
 }
 
 ///////////////
-// DD Menu
+// || DD Menu
 ///////////////
 .nav {
   &__dd-menu {
@@ -298,10 +294,6 @@ main.container {
     position: relative;
   }
 
-  &__dd-item:hover > .nav__link {
-    background-size: 100% 100%;
-  }
-
   &__dd-item:not(:last-child) {
     margin-bottom: 0.5rem;
   }
@@ -315,7 +307,7 @@ main.container {
 
 //////////////////
 //
-// BURGER
+// || BURGER
 //
 //////////////////
 .nav {
@@ -327,21 +319,9 @@ main.container {
     align-items: center;
     height: 3.5rem;
 
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:active {
-      outline: none;
-    }
-
     @media all and (min-width: $tablet) {
       order: unset;
       display: none;
-    }
-
-    &-text {
-      font-size: 1rem;
     }
   }
 
@@ -376,43 +356,9 @@ main.container {
   }
 }
 
-// @mixin nav-link($total-time, $count, $order) {
-//   $delay: ($total-time/$count) * $order;
-//   transition: transform 0.25s calc(#{$delay}* (1s)) ease-in-out;
-// }
-
-// .nav__item:nth-of-type(1) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 1);
-// }
-// .nav__dd-item:nth-of-type(1) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 2);
-// }
-// .nav__dd-item:nth-of-type(2) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 3);
-// }
-// .nav__dd-item:nth-of-type(3) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 4);
-// }
-// .nav__item:nth-of-type(2) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 5);
-// }
-// .nav__item:nth-of-type(3) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 6);
-// }
-// .nav__item:nth-of-type(4) > .nav__link {
-//   outline: red 1px solid;
-//   @include nav-link(0.2, 7, 7);
-// }
-
 //////////////////
 //
-//Menu Open - Burger
+// || Menu Open - Burger
 //
 //////////////////
 .mobile .icon__burger {
@@ -437,24 +383,17 @@ main.container {
 
 //////////////////
 //
-//Menu Open - Nav
+// || Menu Open - Nav
 //
 //////////////////
 
 .mobile {
   & .nav__menu {
+    visibility: visible;
     overflow: auto;
     height: 100vh;
     transition: height 0.5s ease-out, overflow 0s 1s;
-    // border-bottom: 1px solid black;
   }
-
-  // &::after {
-  //   transform: translateY(100vh);
-  // }
-  // & .nav__link {
-  //   transform: translateY(1.5rem);
-  // }
 }
 
 .nav__img--small {
@@ -464,4 +403,76 @@ main.container {
 
 .hidden-nav {
   transform: translateY(-6rem);
+}
+
+//////////////////
+//
+// || Menu Open - Page content
+//
+//////////////////
+
+body > *:not(:first-child) {
+  visibility: visible;
+}
+.mobile body > *:not(:first-child) {
+  visibility: hidden;
+  transition: visibility 0s 0.5s;
+}
+
+//////////////////////
+//  || States
+//////////////////////
+
+// Brand states
+.nav__logo-link:hover,
+.nav__logo-link:focus {
+  color: blueviolet;
+
+  & .nav__img {
+    fill: blueviolet;
+  }
+
+  & .logo__img--eyebrows {
+    transform: translateY(-3px);
+  }
+}
+
+// Work chevron for dropdowns
+.nav__item:hover .nav__link--icon .nav__icon,
+.nav__link--icon:focus-within .nav__icon {
+  transform: rotate(180deg);
+}
+
+//hover and focus states for nav links
+.nav__link:hover,
+.nav__link:focus {
+  background-size: 100% 100%;
+}
+
+//hover states for dd links
+.nav__dd-item:hover > .nav__link {
+  background-size: 100% 100%;
+}
+
+//states for the burger menu
+.nav__toggle {
+  &:focus {
+    outline: hotpink 1px solid;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+.nav__item:focus-within .nav__dd-menu {
+  display: block;
+}
+
+.nav__item:focus-within .nav__icon {
+  transform: rotate(180deg);
 }

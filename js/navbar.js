@@ -2,6 +2,7 @@
 var page = document.querySelector("html");
 var navWrap = document.querySelector(".nav-wrapper");
 var nav = document.querySelector(".nav");
+var navBrand = document.querySelector(".nav__logo-link");
 var logoImg = document.querySelector(".nav__img");
 var navToggle = document.querySelector(".nav__toggle");
 var navMenu = document.querySelector(".nav__menu");
@@ -12,6 +13,8 @@ var w = window.innerWidth
 || document.body.clientWidth;
 
 navToggle.addEventListener("click", function () {
+
+  
   if (page.classList.contains("mobile")) {
     console.log("remove");
     page.classList.remove("mobile");
@@ -81,3 +84,48 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
+
+//Return nav bar on focus events
+nav.addEventListener("focusin", function() {
+  navWrap.classList.remove("hidden-nav");
+})
+
+
+////////////////////////////////////// 
+// keeping tab focus within burger menu
+// https://hiddedevries.nl/en/blog/2017-01-29-using-javascript-to-trap-focus-in-an-element
+////////////////////////////////
+var myNodeList = document.querySelector("nav__link");
+
+// let first = myNodeList[0];
+
+// let last = myNodeList[myNodeList.length - 1];
+
+
+// var focusableEls = nav.querySelectorAll('a[href]:not([disabled]), button:not([disabled])');
+//   var firstFocusableEl = focusableEls[0];  
+//   var lastFocusableEl = focusableEls[focusableEls.length - 1];
+//   var KEYCODE_TAB = 9;
+//   console.log(firstFocusableEl.innerHTML);
+//   console.log(lastFocusableEl.innerHTML);
+  
+//   navMenu.addEventListener('keydown', function(e) {
+//     var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+//     if (!isTabPressed) { 
+//       return; 
+//     }
+
+//     if ( e.shiftKey ) /* shift + tab */ {
+//       if (document.activeElement === firstFocusableEl) {
+//         lastFocusableEl.focus();
+//           e.preventDefault();
+          
+//         }
+//       } else /* tab */ {
+//       if (document.activeElement === lastFocusableEl) {
+//         firstFocusableEl.focus();
+//           e.preventDefault();
+//         }
+//       }
+//   });
