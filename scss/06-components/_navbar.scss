@@ -7,7 +7,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 // NEW NAV
 ////////////////////////////////////
 body > *:nth-child(2) {
-  margin-top: 6rem;
+  margin-top: 12rem;
 }
 
 .mobile body {
@@ -149,7 +149,6 @@ main.container {
       align-items: center;
       position: relative;
       margin-bottom: 0;
-      z-index: 99;
       width: auto;
       height: auto;
       min-height: unset;
@@ -164,7 +163,6 @@ main.container {
 //////////////////
 .nav {
   &__item {
-    // position: relative;
     display: block;
     line-height: 100%;
     text-align: center;
@@ -204,9 +202,13 @@ main.container {
     text-align: center;
     min-width: 48px;
     padding: 1rem 0;
+    z-index: 100;
+    line-height: 1.5rem;
+    // background-size: 0% 100%;
+    // transition: background-size 0.3s ease;
 
     &.nav__link--icon {
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
     }
@@ -215,15 +217,28 @@ main.container {
       line-height: 100%;
       transition: all 0.2s;
     }
+  }
 
-    &:hover {
-      color: red;
+  &__item:hover .nav__link--icon .nav__icon {
+    transform: rotate(180deg);
+  }
 
-      &.nav__link--icon .nav__icon {
-        fill: red;
-        transform: rotate(180deg);
-      }
-    }
+  &__item > .nav__link,
+  &__dd-item > .nav__link {
+    background-image: linear-gradient(
+      180deg,
+      transparent 65%,
+      $color-primary-light 65%,
+      $color-primary-light 75%,
+      transparent 75%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.3s ease;
+  }
+
+  &__item:hover > .nav__link {
+    background-size: 100% 100%;
   }
 }
 
@@ -238,6 +253,7 @@ main.container {
     text-align: center;
     padding: 0;
     left: 0;
+    z-index: 99;
 
     @media all and (min-width: $tablet) {
       display: none;
@@ -262,7 +278,7 @@ main.container {
         content: "";
         width: 50%;
         height: 1rem;
-        // outline: 1px red solid;
+        z-index: 1;
       }
     }
 
@@ -281,6 +297,11 @@ main.container {
     display: block;
     position: relative;
   }
+
+  &__dd-item:hover > .nav__link {
+    background-size: 100% 100%;
+  }
+
   &__dd-item:not(:last-child) {
     margin-bottom: 0.5rem;
   }
