@@ -10,7 +10,10 @@ $nav-color: hsla(0, 0%, 100%, 1);
   font-family: $secondary-type;
 }
 
-.nav__title,
+.nav__title {
+  line-height: 100%;
+  font-size: 150%;
+}
 .nav__link {
   line-height: 100%;
   font-size: 150%;

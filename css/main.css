@@ -1030,12 +1030,14 @@ section.codepen {
 .nav {
   font-family: "Poppins", Helvetica, Verdana, sans-serif; }
 
-.nav__title,
+.nav__title {
+  line-height: 100%;
+  font-size: 150%; }
+
 .nav__link {
   line-height: 100%;
   font-size: 150%; }
   @media all and (min-width: 600px) {
-    .nav__title,
     .nav__link {
       font-size: 100%; } }
 
