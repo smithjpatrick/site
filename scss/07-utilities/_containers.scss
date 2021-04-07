@@ -1,14 +1,14 @@
 .container {
   max-width: $website-width;
-  margin: 0 auto;
-  // width: calc(100% - (2 * 32px));
-  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   @media all and (min-width: $tablet) {
     padding: 0 1rem;
   }
   @media all and (min-width: $desktop) {
-    // width: 100%;
     padding: 0 1.5rem;
   }
 }
