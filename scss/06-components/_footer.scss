@@ -1,0 +1,154 @@
+////////////////////////
+// || Color
+////////////////////////
+.footer-wrapper {
+  color: $color-white;
+  background: linear-gradient(
+    315deg,
+    hsla(220, 66, 29, 1) 9.69%,
+    hsla(220, 71, 18, 1) 87.23%
+  );
+}
+
+.footer__link {
+  color: $color-white;
+}
+
+////////////////////////
+// || Typography
+////////////////////////
+.footer-wrapper {
+  font-family: $secondary-type;
+  font-weight: $normal;
+  font-size: 100%;
+}
+
+.footer__link {
+  line-height: 150%;
+}
+
+.footer__copyright {
+  font-size: calc((14 / 16) * 100%);
+}
+
+/////////////////////////
+// || Layout
+/////////////////////////
+
+.footer {
+  // @include spacer(p, 2, rl);
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  position: relative;
+
+  &__logo {
+    line-height: 0;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    justify-content: start;
+    align-items: flex-start;
+    max-width: 27em;
+  }
+
+  &__img {
+    width: 3rem;
+    flex-grow: 0;
+    margin-right: 1.5rem;
+  }
+  &__bio {
+    display: block;
+    flex-grow: 1;
+    padding: 0;
+    & > .footer__link {
+      display: inline;
+      padding: 0;
+    }
+  }
+
+  /////////////////////
+  // Menu & Copyright
+  /////////////////////
+
+  &__content {
+    @media all and (min-width: $tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 2rem;
+
+    @media all and (min-width: $tablet) {
+      margin: 0;
+    }
+  }
+  &__item {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    @media all and (min-width: $tablet) {
+      display: inline;
+      margin-bottom: 0;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $color-white;
+    padding: 0.5rem 0;
+  }
+
+  &__copyright {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    @media all and (min-width: $tablet) {
+      position: relative;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.footer__link {
+  background-image: linear-gradient(hsla(220, 66, 95, 1), hsla(220, 66, 95, 1));
+  background-size: 100% 0.1em;
+  // background-position-x: 100%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: all 0.1s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-size: 100% 100%;
+    color: hsla(220, 66, 29, 1);
+    // font-weight: 500;
+    // background-position-x: 0%;
+    // animation: link-underline 0.4s;
+  }
+}
+
+@keyframes link-underline {
+  0% {
+    background-size: 100% 0.1em;
+  }
+
+  40% {
+    background-position-x: 100%;
+    background-size: 0% 0.1em;
+  }
+  60% {
+    background-position-x: 0%;
+    background-size: 0% 0.1em;
+  }
+
+  100% {
+    background-position-x: 0%;
+    background-size: 100% 0.1em;
+  }
+}
