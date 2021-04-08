@@ -938,9 +938,6 @@ section.codepen {
 .mobile body {
   overflow: hidden; }
 
-main.container {
-  height: 200vh; }
-
 .nav-wrapper {
   width: 100%;
   position: fixed;
