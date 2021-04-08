@@ -5,7 +5,9 @@
 
 @import url("https://fonts.googleapis.com/css?family=Lora:700i|Lato:400,700|Inconsolata");
 
-$primary-type: "Roboto", Helvetica, Verdana, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;900&display=swap");
+
+$primary-type: "Work Sans", Helvetica, Verdana, sans-serif;
 $primary-baseline: 0.158203; //https://jamonserrano.github.io/plumber-sass/baselines/
 $secondary-type: "Poppins", Helvetica, Verdana, sans-serif;
 $secondary-baseline: 0.15; //https://jamonserrano.github.io/plumber-sass/baselines/
@@ -16,7 +18,7 @@ $accent-type: "Oswald", Helvetica, Verdana, sans-serif;
 $thin: 200;
 $light: 300;
 $normal: 400;
-$semibold: 500;
+$medium: 500;
 $bold: 700;
 
 /*/----------------------------\\
@@ -52,15 +54,15 @@ body {
 $base-font-size: $gh;
 $scale: 1.333;
 $font-size: (
-  xs: pow($scale, -2),
-  s: pow($scale, -1),
-  h6: pow($scale, 1),
-  h5: pow($scale, 2),
-  h4: pow($scale, 3),
-  h3: pow($scale, 4),
-  h2: pow($scale, 5),
-  h1: pow($scale, 6),
-  hero: pow($scale, 7),
+  xs: pow($scale, -2) * 100%,
+  s: pow($scale, -1) * 100%,
+  h6: pow($scale, 1) * 100%,
+  h5: pow($scale, 2) * 100%,
+  h4: pow($scale, 3) * 100%,
+  h3: pow($scale, 4) * 100%,
+  h2: pow($scale, 5) * 100%,
+  h1: pow($scale, 6) * 100%,
+  hero: pow($scale, 7) * 100%,
 );
 
 $line-height: (
@@ -91,7 +93,12 @@ $line-height: (
 /*--- PARAGRAPHS ---*/
 
 p {
-  @include plumber();
+  font-size: 100%;
+  line-height: 1.5;
+
+  @media all and (min-width: $tablet) {
+    font-size: 112.5%;
+  }
 }
 
 /*--- HEADINGS ---*/
@@ -103,89 +110,61 @@ h4,
 h5,
 h6 {
   font-family: $secondary-type;
-  font-weight: $normal;
+  font-weight: $medium;
+  margin-bottom: 1.5rem;
 }
 
 // @import url("https://fonts.googleapis.com/css?family=Poppins:400");
 
 .hero-type,
 .h-xxxl {
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, hero),
-    $line-height: map-get($line-height, hero),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
+  font-size: map-get($font-size, hero) * 0.8;
+  line-height: 0.9;
+
+  @media all and (max-width: 30em) {
+    font-size: map-get($font-size, hero) * 0.6;
+  }
+  @media all and (min-width: $tablet) {
+    font-size: map-get($font-size, hero);
+  }
 }
 
 h1,
 .h-xxl {
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, h1),
-    $line-height: map-get($line-height, h1),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
+  font-size: map-get($font-size, h1) * 0.75;
+  line-height: 0.9;
+
+  @media all and (max-width: 20rem) {
+    font-size: map-get($font-size, h1) * 0.5;
+  }
+  @media all and (min-width: $tablet) {
+    font-size: map-get($font-size, h1);
+  }
 }
 
 h2,
 .h-xl {
-  // font-size: 2.441rem;
-  // line-height: 3rem;
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, h2),
-    $line-height: map-get($line-height, h2),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
+  font-size: map-get($font-size, h2);
+  line-height: map-get($line-height, h2);
 }
 
 h3,
 .h-l {
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, h3),
-    $line-height: map-get($line-height, h3),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
+  font-size: map-get($font-size, h3);
+  line-height: map-get($line-height, h3);
 }
 
 h4,
 .h-med {
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, h4),
-    $line-height: map-get($line-height, h4),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
 }
 
 h5,
 .h-small {
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, h5),
-    $line-height: map-get($line-height, h5),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
 }
 
 h6,
 small,
 .text_small {
-  @include plumber(
-    $baseline: $secondary-baseline,
-    $font-size: map-get($font-size, h6),
-    $line-height: map-get($line-height, h6),
-    $leading-top: 0,
-    $leading-bottom: 1.5
-  );
 }
 
 .section__heading {
