@@ -1223,10 +1223,11 @@ main.container {
 
 .nav__item > .nav__link,
 .nav__dd-item > .nav__link {
-  background-image: linear-gradient(180deg, transparent 70%, #e37d7b 70%, #e37d7b 75%, transparent 75%);
+  background-image: linear-gradient(#e37d7b, #e37d7b);
+  background-position-y: 75%;
   background-repeat: no-repeat;
-  background-size: 0% 100%;
-  transition: background-size 0.3s ease; }
+  background-size: 0% 4px;
+  transition: background-size 0.2s ease; }
 
 .nav__dd-menu {
   display: block;
@@ -1359,11 +1360,9 @@ body > *:not(:first-child) {
   transform: rotate(180deg); }
 
 .nav__link:hover,
-.nav__link:focus {
-  background-size: 100% 100%; }
-
+.nav__link:focus,
 .nav__dd-item:hover > .nav__link {
-  background-size: 100% 100%; }
+  background-size: 100% 4px; }
 
 .nav__toggle:focus {
   outline: hotpink 1px solid; }
