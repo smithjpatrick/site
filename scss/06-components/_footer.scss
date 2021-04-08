@@ -114,7 +114,9 @@
   }
 }
 
-.footer__link {
+.footer__link,
+.footer__link:link,
+.footer__link:visited {
   background-image: linear-gradient(hsla(220, 66, 95, 1), hsla(220, 66, 95, 1));
   background-size: 100% 0.1em;
   // background-position-x: 100%;
