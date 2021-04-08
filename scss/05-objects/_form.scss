@@ -1,64 +1,44 @@
 .form {
-  border-radius: $gh / 2;
-  // max-width: 480px;
   margin: 0 auto;
 
   color: #333;
   font-family: $secondary-type;
-
-  &__help-text {
-    font-weight: $light;
-    @include plumber(
-      $font-size: 0.9,
-      $baseline: $secondary-baseline,
-      $line-height: 1.5,
-      $leading-top: 0,
-      $leading-bottom: 0
-    );
-    @include spacer(m, p5, b);
-  }
+  font-size: 100%;
 
   & > *:not(:last-child) {
-    @include spacer(m, 1, b);
+    margin-bottom: 1.5rem;
   }
 
   &__label {
-    display: block;
+    display: inline-block;
     font-weight: $normal;
-    @include plumber(
-      $font-size: 1,
-      $baseline: $secondary-baseline,
-      $line-height: 1.5,
-      $leading-top: 0,
-      $leading-bottom: 0.5
-    );
-    // @include spacer(m, 1, b);
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
   }
 
   &__field {
     color: darken($color-secondary-dark, 4);
-    // border: 1px solid rgb(181, 181, 181);
     border: none;
 
     background-color: rgba(white, 0.85);
     border-radius: 4px;
     box-shadow: inset 0px 0px 0px 1px rgb(86, 86, 86);
-    padding: $gh/2;
-    // height: 5 * $gh;
+    padding: 0.5rem;
     display: block;
     width: 100%;
 
-    font-family: $secondary-type;
+    &[name="name"],
+    &[name="email"] {
+      max-width: calc(360 / 16 * 1em);
+    }
+
+    font-family: $primary-type;
     font-size: 100%;
     line-height: 1.5;
 
-    &--half-width {
-      width: 65%;
-    }
-
-    &--area {
+    &--txtarea {
       line-height: 1.5;
-      height: 8 * $gh;
+      height: 1rem * 1.5 * 6;
       resize: vertical;
     }
 
@@ -67,6 +47,9 @@
     }
   }
 
+  //////////////////////
+  // || Button
+  //////////////////////
   &__submit {
     background-color: $color-primary-light;
     font-family: $secondary-type;
@@ -75,19 +58,17 @@
   }
 }
 
+//////////////////////
+// || Error handling
+//////////////////////
 .form__group {
   &.error-item {
     color: $color-error;
 
     & .error:last-child {
       display: block;
-      @include plumber(
-        $baseline: $secondary-baseline,
-        $font-size: 0.9,
-        $line-height: 1,
-        $leading-top: 0,
-        $leading-bottom: 0
-      );
+      margin-top: 0.125rem;
+      font-size: calc(14 / 16 * 100%);
     }
   }
 }
