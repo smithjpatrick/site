@@ -54,13 +54,7 @@
       position: relative;
       text-decoration: none;
       padding: 1.5rem 0rem 1rem 0rem;
-      @include plumber(
-        $baseline: $secondary-baseline,
-        $font-size: map-get($font-size, h6),
-        $line-height: map-get($line-height, h6),
-        $leading-top: 1,
-        $leading-bottom: 3
-      );
+
       // font-size: 4rem;
       border-bottom: solid 3px color(primary, light);
       // font-weight: 500;

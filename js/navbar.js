@@ -4,6 +4,7 @@ var navWrap = document.querySelector(".nav-wrapper");
 var nav = document.querySelector(".nav");
 var navBrand = document.querySelector(".nav__logo-link");
 var logoImg = document.querySelector(".nav__img");
+var navLink = document.querySelector(".nav__link");
 var navToggle = document.querySelector(".nav__toggle");
 var navMenu = document.querySelector(".nav__menu");
 var navBurger = document.querySelector(".nav__burger");
@@ -13,8 +14,16 @@ var w = window.innerWidth
 || document.body.clientWidth;
 
 navToggle.addEventListener("click", function () {
+menuToggle();
+})
+navBrand.addEventListener("click", function () {
+menuClose();
+})
+navLink.addEventListener("click", function () {
+menuClose();
+})
 
-  
+function menuToggle() {
   if (page.classList.contains("mobile")) {
     console.log("remove");
     page.classList.remove("mobile");
@@ -26,7 +35,15 @@ navToggle.addEventListener("click", function () {
     
     navBurgerText.innerHTML = "Close";
   }
-});
+};
+function menuClose() {
+  if (page.classList.contains("mobile")) {
+    console.log("remove");
+    page.classList.remove("mobile");
+    
+    navBurgerText.innerHTML = "Menu";
+  }
+};
 
 
 window.addEventListener("resize", function () {
