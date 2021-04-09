@@ -881,13 +881,21 @@ section.codepen {
         right: 0;
         bottom: 0; } }
 
-.footer__link {
+.footer__link,
+.footer__link:link,
+.footer__link:visited {
   background-image: linear-gradient(#eaeffb, #eaeffb);
   background-size: 100% 0.1em;
   background-position-y: 100%;
   background-repeat: no-repeat;
   transition: all 0.1s ease-in-out; }
-  .footer__link:hover, .footer__link:focus, .footer__link:active {
+  .footer__link:hover, .footer__link:focus, .footer__link:active,
+  .footer__link:link:hover,
+  .footer__link:link:focus,
+  .footer__link:link:active,
+  .footer__link:visited:hover,
+  .footer__link:visited:focus,
+  .footer__link:visited:active {
     background-size: 100% 100%;
     color: #193a7b; }
 
