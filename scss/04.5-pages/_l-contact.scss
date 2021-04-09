@@ -6,15 +6,17 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(8 1fr);
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto;
   // grid-template-areas:
   //   "hed hed hed hed hed hed hed hed"
   //   "subhed subhed subhed subhed subhed subhed subhed subhed"
   //   "form form form form form form form form";
-
-  @media all and (min-width: $tablet) {
+  
+  @media all and (min-width: $desktop) {
     column-gap: 1em;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: repeat(12, 1fr);
   }
 }
 
@@ -22,15 +24,40 @@
 .subheading,
 .form {
   grid-column-start: 1;
-  grid-column-end: span 8;
+  grid-column-end: span all;
   margin-bottom: 2rem;
 }
 
 .heading,
 .subheading {
   margin-bottom: 2rem;
+
+  @media all and (min-width: $tablet) {
+    grid-column-start: 1;
+    grid-column-end: span all ;
+  }
+
+  @media all and (min-width: $desktop) {
+    grid-column-start: 1;
+    grid-column-end: span 5 ;
+  }
+
 }
 
 .subheading {
-  max-width: calc((400 / 16) * 1em);
+  max-width: calc((480 / 16) * 1em);
+}
+
+.form {
+  @media all and (min-width: $tablet) {
+    grid-column-start: 1;
+    grid-column-end: span 6 ;
+  }
+
+  @media all and (min-width: $desktop) {
+    grid-row-start: 1;
+    grid-row-end: end;
+    grid-column-start: 7;
+    grid-column-end: span all ;
+  }
 }
