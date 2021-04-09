@@ -12,52 +12,78 @@
   //   "hed hed hed hed hed hed hed hed"
   //   "subhed subhed subhed subhed subhed subhed subhed subhed"
   //   "form form form form form form form form";
-  
+
   @media all and (min-width: $desktop) {
     column-gap: 1em;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: auto 1fr;
     grid-template-columns: repeat(12, 1fr);
   }
 }
 
-.heading,
-.subheading,
-.form {
-  grid-column-start: 1;
-  grid-column-end: span all;
-  margin-bottom: 2rem;
-}
-
-.heading,
-.subheading {
-  margin-bottom: 2rem;
-
-  @media all and (min-width: $tablet) {
+.l-contact {
+  & .heading,
+  & .subheading,
+  & .form {
     grid-column-start: 1;
-    grid-column-end: span all ;
+    grid-column-end: span all;
+    margin-bottom: 2rem;
   }
 
-  @media all and (min-width: $desktop) {
-    grid-column-start: 1;
-    grid-column-end: span 5 ;
-  }
+  & .heading,
+  & .subheading {
+    margin-bottom: 2rem;
 
+    @media all and (min-width: $tablet) {
+      grid-column-start: 1;
+      grid-column-end: span all;
+    }
+
+    @media all and (min-width: $desktop) {
+      grid-column-start: 1;
+      grid-column-end: span 5;
+    }
+  }
 }
 
-.subheading {
+.l-contact .subheading {
   max-width: calc((480 / 16) * 1em);
 }
 
-.form {
+.l-contact .form {
   @media all and (min-width: $tablet) {
     grid-column-start: 1;
-    grid-column-end: span 6 ;
+    grid-column-end: span 6;
   }
 
   @media all and (min-width: $desktop) {
     grid-row-start: 1;
     grid-row-end: end;
     grid-column-start: 7;
-    grid-column-end: span all ;
+    grid-column-end: span all;
   }
+}
+
+.l-contact .heading {
+  @media all and (min-width: $desktop) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+
+.l-contact .subheading {
+  @media all and (min-width: $desktop) {
+    font-size: (20/16) * 1rem;
+    grid-row-start: 2;
+    grid-row-end: span all;
+  }
+}
+
+.l-contact .heading {
+  @media all and (min-width: $tablet) {
+    font-size: clamp(5rem, 10vw, 6rem);
+  }
+  line-height: 0.8;
+}
+.l-contact .subheading {
+  font-size: clamp(100%, 2vw, (20/16) * 100%);
 }
