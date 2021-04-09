@@ -2,12 +2,6 @@
 // Toggle classes
 /////////////////////////////////////
 
-// Toggle Plumber class
-function togglePlumber() {
-  var element = document.getElementById("plumber");
-  element.classList.toggle("plumber-grid");
-}
-
 
 // Toggle visibility class
 // function togglePopup() {

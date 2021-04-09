@@ -31,17 +31,11 @@ $nav-color: hsla(0, 0%, 100%, 1);
 ////////////////////////////////////
 // || NEW NAV
 ////////////////////////////////////
-body > *:nth-child(2) {
-  margin-top: 12rem;
-}
 
 .mobile body {
   overflow: hidden;
 }
 
-main.container {
-  height: 200vh;
-}
 .nav-wrapper {
   width: 100%;
   position: fixed;
@@ -229,15 +223,13 @@ main.container {
   &__item > .nav__link,
   &__dd-item > .nav__link {
     background-image: linear-gradient(
-      180deg,
-      transparent 70%,
-      $color-primary-light 70%,
-      $color-primary-light 75%,
-      transparent 75%
+      $color-primary-light,
+      $color-primary-light
     );
+    background-position-y: 75%;
     background-repeat: no-repeat;
-    background-size: 0% 100%;
-    transition: background-size 0.3s ease;
+    background-size: 0% 4px;
+    transition: background-size 0.2s ease;
   }
 }
 
@@ -448,13 +440,9 @@ body > *:not(:first-child) {
 
 //hover and focus states for nav links
 .nav__link:hover,
-.nav__link:focus {
-  background-size: 100% 100%;
-}
-
-//hover states for dd links
+.nav__link:focus,
 .nav__dd-item:hover > .nav__link {
-  background-size: 100% 100%;
+  background-size: 100% 4px;
 }
 
 //states for the burger menu
