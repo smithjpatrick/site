@@ -1007,7 +1007,14 @@ section.codepen {
   text-align: center;
   min-width: 48px;
   padding: 1rem 0;
-  z-index: 100; }
+  z-index: 100;
+  background-image: linear-gradient(#e37d7b, #e37d7b);
+  background-position-y: 75%;
+  background-repeat: no-repeat;
+  background-size: 0% 4px;
+  transition: background-size 0.2s ease; }
+  .nav__link--active {
+    background-size: 100% 4px; }
   .nav__link.nav__link--icon {
     display: inline-flex;
     justify-content: center;
@@ -1015,14 +1022,6 @@ section.codepen {
   .nav__link.nav__link--icon .nav__icon {
     line-height: 100%;
     transition: all 0.2s; }
-
-.nav__item > .nav__link,
-.nav__dd-item > .nav__link {
-  background-image: linear-gradient(#e37d7b, #e37d7b);
-  background-position-y: 75%;
-  background-repeat: no-repeat;
-  background-size: 0% 4px;
-  transition: background-size 0.2s ease; }
 
 .nav__dd-menu {
   display: block;

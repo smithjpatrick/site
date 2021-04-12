@@ -206,6 +206,19 @@ $nav-color: hsla(0, 0%, 100%, 1);
     padding: 1rem 0;
     z-index: 100;
 
+    background-image: linear-gradient(
+      $color-primary-light,
+      $color-primary-light
+    );
+    background-position-y: 75%;
+    background-repeat: no-repeat;
+    background-size: 0% 4px;
+    transition: background-size 0.2s ease;
+
+    &--active {
+      background-size: 100% 4px;
+    }
+
     &.nav__link--icon {
       display: inline-flex;
       justify-content: center;
@@ -216,18 +229,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
       line-height: 100%;
       transition: all 0.2s;
     }
-  }
-
-  &__item > .nav__link,
-  &__dd-item > .nav__link {
-    background-image: linear-gradient(
-      $color-primary-light,
-      $color-primary-light
-    );
-    background-position-y: 75%;
-    background-repeat: no-repeat;
-    background-size: 0% 4px;
-    transition: background-size 0.2s ease;
   }
 }
 
