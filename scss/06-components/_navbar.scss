@@ -120,9 +120,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
       fill: cornflowerblue;
     }
     @media all and (min-width: $desktop) {
-      height: 5rem;
-      padding: 0.75rem 0;
-      height: clamp(5rem, 8vh, 7rem);
+      padding: 1.25rem 0;
       fill: green;
     }
   }

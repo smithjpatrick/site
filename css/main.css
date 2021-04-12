@@ -948,9 +948,7 @@ section.codepen {
       fill: cornflowerblue; } }
   @media all and (min-width: 768px) {
     .nav__img {
-      height: 5rem;
-      padding: 0.75rem 0;
-      height: clamp(5rem, 8vh, 7rem);
+      padding: 1.25rem 0;
       fill: green; } }
 
 .nav__menu {
