@@ -13,6 +13,7 @@ var w = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
 
+//Toggle Mobile nav menu off
 navToggle.addEventListener("click", function () {
 menuToggle();
 })
@@ -22,7 +23,15 @@ menuClose();
 navLink.addEventListener("click", function () {
 menuClose();
 })
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    menuClose();
+    navToggle.focus();
+  }
+});
 
+// Open the nav menu by adding or removing 
+// the .mobile class to html tag
 function menuToggle() {
   if (page.classList.contains("mobile")) {
     console.log("remove");
@@ -45,7 +54,10 @@ function menuClose() {
   }
 };
 
-
+// when window is being resized, check for width.
+// when the width is a certain value, toggle .mmobile
+// class to toggle nav appearance and hide open mobile
+// menu
 window.addEventListener("resize", function () {
 w = window.innerWidth
 || document.documentElement.clientWidth
@@ -61,20 +73,23 @@ w = window.innerWidth
 /////////////////////
 //Scrolling
 /////////////////////
+// control appearance of nav bar:
+//    shrink vs hide, etc
+
 var navHide = 100; //scroll distance that nav hides
 
 window.onscroll = function() {
-    myFunction();
+    navScroll();
 }
 
-function myFunction() {
+function navScroll() {
   
     if (document.body.scrollTop > navHide || document.documentElement.scrollTop > navHide) {
-      logoImg.classList.add("nav__img--small");
+      navBrand.classList.add("nav__logo-link--small");
       navWrap.classList.add("nav--scrolled");
     } else {
       navWrap.classList.remove("nav--scrolled");
-      logoImg.classList.remove("nav__img--small");
+      navBrand.classList.remove("nav__logo-link--small");
       console.log("scrolled up")
     }
   };
@@ -146,3 +161,9 @@ var myNodeList = document.querySelector("nav__link");
 //         }
 //       }
 //   });
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    menuClose();
+  }
+});
