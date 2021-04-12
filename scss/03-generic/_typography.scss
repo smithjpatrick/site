@@ -54,15 +54,15 @@ body {
 $base-font-size: $gh;
 $scale: 1.333;
 $font-size: (
-  xs: pow($scale, -2) * 100%,
-  s: pow($scale, -1) * 100%,
-  h6: pow($scale, 1) * 100%,
-  h5: pow($scale, 2) * 100%,
-  h4: pow($scale, 3) * 100%,
-  h3: pow($scale, 4) * 100%,
-  h2: pow($scale, 5) * 100%,
-  h1: pow($scale, 6) * 100%,
-  hero: pow($scale, 7) * 100%,
+  xs: ceil(pow($scale, -2)),
+  s: ceil(pow($scale, -1)),
+  h6: ceil(pow($scale, 1)),
+  h5: ceil(pow($scale, 2)),
+  h4: ceil(pow($scale, 3)),
+  h3: ceil(pow($scale, 4)),
+  h2: ceil(pow($scale, 5)),
+  h1: ceil(pow($scale, 6)),
+  hero: ceil(pow($scale, 7)),
 );
 
 $line-height: (
@@ -118,7 +118,7 @@ h6 {
 
 .hero-type,
 .h-xxxl {
-  font-size: map-get($font-size, hero) * 0.75;
+  font-size: ceil(map-get($font-size, hero) * 0.75);
   line-height: 0.9;
 
   @media all and (max-width: 30em) {
@@ -131,7 +131,8 @@ h6 {
 
 h1,
 .h-xxl {
-  font-size: map-get($font-size, h1) * 0.75;
+  // font-size: ceil(72.5) * 1px;
+  font-size: map-get($font-size, h1) * 1%;
   line-height: 1;
 
   @media all and (max-width: 20rem) {
@@ -144,32 +145,32 @@ h1,
 
 h2,
 .h-xl {
-  font-size: map-get($font-size, h2) * 0.75;
+  font-size: map-get($font-size, h2) * 75%;
   line-height: 1;
 }
 
 h3,
 .h-l {
-  font-size: map-get($font-size, h3) * 0.75;
+  font-size: map-get($font-size, h3) * 75%;
   line-height: 1;
 }
 
 h4,
 .h-med {
-  font-size: map-get($font-size, h4) * 0.75;
+  font-size: map-get($font-size, h4) * 75%;
   line-height: 1;
 }
 
 h5,
 .h-small {
-  font-size: map-get($font-size, h5) * 0.75;
+  font-size: map-get($font-size, h5) * 75%;
   line-height: 1.2;
 }
 
 h6,
 small,
 .text_small {
-  font-size: map-get($font-size, h6) * 0.75;
+  font-size: map-get($font-size, h6) * 75%;
   line-height: 1.2;
 }
 
