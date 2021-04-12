@@ -100,8 +100,46 @@ $nav-color: hsla(0, 0%, 100%, 1);
     }
   }
 
+  &__logo-link,
+  &__logo-link:link,
+  &__logo-link:visited {
+    color: $color-primary-dark;
+    height: 4rem;
+    margin: 1rem 0;
+    transition: height 0.2s, margin 0.2s;
+  }
+
+  &__logo-link:hover,
+  &__logo-link:focus {
+    color: $color-primary-default;
+
+    & .nav__img {
+      fill: $color-primary-default;
+    }
+
+    & .logo__img--eyebrows {
+      transform: translateY(-3px);
+    }
+  }
+  &__logo-link:focus {
+    @include link-focus;
+  }
+
+  &__logo-link--small,
+  &__logo-link--small:link,
+  &__logo-link--small:visited {
+    height: 3rem;
+    margin: 0.5rem 0;
+    @media all and (min-width: $desktop) {
+      .nav__img {
+        height: 3rem;
+      }
+    }
+  }
+
   &__title {
     display: none;
+    margin-left: 1rem;
 
     @media all and (min-width: $desktop) {
       display: inline-block;
@@ -109,19 +147,13 @@ $nav-color: hsla(0, 0%, 100%, 1);
   }
 
   &__img {
-    height: $navbar-height;
+    height: 3rem;
     line-height: 100%;
-    padding: 1.5rem 0;
-    margin-right: 1rem;
-    fill: coral;
-    transition: height 0.2s, padding 0.2s;
+    fill: $color-primary-dark;
+    transition: height 0.2s;
 
-    @media all and (min-width: $tablet) {
-      fill: cornflowerblue;
-    }
     @media all and (min-width: $desktop) {
-      padding: 1.25rem 0;
-      fill: green;
+      height: 3.5rem;
     }
   }
 }
@@ -200,6 +232,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   }
 
   &__link {
+    color: $color-primary-dark;
     display: inline-block;
     text-align: center;
     min-width: 48px;
@@ -207,8 +240,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
     z-index: 100;
 
     background-image: linear-gradient(
-      $color-primary-light,
-      $color-primary-light
+      $color-primary-default,
+      $color-primary-default
     );
     background-position-y: 75%;
     background-repeat: no-repeat;
@@ -226,6 +259,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
     }
 
     &.nav__link--icon .nav__icon {
+      fill: $color-primary-dark;
       line-height: 100%;
       transition: all 0.2s;
     }
@@ -306,6 +340,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //////////////////
 .nav {
   &__toggle {
+    color: $color-primary-dark;
     border: none;
     z-index: 100;
     display: flex;
@@ -325,6 +360,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   }
 
   & .icon__burger {
+    fill: $color-primary-default;
     transform-origin: 50% 50%;
     transition: transform 0.5s;
 
@@ -390,11 +426,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
   }
 }
 
-.nav__img--small {
-  height: $navbar-height--small;
-  padding: 0.5rem 0;
-}
-
 .hidden-nav {
   transform: translateY(-6rem);
 }
@@ -418,18 +449,6 @@ body > *:not(:first-child) {
 //////////////////////
 
 // Brand states
-.nav__logo-link:hover,
-.nav__logo-link:focus {
-  color: blueviolet;
-
-  & .nav__img {
-    fill: blueviolet;
-  }
-
-  & .logo__img--eyebrows {
-    transform: translateY(-3px);
-  }
-}
 
 // Work chevron for dropdowns
 .nav__item:hover .nav__link--icon .nav__icon,
@@ -447,7 +466,7 @@ body > *:not(:first-child) {
 //states for the burger menu
 .nav__toggle {
   &:focus {
-    outline: hotpink 1px solid;
+    @include link-focus;
   }
 
   &:hover {

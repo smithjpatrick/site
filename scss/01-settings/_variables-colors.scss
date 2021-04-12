@@ -5,13 +5,13 @@ $test-1: rgb(174, 255, 174);
 $test-2: #fff47a;
 $test-3: rgb(108, 211, 255);
 
-$color-primary-default: #e05452;
-$color-primary-light: #e37d7b;
-$color-primary-dark: #bf0805;
+$color-secondary-default: #e05452;
+$color-secondary-light: #e37d7b;
+$color-secondary-dark: #bf0805;
 
-$color-secondary-default: hsl(225, 54%, 50%);
-$color-secondary-light: hsla(225, 65%, 70%, 100%);
-$color-secondary-dark: hsla(225, 54%, 30%, 100%);
+$color-primary-default: hsl(225, 54%, 50%);
+$color-primary-light: hsla(225, 65%, 70%, 100%);
+$color-primary-dark: hsla(225, 54%, 30%, 100%);
 
 $color-toast-default: #e58e42;
 $color-toast-light: #f1b37d;
