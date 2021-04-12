@@ -202,7 +202,7 @@ h6 {
 
 .hero-type,
 .h-xxxl {
-  font-size: 598.27524%;
+  font-size: 560.88304%;
   line-height: 0.9; }
   @media all and (max-width: 30em) {
     .hero-type,
@@ -216,7 +216,7 @@ h6 {
 h1,
 .h-xxl {
   font-size: 420.76747%;
-  line-height: 0.9; }
+  line-height: 1; }
   @media all and (max-width: 20rem) {
     h1,
     .h-xxl {
@@ -228,29 +228,29 @@ h1,
 
 h2,
 .h-xl {
-  font-size: 420.87269%;
-  line-height: 421%; }
+  font-size: 315.65452%;
+  line-height: 1; }
 
 h3,
 .h-l {
-  font-size: 315.73345%;
-  line-height: 316%; }
+  font-size: 236.80009%;
+  line-height: 1; }
 
 h4,
 .h-med {
-  font-size: 236.8593%;
-  line-height: 237%; }
+  font-size: 177.64448%;
+  line-height: 1; }
 
 h5,
 .h-small {
-  font-size: 177.6889%;
-  line-height: 178%; }
+  font-size: 133.26667%;
+  line-height: 1.2; }
 
 h6,
 small,
 .text_small {
-  font-size: 133.3%;
-  line-height: 134%; }
+  font-size: 99.975%;
+  line-height: 1.2; }
 
 .section__heading {
   text-align: center; }

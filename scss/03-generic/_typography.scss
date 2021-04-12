@@ -118,7 +118,7 @@ h6 {
 
 .hero-type,
 .h-xxxl {
-  font-size: map-get($font-size, hero) * 0.8;
+  font-size: map-get($font-size, hero) * 0.75;
   line-height: 0.9;
 
   @media all and (max-width: 30em) {
@@ -132,7 +132,7 @@ h6 {
 h1,
 .h-xxl {
   font-size: map-get($font-size, h1) * 0.75;
-  line-height: 0.9;
+  line-height: 1;
 
   @media all and (max-width: 20rem) {
     font-size: map-get($font-size, h1) * 0.5;
@@ -144,33 +144,33 @@ h1,
 
 h2,
 .h-xl {
-  font-size: map-get($font-size, h2);
-  line-height: map-get($line-height, h2);
+  font-size: map-get($font-size, h2) * 0.75;
+  line-height: 1;
 }
 
 h3,
 .h-l {
-  font-size: map-get($font-size, h3);
-  line-height: map-get($line-height, h3);
+  font-size: map-get($font-size, h3) * 0.75;
+  line-height: 1;
 }
 
 h4,
 .h-med {
-  font-size: map-get($font-size, h4);
-  line-height: map-get($line-height, h4);
+  font-size: map-get($font-size, h4) * 0.75;
+  line-height: 1;
 }
 
 h5,
 .h-small {
-  font-size: map-get($font-size, h5);
-  line-height: map-get($line-height, h5);
+  font-size: map-get($font-size, h5) * 0.75;
+  line-height: 1.2;
 }
 
 h6,
 small,
 .text_small {
-  font-size: map-get($font-size, h6);
-  line-height: map-get($line-height, h6);
+  font-size: map-get($font-size, h6) * 0.75;
+  line-height: 1.2;
 }
 
 .section__heading {
