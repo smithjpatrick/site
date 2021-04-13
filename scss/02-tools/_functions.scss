@@ -7,25 +7,25 @@
       $value: $value * $number;
     }
   }
-  $floor: floor($value);
   $ceiling: ceil($value);
+  $floor: floor($value);
   $delta: $ceiling - $value;
+
   @if $delta <= 0.125 {
     $value: $ceiling;
   }
   @if $delta > 0.125 {
-    $value: $floor + 0.75;
+    $value: $ceiling - 0.25;
   }
   @if $delta > 0.375 {
-    $value: $floor + 0.5;
+    $value: $ceiling - 0.5;
   }
   @if $delta > 0.625 {
-    $value: $floor + 0.25;
+    $value: $ceiling - 0.75;
   }
   @if $delta > 0.875 {
     $value: $floor;
   }
-  
   @return $value;
 }
 
