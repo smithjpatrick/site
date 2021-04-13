@@ -1037,8 +1037,8 @@ section.codepen {
     .nav__img {
       height: 3.5rem; } }
 
-.nav__menu {
-  padding-inline-start: 0;
+.nav__menu-wrapper {
+  text-align: center;
   background: white;
   position: fixed;
   left: 0;
@@ -1052,7 +1052,7 @@ section.codepen {
   visibility: hidden;
   z-index: 99; }
   @media all and (min-width: 600px) {
-    .nav__menu {
+    .nav__menu-wrapper {
       display: flex;
       justify-content: start;
       align-items: center;
@@ -1064,16 +1064,16 @@ section.codepen {
       overflow: visible;
       visibility: visible; } }
 
+.nav__menu {
+  margin-top: 30vh;
+  z-index: 100;
+  display: inline-block; }
+
 .nav__item {
   display: block;
   line-height: 100%;
   text-align: center;
   margin-bottom: 1.5rem; }
-  .nav__item:first-child {
-    margin-top: 20vh; }
-    @media all and (min-width: 600px) {
-      .nav__item:first-child {
-        margin-top: 0; } }
   @media all and (min-width: 600px) {
     .nav__item {
       margin-bottom: 0; }
@@ -1128,6 +1128,13 @@ section.codepen {
         margin-right: 0.5rem;
         top: 30%;
         height: 40%; } }
+  .nav__dd-button:hover .nav__icon#chevron {
+    transform: rotate(180deg); }
+  .nav__dd-button:hover ~ .nav__dd-menu {
+    display: block; }
+
+.nav__dd-menu:hover {
+  display: block; }
 
 .nav__icon#chevron {
   fill: #233876;
@@ -1183,10 +1190,6 @@ section.codepen {
 .nav__dd-item:not(:last-child) {
   margin-bottom: 0.5rem; }
 
-@media all and (min-width: 600px) {
-  .nav__item:hover .nav__dd-menu {
-    display: block; } }
-
 .nav__toggle {
   color: #233876;
   border: none;
@@ -1238,7 +1241,7 @@ section.codepen {
     transform-origin: 79.167% 79.167%;
     transform: rotate(45deg) scale(1.25, 1) translateX(-2.6px); }
 
-.mobile .nav__menu {
+.mobile .nav__menu-wrapper {
   visibility: visible;
   overflow: auto;
   height: 100vh;

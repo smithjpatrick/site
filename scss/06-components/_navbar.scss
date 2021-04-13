@@ -134,8 +134,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
 ////////////
 
 .nav {
-  &__menu {
-    padding-inline-start: 0;
+  &__menu-wrapper {
+    text-align: center;
     background: $nav-color;
     position: fixed;
     left: 0;
@@ -162,6 +162,13 @@ $nav-color: hsla(0, 0%, 100%, 1);
       visibility: visible;
     }
   }
+
+  &__menu {
+    margin-top: 30vh;
+    z-index: 100;
+    display: inline-block;
+    // width: 75%;
+  }
 }
 
 //////////////////
@@ -173,14 +180,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
     line-height: 100%;
     text-align: center;
     margin-bottom: 1.5rem;
-
-    &:first-child {
-      margin-top: 20vh;
-
-      @media all and (min-width: $tablet) {
-        margin-top: 0;
-      }
-    }
 
     @media all and (min-width: $tablet) {
       margin-bottom: 0;
@@ -240,6 +239,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
     @media all and (min-width: $tablet) {
       padding: 0.75rem 0.25rem;
     }
+
     &::before {
       margin-right: 2rem;
       content: "";
@@ -256,7 +256,20 @@ $nav-color: hsla(0, 0%, 100%, 1);
         height: 40%;
       }
     }
+
+    &:hover {
+      & .nav__icon#chevron {
+        transform: rotate(180deg);
+      }
+      & ~ .nav__dd-menu {
+        display: block;
+      }
+    }
   }
+  &__dd-menu:hover {
+    display: block;
+  }
+
   &__icon#chevron {
     fill: $color-primary-dark;
     transition: transform 0.2s;
@@ -328,12 +341,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
   &__dd-item:not(:last-child) {
     margin-bottom: 0.5rem;
-  }
-
-  @media all and (min-width: $tablet) {
-    &__item:hover .nav__dd-menu {
-      display: block;
-    }
   }
 }
 
@@ -424,7 +431,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //////////////////
 
 .mobile {
-  & .nav__menu {
+  & .nav__menu-wrapper {
     visibility: visible;
     overflow: auto;
     height: 100vh;
