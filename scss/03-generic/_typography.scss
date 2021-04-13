@@ -33,7 +33,7 @@ $base-line-height: 1.5; // line height for body, 150%
 $magic-number: $gh * $base-line-height;
 
 html {
-  font-size: $gh;
+  font-size: 100%;
   font-family: $primary-type;
   font-weight: $normal;
   color: $color-txt-primary;
@@ -54,15 +54,15 @@ body {
 $base-font-size: $gh;
 $scale: 1.333;
 $font-size: (
-  xs: ceil(pow($scale, -2)),
-  s: ceil(pow($scale, -1)),
-  h6: ceil(pow($scale, 1)),
-  h5: ceil(pow($scale, 2)),
-  h4: ceil(pow($scale, 3)),
-  h3: ceil(pow($scale, 4)),
-  h2: ceil(pow($scale, 5)),
-  h1: ceil(pow($scale, 6)),
-  hero: ceil(pow($scale, 7)),
+  xs: pow($scale, -2),
+  s: pow($scale, -1),
+  h6:pow($scale, 1),
+  h5:pow($scale, 2),
+  h4:pow($scale, 3),
+  h3:pow($scale, 4),
+  h2:pow($scale, 5),
+  h1:pow($scale, 6),
+  hero:pow($scale, 7),
 );
 
 $line-height: (
@@ -118,7 +118,7 @@ h6 {
 
 .hero-type,
 .h-xxxl {
-  font-size: ceil(map-get($font-size, hero) * 0.75);
+  font-size: map-get($font-size, hero) * 100%;
   line-height: 0.9;
 
   @media all and (max-width: 30em) {
@@ -132,7 +132,7 @@ h6 {
 h1,
 .h-xxl {
   // font-size: ceil(72.5) * 1px;
-  font-size: map-get($font-size, h1) * 1%;
+  font-size: map-get($font-size, h1) * 100%;
   line-height: 1;
 
   @media all and (max-width: 20rem) {
@@ -145,32 +145,32 @@ h1,
 
 h2,
 .h-xl {
-  font-size: map-get($font-size, h2) * 75%;
+  font-size: map-get($font-size, h2) * 100%;
   line-height: 1;
 }
 
 h3,
 .h-l {
-  font-size: map-get($font-size, h3) * 75%;
+  font-size: map-get($font-size, h3) * 100%;
   line-height: 1;
 }
 
 h4,
 .h-med {
-  font-size: map-get($font-size, h4) * 75%;
+  font-size: map-get($font-size, h4) * 100%;
   line-height: 1;
 }
 
 h5,
 .h-small {
-  font-size: map-get($font-size, h5) * 75%;
+  font-size: map-get($font-size, h5) * 100%;
   line-height: 1.2;
 }
 
 h6,
 small,
 .text_small {
-  font-size: map-get($font-size, h6) * 75%;
+  font-size: map-get($font-size, h6) * 100%;
   line-height: 1.2;
 }
 
