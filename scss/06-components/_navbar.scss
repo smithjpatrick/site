@@ -164,6 +164,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
 .nav {
   &__menu {
+    padding-inline-start: 0;
     background: $nav-color;
     position: fixed;
     left: 0;
