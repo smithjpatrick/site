@@ -167,7 +167,10 @@ $nav-color: hsla(0, 0%, 100%, 1);
     margin-top: 30vh;
     z-index: 100;
     display: inline-block;
-    // width: 75%;
+
+    @media all and (min-width: $tablet) {
+      margin: 0;
+    }
   }
 }
 
@@ -183,6 +186,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
     @media all and (min-width: $tablet) {
       margin-bottom: 0;
+      display: inline;
       &:not(:last-child) {
         margin-right: 1.5rem;
       }
