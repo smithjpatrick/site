@@ -9,6 +9,8 @@ var navToggle = document.querySelector(".nav__toggle");
 var navMenu = document.querySelector(".nav__menu");
 var navBurger = document.querySelector(".nav__burger");
 var navBurgerText = document.querySelector(".nav__toggle-text");
+var navDdbtn = document.querySelector(".nav__dd-button");
+var navDdmenu = document.querySelector(".nav__dd-menu");
 var w = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
@@ -34,12 +36,10 @@ document.addEventListener('keydown', (event) => {
 // the .mobile class to html tag
 function menuToggle() {
   if (page.classList.contains("mobile")) {
-    console.log("remove");
     page.classList.remove("mobile");
-    
+    navDdbtn.classList.remove("expanded");
     navBurgerText.innerHTML = "Menu";
   } else {
-    console.log("add");
     page.classList.add("mobile");
     
     navBurgerText.innerHTML = "Close";
@@ -47,9 +47,8 @@ function menuToggle() {
 };
 function menuClose() {
   if (page.classList.contains("mobile")) {
-    console.log("remove");
     page.classList.remove("mobile");
-    
+    navDdbtn.classList.remove("expanded");
     navBurgerText.innerHTML = "Menu";
   }
 };
@@ -122,48 +121,24 @@ nav.addEventListener("focusin", function() {
   navWrap.classList.remove("hidden-nav");
 })
 
-
-////////////////////////////////////// 
-// keeping tab focus within burger menu
-// https://hiddedevries.nl/en/blog/2017-01-29-using-javascript-to-trap-focus-in-an-element
-////////////////////////////////
-var myNodeList = document.querySelector("nav__link");
-
-// let first = myNodeList[0];
-
-// let last = myNodeList[myNodeList.length - 1];
-
-
-// var focusableEls = nav.querySelectorAll('a[href]:not([disabled]), button:not([disabled])');
-//   var firstFocusableEl = focusableEls[0];  
-//   var lastFocusableEl = focusableEls[focusableEls.length - 1];
-//   var KEYCODE_TAB = 9;
-//   console.log(firstFocusableEl.innerHTML);
-//   console.log(lastFocusableEl.innerHTML);
-  
-//   navMenu.addEventListener('keydown', function(e) {
-//     var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
-
-//     if (!isTabPressed) { 
-//       return; 
-//     }
-
-//     if ( e.shiftKey ) /* shift + tab */ {
-//       if (document.activeElement === firstFocusableEl) {
-//         lastFocusableEl.focus();
-//           e.preventDefault();
-          
-//         }
-//       } else /* tab */ {
-//       if (document.activeElement === lastFocusableEl) {
-//         firstFocusableEl.focus();
-//           e.preventDefault();
-//         }
-//       }
-//   });
-
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     menuClose();
   }
 });
+
+
+//toggle Dropdown menu on button click
+navDdbtn.addEventListener("click", function () {
+  ddToggle();
+  });
+
+  function ddToggle() {
+    if (navDdbtn.classList.contains("expanded")) {
+      navDdbtn.classList.remove("expanded");
+    } else {
+      navDdbtn.classList.add("expanded");
+    }
+  };
+
+  

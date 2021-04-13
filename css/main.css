@@ -156,6 +156,70 @@ hr {
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+  * Restore the focus styles unset by the previous rule.
+  */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
 /*/----------------------------\\
       Font Families
 -------------------------------\\*/
@@ -364,7 +428,8 @@ a {
   line-height: 1;
   background-color: #fff;
   color: #333;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 100%; }
 
 .o-dropdown {
   list-style: none;
@@ -889,22 +954,6 @@ section.codepen {
 .nav {
   font-family: "Poppins", Helvetica, Verdana, sans-serif; }
 
-.nav__title {
-  line-height: 100%;
-  font-size: 150%; }
-
-.nav__link {
-  line-height: 100%;
-  font-size: 150%; }
-  @media all and (min-width: 600px) {
-    .nav__link {
-      font-size: 100%; } }
-
-.nav__dd-menu .nav__link,
-.nav__toggle-text {
-  font-size: 100%;
-  line-height: 100%; }
-
 .mobile body {
   overflow: hidden; }
 
@@ -972,7 +1021,9 @@ section.codepen {
 
 .nav__title {
   display: none;
-  margin-left: 1rem; }
+  margin-left: 1rem;
+  line-height: 100%;
+  font-size: 150%; }
   @media all and (min-width: 768px) {
     .nav__title {
       display: inline-block; } }
@@ -1016,59 +1067,84 @@ section.codepen {
 .nav__item {
   display: block;
   line-height: 100%;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 1.5rem; }
   .nav__item:first-child {
     margin-top: 20vh; }
     @media all and (min-width: 600px) {
       .nav__item:first-child {
         margin-top: 0; } }
-  .nav__item:not(:last-child):after {
-    content: "";
-    position: relative;
-    display: block;
-    width: 15%;
-    min-width: 3rem;
-    height: 1px;
-    background-color: #dfdfdf;
-    margin: 0.5rem auto; }
-    @media all and (min-width: 600px) {
-      .nav__item:not(:last-child):after {
-        display: none; } }
   @media all and (min-width: 600px) {
-    .nav__item:not(:last-child) {
-      margin-right: 1.5rem; } }
+    .nav__item {
+      margin-bottom: 0; }
+      .nav__item:not(:last-child) {
+        margin-right: 1.5rem; } }
 
 .nav__link {
+  vertical-align: middle;
   color: #233876;
-  display: inline-block;
-  text-align: center;
+  font-size: 150%;
   min-width: 48px;
   padding: 1rem 0;
-  z-index: 100;
   background-image: linear-gradient(#3b5dc4, #3b5dc4);
   background-position-y: 75%;
   background-repeat: no-repeat;
   background-size: 0% 4px;
-  transition: background-size 0.2s ease; }
+  transition: background-size 0.2s ease;
+  display: inline-block; }
+  @media all and (min-width: 600px) {
+    .nav__link {
+      font-size: 100%; } }
   .nav__link--active {
     background-size: 100% 4px; }
-  .nav__link.nav__link--icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center; }
-  .nav__link.nav__link--icon .nav__icon {
-    fill: #233876;
-    line-height: 100%;
-    transition: all 0.2s; }
+
+.nav__link--icon {
+  margin-right: 1rem;
+  margin-left: 1.5rem; }
+  @media all and (min-width: 600px) {
+    .nav__link--icon {
+      margin-right: 0.25rem;
+      margin-left: 0rem; } }
+
+.nav__dd-button {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 0.75rem;
+  vertical-align: middle; }
+  @media all and (min-width: 600px) {
+    .nav__dd-button {
+      padding: 0.75rem 0.25rem; } }
+  .nav__dd-button::before {
+    margin-right: 2rem;
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 1px;
+    height: 60%;
+    background-color: #cccccc; }
+    @media all and (min-width: 600px) {
+      .nav__dd-button::before {
+        margin-right: 0.5rem;
+        top: 30%;
+        height: 40%; } }
+
+.nav__icon#chevron {
+  fill: #233876;
+  transition: transform 0.2s; }
 
 .nav__dd-menu {
-  display: block;
+  display: none;
   position: relative;
   margin-bottom: 0;
   text-align: center;
+  font-size: 100%;
+  line-height: 100%;
   padding: 0;
   left: 0;
   z-index: 99; }
+  .nav__dd-menu:focus-within {
+    display: block; }
   @media all and (min-width: 600px) {
     .nav__dd-menu {
       display: none;
@@ -1093,7 +1169,8 @@ section.codepen {
   .nav__dd-menu .nav__link {
     display: inline-block;
     min-width: 48px;
-    padding: 1rem 0; }
+    padding: 1rem 0;
+    font-size: 100%; }
     @media all and (min-width: 600px) {
       .nav__dd-menu .nav__link {
         text-align: left;
@@ -1117,7 +1194,9 @@ section.codepen {
   display: flex;
   justify-content: end;
   align-items: center;
-  height: 3.5rem; }
+  height: 3.5rem;
+  font-size: 100%;
+  line-height: 100%; }
   @media all and (min-width: 600px) {
     .nav__toggle {
       order: unset;
@@ -1175,10 +1254,6 @@ body > *:not(:first-child) {
   visibility: hidden;
   transition: visibility 0s 0.5s; }
 
-.nav__item:hover .nav__link--icon .nav__icon,
-.nav__link--icon:focus-within .nav__icon {
-  transform: rotate(180deg); }
-
 .nav__link:hover,
 .nav__link:focus,
 .nav__dd-item:hover > .nav__link {
@@ -1193,11 +1268,23 @@ body > *:not(:first-child) {
 .nav__toggle:active {
   outline: none; }
 
-.nav__item:focus-within .nav__dd-menu {
+.nav__dd-button:focus {
+  outline: 3px dotted; }
+
+.nav__dd-button:hover #chevron {
+  transform: scale(1.5); }
+
+.nav__dd-button:focus {
+  outline: 3px dotted; }
+
+.nav__dd-button.expanded + .nav__dd-menu {
   display: block; }
 
-.nav__item:focus-within .nav__icon {
+.nav__dd-button.expanded #chevron {
   transform: rotate(180deg); }
+
+.nav__dd-button.expanded:hover #chevron {
+  transform: scale(1.5) rotate(180deg); }
 
 .container {
   max-width: 72rem;

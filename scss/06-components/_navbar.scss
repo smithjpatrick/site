@@ -10,24 +10,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
   font-family: $secondary-type;
 }
 
-.nav__title {
-  line-height: 100%;
-  font-size: 150%;
-}
-.nav__link {
-  line-height: 100%;
-  font-size: 150%;
-  @media all and (min-width: $tablet) {
-    font-size: 100%;
-  }
-}
-
-.nav__dd-menu .nav__link,
-.nav__toggle-text {
-  font-size: 100%;
-  line-height: 100%;
-}
-
 ////////////////////////////////////
 // || NEW NAV
 ////////////////////////////////////
@@ -58,20 +40,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
   z-index: 100;
   flex-wrap: wrap;
   margin: 0 auto;
-
-  // &::after {
-  //   content: "";
-  //   width: 100%;
-  //   height: 2px;
-  //   background-image: linear-gradient(to bottom, transparent, #333);
-  //   position: relative;
-  //   bottom: 0rem;
-  //   left: 0;
-  //   margin: 0 1rem;
-  //   transition: transform 2.1s 0.15s ease-out;
-  // }
-
-  //
 
   @media all and (min-width: $tablet) {
     flex-wrap: nowrap;
@@ -121,6 +89,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
       transform: translateY(-3px);
     }
   }
+
   &__logo-link:focus {
     @include link-focus;
   }
@@ -140,6 +109,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
   &__title {
     display: none;
     margin-left: 1rem;
+    line-height: 100%;
+    font-size: 150%;
 
     @media all and (min-width: $desktop) {
       display: inline-block;
@@ -194,13 +165,14 @@ $nav-color: hsla(0, 0%, 100%, 1);
 }
 
 //////////////////
-// || Menu Items/Links
+// || Menu Items
 //////////////////
 .nav {
   &__item {
     display: block;
     line-height: 100%;
     text-align: center;
+    margin-bottom: 1.5rem;
 
     &:first-child {
       margin-top: 20vh;
@@ -210,36 +182,26 @@ $nav-color: hsla(0, 0%, 100%, 1);
       }
     }
 
-    &:not(:last-child):after {
-      content: "";
-      position: relative;
-      display: block;
-      width: 15%;
-      min-width: 3rem;
-      height: 1px;
-      background-color: #dfdfdf;
-      margin: 0.5rem auto;
-
-      @media all and (min-width: $tablet) {
-        display: none;
-      }
-    }
-
     @media all and (min-width: $tablet) {
+      margin-bottom: 0;
       &:not(:last-child) {
         margin-right: 1.5rem;
       }
     }
   }
 
+  // NAV-LINKS
+
   &__link {
+    vertical-align: middle;
     color: $color-primary-dark;
-    display: inline-block;
-    text-align: center;
+    font-size: 150%;
+
+    @media all and (min-width: $tablet) {
+      font-size: 100%;
+    }
     min-width: 48px;
     padding: 1rem 0;
-    z-index: 100;
-
     background-image: linear-gradient(
       $color-primary-default,
       $color-primary-default
@@ -248,22 +210,56 @@ $nav-color: hsla(0, 0%, 100%, 1);
     background-repeat: no-repeat;
     background-size: 0% 4px;
     transition: background-size 0.2s ease;
+    display: inline-block;
 
     &--active {
       background-size: 100% 4px;
     }
+  }
 
-    &.nav__link--icon {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-    }
+  // NAV-LINK-ICON
 
-    &.nav__link--icon .nav__icon {
-      fill: $color-primary-dark;
-      line-height: 100%;
-      transition: all 0.2s;
+  &__link--icon {
+    margin-right: 1rem;
+    margin-left: 1.5rem;
+
+    @media all and (min-width: $tablet) {
+      margin-right: 0.25rem;
+      margin-left: 0rem;
     }
+  }
+
+  // NAV-DD-Button
+
+  &__dd-button {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 0.75rem;
+    vertical-align: middle;
+
+    @media all and (min-width: $tablet) {
+      padding: 0.75rem 0.25rem;
+    }
+    &::before {
+      margin-right: 2rem;
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 1px;
+      height: 60%;
+      background-color: hsl(0, 0%, 80%);
+
+      @media all and (min-width: $tablet) {
+        margin-right: 0.5rem;
+        top: 30%;
+        height: 40%;
+      }
+    }
+  }
+  &__icon#chevron {
+    fill: $color-primary-dark;
+    transition: transform 0.2s;
   }
 }
 
@@ -272,13 +268,19 @@ $nav-color: hsla(0, 0%, 100%, 1);
 ///////////////
 .nav {
   &__dd-menu {
-    display: block;
+    display: none;
     position: relative;
     margin-bottom: 0;
     text-align: center;
+    font-size: 100%;
+    line-height: 100%;
     padding: 0;
     left: 0;
     z-index: 99;
+
+    &:focus-within {
+      display: block;
+    }
 
     @media all and (min-width: $tablet) {
       display: none;
@@ -311,6 +313,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
       display: inline-block;
       min-width: 48px;
       padding: 1rem 0;
+      font-size: 100%;
 
       @media all and (min-width: $tablet) {
         text-align: left;
@@ -348,6 +351,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
     justify-content: end;
     align-items: center;
     height: 3.5rem;
+    font-size: 100%;
+    line-height: 100%;
 
     @media all and (min-width: $tablet) {
       order: unset;
@@ -452,10 +457,6 @@ body > *:not(:first-child) {
 // Brand states
 
 // Work chevron for dropdowns
-.nav__item:hover .nav__link--icon .nav__icon,
-.nav__link--icon:focus-within .nav__icon {
-  transform: rotate(180deg);
-}
 
 //hover and focus states for nav links
 .nav__link:hover,
@@ -479,10 +480,32 @@ body > *:not(:first-child) {
   }
 }
 
-.nav__item:focus-within .nav__dd-menu {
-  display: block;
+.nav__dd-button:focus {
+  @include link-focus;
 }
 
-.nav__item:focus-within .nav__icon {
-  transform: rotate(180deg);
+.nav__dd-button {
+  &:hover {
+    & #chevron {
+      transform: scale(1.5);
+    }
+  }
+
+  &:focus {
+    @include link-focus;
+  }
+
+  &.expanded {
+    & + .nav__dd-menu {
+      display: block;
+    }
+    & #chevron {
+      transform: rotate(180deg);
+    }
+  }
+  &.expanded:hover {
+    & #chevron {
+      transform: scale(1.5) rotate(180deg);
+    }
+  }
 }
