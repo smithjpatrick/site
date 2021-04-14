@@ -4,13 +4,13 @@ var navWrap = document.querySelector(".nav-wrapper");
 var nav = document.querySelector(".nav");
 var navBrand = document.querySelector(".nav__logo-link");
 var logoImg = document.querySelector(".nav__img");
-var navLink = document.querySelector(".nav__link");
+var navLink = document.querySelector(".menu__link");
 var navToggle = document.querySelector(".nav__toggle");
-var navMenu = document.querySelector(".nav__menu");
+var navMenu = document.querySelector(".nav .menu");
 var navBurger = document.querySelector(".nav__burger");
 var navBurgerText = document.querySelector(".nav__toggle-text");
-var navDdbtn = document.querySelector(".nav__dd-button");
-var navDdmenu = document.querySelector(".nav__dd-menu");
+var navDdbtn = document.querySelector(".nav .submenu__button");
+var navDdmenu = document.querySelector(".nav .submenu");
 var w = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
@@ -129,15 +129,15 @@ document.addEventListener('keydown', (event) => {
 });
 
 
-//toggle Dropdown menu on button click
-navDdbtn.addEventListener("click", function () {
-  if (navDdbtn.classList.contains("expanded")) {
-    navDdbtn.classList.remove("expanded");
-  } else {
-    navDdbtn.classList.add("expanded");
-    document.querySelector(".nav__dd-item>.nav__link").focus();
-  }
-  });
+// toggle Dropdown menu on button click
+// navDdbtn.addEventListener("click", function () {
+//   if (navDdbtn.classList.contains("expanded")) {
+//     navDdbtn.classList.remove("expanded");
+//   } else {
+//     navDdbtn.classList.add("expanded");
+//     document.querySelector(".nav__dd-item>.nav__link").focus();
+//   }
+//   });
 
   function ddToggle() {
     if (navDdbtn.classList.contains("expanded")) {
@@ -148,8 +148,26 @@ navDdbtn.addEventListener("click", function () {
   };
 
   
-  navDdmenu.addEventListener("focusout", function() {
-    navDdbtn.classList.remove("expanded");
-    console.log("focusout");
-    console.log(navDdmenu);
+  // navDdmenu.addEventListener("focusout", function() {
+  //   navDdbtn.classList.remove("expanded");
+  //   // console.log("focusout");
+  //   // console.log(navDdmenu);
+  // })
+
+
+  // Accessible navigaiton
+  // https://www.a11ywithlindsey.com/blog/create-accessible-dropdown-navigation
+
+  const topLevelLinks = document.querySelectorAll('.menu__link')
+
+  topLevelLinks.forEach(link => {
+    link.addEventListener('focus', function() {
+      this.parentElement.classList.add('focus')
+      
+    })
+    if (link.nextElementSibling) {
+      const subMenu = link.nextElementSibling
+      console.log(subMenu)
+      console.log(subMenu.querySelectorAll('a'))
+    }
   })

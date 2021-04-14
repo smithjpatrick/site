@@ -134,7 +134,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 ////////////
 
 .nav {
-  &__menu-wrapper {
+  & .menu-wrapper {
     text-align: center;
     background: $nav-color;
     position: fixed;
@@ -163,10 +163,11 @@ $nav-color: hsla(0, 0%, 100%, 1);
     }
   }
 
-  &__menu {
+  & .menu {
     margin-top: 30vh;
     z-index: 100;
     display: inline-block;
+    position: relative;
 
     @media all and (min-width: $tablet) {
       margin: 0;
@@ -178,7 +179,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 // || Menu Items
 //////////////////
 .nav {
-  &__item {
+  & .menu__item {
     display: block;
     line-height: 100%;
     text-align: center;
@@ -195,7 +196,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
   // NAV-LINKS
 
-  &__link {
+  & .menu__link,
+  & .submenu__link {
     vertical-align: middle;
     color: $color-primary-dark;
     font-size: 150%;
@@ -222,7 +224,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
   // NAV-LINK-ICON
 
-  &__link--icon {
+  & .menu__link--icon {
     margin-right: 1rem;
     margin-left: 1.5rem;
 
@@ -234,7 +236,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
   // NAV-DD-Button
 
-  &__dd-button {
+  & .submenu__button {
     position: relative;
     display: inline-block;
     padding: 1rem 0.75rem;
@@ -260,18 +262,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
         height: 40%;
       }
     }
-
-    // &:hover {
-    //   & .nav__icon#chevron {
-    //     transform: rotate(180deg);
-    //   }
-    // & ~ .nav__dd-menu {
-    //   display: block;
-    // }
-    // }
-  }
-  &__dd-menu:hover {
-    display: block;
   }
 
   &__icon#chevron {
@@ -284,7 +274,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 // || DD Menu
 ///////////////
 .nav {
-  &__dd-menu {
+  & .submenu {
     display: none;
     position: relative;
     margin-bottom: 0;
@@ -326,7 +316,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
       }
     }
 
-    & .nav__link {
+    &__link {
       display: inline-block;
       min-width: 48px;
       padding: 1rem 0;
@@ -338,12 +328,12 @@ $nav-color: hsla(0, 0%, 100%, 1);
       }
     }
   }
-  &__dd-item {
+  & .submenu__item {
     display: block;
     position: relative;
   }
 
-  &__dd-item:not(:last-child) {
+  & .submenu__item:not(:last-child) {
     margin-bottom: 0.5rem;
   }
 }
@@ -435,7 +425,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //////////////////
 
 .mobile {
-  & .nav__menu-wrapper {
+  & .menu-wrapper {
     visibility: visible;
     overflow: auto;
     height: 100vh;
@@ -470,9 +460,11 @@ body > *:not(:first-child) {
 // Work chevron for dropdowns
 
 //hover and focus states for nav links
-.nav__link:hover,
-.nav__link:focus,
-.nav__dd-item:hover > .nav__link {
+.menu__link:hover,
+.menu__link:focus,
+.nav .submenu__link:hover,
+.nav .submenu__link:focus,
+.nav .submenu__item:hover > .submenu__link {
   background-size: 100% 4px;
 }
 
@@ -491,23 +483,17 @@ body > *:not(:first-child) {
   }
 }
 
-.nav__dd-button:focus {
-  @include link-focus;
-}
+// .nav .submenu__button:focus {
+//   @include link-focus;
+// }
 
-.nav__dd-button {
-  // &:hover {
-  //   & #chevron {
-  //     transform: scale(1.5);
-  //   }
-  // }
-
+.nav .submenu__button {
   &:focus {
     @include link-focus;
   }
 
   &.expanded {
-    & + .nav__dd-menu {
+    & + .submenu {
       display: block;
     }
     & #chevron {
@@ -521,19 +507,16 @@ body > *:not(:first-child) {
   // }
 }
 
-.nav__item--dd:hover {
-  & > .nav__link {
+.nav .menu__item--dd:hover {
+  & > .menu__link {
     background-size: 100% 4px;
   }
   & #chevron {
     transform: rotate(180deg);
   }
-  & .nav__dd-menu {
-    display: block;
-  }
 }
-.nav__item--dd:focus-within {
-  & > .nav__link {
+.nav .menu__item--dd:focus-within {
+  & > .menu__link {
     background-size: 100% 4px;
   }
 }
@@ -541,3 +524,8 @@ body > *:not(:first-child) {
 // .nav__dd-menu:focus-within {
 //   display: block;
 // }
+
+.nav .menu__item:hover .submenu,
+.nav .menu__item.focus .submenu {
+  display: block;
+}
