@@ -124,13 +124,19 @@ nav.addEventListener("focusin", function() {
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     menuClose();
+    navDdbtn.classList.remove("expanded");
   }
 });
 
 
 //toggle Dropdown menu on button click
 navDdbtn.addEventListener("click", function () {
-  ddToggle();
+  if (navDdbtn.classList.contains("expanded")) {
+    navDdbtn.classList.remove("expanded");
+  } else {
+    navDdbtn.classList.add("expanded");
+    document.querySelector(".nav__dd-item>.nav__link").focus();
+  }
   });
 
   function ddToggle() {
@@ -142,3 +148,8 @@ navDdbtn.addEventListener("click", function () {
   };
 
   
+  navDdmenu.addEventListener("focusout", function() {
+    navDdbtn.classList.remove("expanded");
+    console.log("focusout");
+    console.log(navDdmenu);
+  })

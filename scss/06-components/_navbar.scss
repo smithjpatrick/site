@@ -261,14 +261,14 @@ $nav-color: hsla(0, 0%, 100%, 1);
       }
     }
 
-    &:hover {
-      & .nav__icon#chevron {
-        transform: rotate(180deg);
-      }
-      & ~ .nav__dd-menu {
-        display: block;
-      }
-    }
+    // &:hover {
+    //   & .nav__icon#chevron {
+    //     transform: rotate(180deg);
+    //   }
+    // & ~ .nav__dd-menu {
+    //   display: block;
+    // }
+    // }
   }
   &__dd-menu:hover {
     display: block;
@@ -458,7 +458,7 @@ body > *:not(:first-child) {
 }
 .mobile body > *:not(:first-child) {
   visibility: hidden;
-  transition: visibility 0s 0.5s;
+  transition: visibility 0s 0.2s;
 }
 
 //////////////////////
@@ -496,11 +496,11 @@ body > *:not(:first-child) {
 }
 
 .nav__dd-button {
-  &:hover {
-    & #chevron {
-      transform: scale(1.5);
-    }
-  }
+  // &:hover {
+  //   & #chevron {
+  //     transform: scale(1.5);
+  //   }
+  // }
 
   &:focus {
     @include link-focus;
@@ -514,9 +514,30 @@ body > *:not(:first-child) {
       transform: rotate(180deg);
     }
   }
-  &.expanded:hover {
-    & #chevron {
-      transform: scale(1.5) rotate(180deg);
-    }
+  // &.expanded:hover {
+  //   & #chevron {
+  //     transform: scale(1.5) rotate(180deg);
+  //   }
+  // }
+}
+
+.nav__item--dd:hover {
+  & > .nav__link {
+    background-size: 100% 4px;
+  }
+  & #chevron {
+    transform: rotate(180deg);
+  }
+  & .nav__dd-menu {
+    display: block;
   }
 }
+.nav__item--dd:focus-within {
+  & > .nav__link {
+    background-size: 100% 4px;
+  }
+}
+
+// .nav__dd-menu:focus-within {
+//   display: block;
+// }

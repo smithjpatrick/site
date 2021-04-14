@@ -1132,10 +1132,6 @@ section.codepen {
         margin-right: 0.5rem;
         top: 30%;
         height: 40%; } }
-  .nav__dd-button:hover .nav__icon#chevron {
-    transform: rotate(180deg); }
-  .nav__dd-button:hover ~ .nav__dd-menu {
-    display: block; }
 
 .nav__dd-menu:hover {
   display: block; }
@@ -1259,7 +1255,7 @@ body > *:not(:first-child) {
 
 .mobile body > *:not(:first-child) {
   visibility: hidden;
-  transition: visibility 0s 0.5s; }
+  transition: visibility 0s 0.2s; }
 
 .nav__link:hover,
 .nav__link:focus,
@@ -1278,9 +1274,6 @@ body > *:not(:first-child) {
 .nav__dd-button:focus {
   outline: 3px dotted; }
 
-.nav__dd-button:hover #chevron {
-  transform: scale(1.5); }
-
 .nav__dd-button:focus {
   outline: 3px dotted; }
 
@@ -1290,8 +1283,17 @@ body > *:not(:first-child) {
 .nav__dd-button.expanded #chevron {
   transform: rotate(180deg); }
 
-.nav__dd-button.expanded:hover #chevron {
-  transform: scale(1.5) rotate(180deg); }
+.nav__item--dd:hover > .nav__link {
+  background-size: 100% 4px; }
+
+.nav__item--dd:hover #chevron {
+  transform: rotate(180deg); }
+
+.nav__item--dd:hover .nav__dd-menu {
+  display: block; }
+
+.nav__item--dd:focus-within > .nav__link {
+  background-size: 100% 4px; }
 
 .container {
   max-width: 72rem;
