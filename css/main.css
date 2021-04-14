@@ -1048,7 +1048,7 @@ section.codepen {
   width: 100%;
   order: 2;
   height: 0;
-  transition: height 0.5s ease-out, overflow 0s 1s ease-out, visibility 0s 1s;
+  transition: height 0.2s ease-out, overflow 0s 0.2s ease-out, visibility 0.2s;
   visibility: hidden;
   z-index: 99; }
   @media all and (min-width: 600px) {
@@ -1249,7 +1249,7 @@ section.codepen {
   visibility: visible;
   overflow: auto;
   height: 100vh;
-  transition: height 0.5s ease-out, overflow 0s 1s; }
+  transition: height 0.2s ease-out, overflow 0s 1s; }
 
 .hidden-nav {
   transform: translateY(-6rem); }
