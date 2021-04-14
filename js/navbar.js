@@ -1,5 +1,6 @@
 
 var page = document.querySelector("html");
+var body = document.querySelector("body");
 var navWrap = document.querySelector(".nav-wrapper");
 var nav = document.querySelector(".nav");
 var navBrand = document.querySelector(".nav__logo-link");
@@ -157,17 +158,38 @@ document.addEventListener('keydown', (event) => {
 
   // Accessible navigaiton
   // https://www.a11ywithlindsey.com/blog/create-accessible-dropdown-navigation
+  // Also used this resource:
+  // https://gomakethings.com/how-to-get-all-of-an-elements-siblings-with-vanilla-js/
 
   const topLevelLinks = document.querySelectorAll('.menu__link')
-
+  
   topLevelLinks.forEach(link => {
     link.addEventListener('focus', function() {
       this.parentElement.classList.add('focus')
+      var siblings = [];
+      var sibling = this;
+
+      while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== this) {
+          siblings.push(sibling);
+        }
+        sibling = sibling.nextSibling
+      }
       
+      if (siblings.length >=2) {
+        const subMenu = siblings[1]
+        const subMenuLinks = subMenu.querySelectorAll('a')
+        const lastLinkIndex = subMenuLinks.length - 1
+        const lastLink = subMenuLinks[lastLinkIndex]
+        lastLink.addEventListener('blur', function() {
+          link.parentElement.classList.remove('focus')
+        })
+      }
     })
-    if (link.nextElementSibling) {
-      const subMenu = link.nextElementSibling
-      console.log(subMenu)
-      console.log(subMenu.querySelectorAll('a'))
-    }
   })
+
+  body.addEventListener("click", function () {
+    document.querySelector(".menu__item").classList.remove('focus')
+    })
+
+ 
