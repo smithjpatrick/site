@@ -491,20 +491,6 @@ body > *:not(:first-child) {
   &:focus {
     @include link-focus;
   }
-
-  &.expanded {
-    & + .submenu {
-      display: block;
-    }
-    & #chevron {
-      transform: rotate(180deg);
-    }
-  }
-  // &.expanded:hover {
-  //   & #chevron {
-  //     transform: scale(1.5) rotate(180deg);
-  //   }
-  // }
 }
 
 .nav .menu__item--dd:hover {

@@ -1277,12 +1277,6 @@ body > *:not(:first-child) {
 .nav .submenu__button:focus {
   outline: 3px dotted; }
 
-.nav .submenu__button.expanded + .submenu {
-  display: block; }
-
-.nav .submenu__button.expanded #chevron {
-  transform: rotate(180deg); }
-
 .nav .menu__item--dd:hover > .menu__link {
   background-size: 100% 4px; }
 

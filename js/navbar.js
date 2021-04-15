@@ -130,30 +130,10 @@ document.addEventListener('keydown', (event) => {
 });
 
 
-// toggle Dropdown menu on button click
-// navDdbtn.addEventListener("click", function () {
-//   if (navDdbtn.classList.contains("expanded")) {
-//     navDdbtn.classList.remove("expanded");
-//   } else {
-//     navDdbtn.classList.add("expanded");
-//     document.querySelector(".nav__dd-item>.nav__link").focus();
-//   }
-//   });
 
-  function ddToggle() {
-    if (navDdbtn.classList.contains("expanded")) {
-      navDdbtn.classList.remove("expanded");
-    } else {
-      navDdbtn.classList.add("expanded");
-    }
-  };
+
 
   
-  // navDdmenu.addEventListener("focusout", function() {
-  //   navDdbtn.classList.remove("expanded");
-  //   // console.log("focusout");
-  //   // console.log(navDdmenu);
-  // })
 
 
   // Accessible navigaiton
@@ -161,35 +141,43 @@ document.addEventListener('keydown', (event) => {
   // Also used this resource:
   // https://gomakethings.com/how-to-get-all-of-an-elements-siblings-with-vanilla-js/
 
-  const topLevelLinks = document.querySelectorAll('.menu__link')
-  
+  const topLevelLinks = document.querySelectorAll('.nav__logo-link, .menu__link');
+
   topLevelLinks.forEach(link => {
+    if (link.nextElementSibling) {
     link.addEventListener('focus', function() {
       this.parentElement.classList.add('focus')
-      var siblings = [];
-      var sibling = this;
-
-      while (sibling) {
-        if (sibling.nodeType === 1 && sibling !== this) {
-          siblings.push(sibling);
-        }
-        sibling = sibling.nextSibling
-      }
-      
-      if (siblings.length >=2) {
-        const subMenu = siblings[1]
+    })  
+        const subMenu = link.parentElement.lastElementChild
         const subMenuLinks = subMenu.querySelectorAll('a')
         const lastLinkIndex = subMenuLinks.length - 1
         const lastLink = subMenuLinks[lastLinkIndex]
+
         lastLink.addEventListener('blur', function() {
           link.parentElement.classList.remove('focus')
         })
       }
-    })
   })
 
+  navBrand.addEventListener("focusin", function () {
+    document.querySelector(".menu__item").classList.remove('focus')
+    })
   body.addEventListener("click", function () {
     document.querySelector(".menu__item").classList.remove('focus')
     })
 
+    // toggle Dropdown menu on button click
+navDdbtn.addEventListener("click", function () {
+  console.log("navDdbtn")
+  console.log(navDdbtn)
+  console.log("navDdbtn.parentElement")
+  console.log(navDdbtn.parentElement)
+  document.querySelector(".menu__item").classList.add("focus");
+  // if (navDdbtn.parentElement.classList.contains("focus")) {
+  //   navDdbtn.parentElement.classList.remove("focus");
+  // } else {
+  //   navDdbtn.parentElement.classList.add("focus");
+  //   // document.querySelector(".nav__dd-item>.nav__link").focus();
+  // }
+  });
  
