@@ -38,7 +38,6 @@ document.addEventListener('keydown', (event) => {
 function menuToggle() {
   if (page.classList.contains("mobile")) {
     page.classList.remove("mobile");
-    subMenuBtn.classList.remove("expanded");
     navBurgerText.innerHTML = "Menu";
   } else {
     page.classList.add("mobile");
@@ -53,6 +52,7 @@ function menuClose() {
     navBurgerText.innerHTML = "Menu";
   }
 };
+
 
 // when window is being resized, check for width.
 // when the width is a certain value, toggle .mmobile
@@ -160,11 +160,13 @@ document.addEventListener('keydown', (event) => {
       }
   })
 
-  navBrand.addEventListener("focusin", function () {
+  navBrand.addEventListener("focus", function () {
     document.querySelector(".menu__item").classList.remove('focus')
     })
-  body.addEventListener("click", function () {
+
+    subMenuBtn.addEventListener("blur", function () {
     document.querySelector(".menu__item").classList.remove('focus')
+    console.log("click")
     })
 
     // toggle Dropdown menu on button click
@@ -183,3 +185,6 @@ subMenuBtn.addEventListener("click", function () {
 // }
   });
  
+  subMenuBtn.addEventListener("mouseover", function () {
+    console.log("hover")
+  });

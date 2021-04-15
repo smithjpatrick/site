@@ -1118,8 +1118,7 @@ section.codepen {
   position: relative;
   display: inline-block;
   padding: 1rem 0.75rem;
-  vertical-align: middle;
-  cursor: auto; }
+  vertical-align: middle; }
   @media all and (min-width: 600px) {
     .nav .submenu__button {
       padding: 0.75rem 0.25rem; } }
@@ -1279,14 +1278,19 @@ body > *:not(:first-child) {
   background-size: 100% 4px; }
 
 .nav .menu__item--dd:hover #chevron {
-  transform: rotate(180deg); }
+  transform: scale(1.1); }
+
+.nav .submenu__button:hover #chevron {
+  transform: scale(1.4); }
 
 .nav .menu__item--dd:focus-within > .menu__link {
   background-size: 100% 4px; }
 
-.nav .menu__item:hover .submenu,
 .nav .menu__item.focus .submenu {
   display: block; }
+
+.nav .menu__item.focus #chevron {
+  transform: rotate(180deg); }
 
 .container {
   max-width: 72rem;

@@ -241,7 +241,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
     display: inline-block;
     padding: 1rem 0.75rem;
     vertical-align: middle;
-    cursor: auto;
 
     @media all and (min-width: $tablet) {
       padding: 0.75rem 0.25rem;
@@ -489,8 +488,11 @@ body > *:not(:first-child) {
     background-size: 100% 4px;
   }
   & #chevron {
-    transform: rotate(180deg);
+    transform: scale(1.1);
   }
+}
+.nav .submenu__button:hover #chevron {
+  transform: scale(1.4);
 }
 .nav .menu__item--dd:focus-within {
   & > .menu__link {
@@ -502,7 +504,12 @@ body > *:not(:first-child) {
 //   display: block;
 // }
 
-.nav .menu__item:hover .submenu,
-.nav .menu__item.focus .submenu {
-  display: block;
+// .nav .menu__item:hover .submenu,
+.nav .menu__item.focus {
+  & .submenu {
+    display: block;
+  }
+  & #chevron {
+    transform: rotate(180deg);
+  }
 }
