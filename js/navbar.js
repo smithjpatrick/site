@@ -163,9 +163,9 @@ document.addEventListener('keydown', (event) => {
   navBrand.addEventListener("focusin", function () {
     document.querySelector(".menu__item").classList.remove('focus')
     })
-  // body.addEventListener("click", function () {
-  //   document.querySelector(".menu__item").classList.remove('focus')
-  //   })
+  body.addEventListener("click", function () {
+    document.querySelector(".menu__item").classList.remove('focus')
+    })
 
     // toggle Dropdown menu on button click
 subMenuBtn.addEventListener("click", function () {
