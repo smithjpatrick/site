@@ -10,7 +10,7 @@ var navToggle = document.querySelector(".nav__toggle");
 var navMenu = document.querySelector(".nav .menu");
 var navBurger = document.querySelector(".nav__burger");
 var navBurgerText = document.querySelector(".nav__toggle-text");
-var navDdbtn = document.querySelector(".nav .submenu__button");
+var subMenuBtn = document.querySelector(".nav .submenu__button");
 var navDdmenu = document.querySelector(".nav .submenu");
 var w = window.innerWidth
 || document.documentElement.clientWidth
@@ -38,7 +38,7 @@ document.addEventListener('keydown', (event) => {
 function menuToggle() {
   if (page.classList.contains("mobile")) {
     page.classList.remove("mobile");
-    navDdbtn.classList.remove("expanded");
+    subMenuBtn.classList.remove("expanded");
     navBurgerText.innerHTML = "Menu";
   } else {
     page.classList.add("mobile");
@@ -49,7 +49,7 @@ function menuToggle() {
 function menuClose() {
   if (page.classList.contains("mobile")) {
     page.classList.remove("mobile");
-    navDdbtn.classList.remove("expanded");
+    subMenuBtn.classList.remove("expanded");
     navBurgerText.innerHTML = "Menu";
   }
 };
@@ -125,7 +125,7 @@ nav.addEventListener("focusin", function() {
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     menuClose();
-    navDdbtn.classList.remove("expanded");
+    subMenuBtn.classList.remove("expanded");
   }
 });
 
@@ -146,6 +146,7 @@ document.addEventListener('keydown', (event) => {
   topLevelLinks.forEach(link => {
     if (link.nextElementSibling) {
     link.addEventListener('focus', function() {
+      console.log("button click")
       this.parentElement.classList.add('focus')
     })  
         const subMenu = link.parentElement.lastElementChild
@@ -162,22 +163,23 @@ document.addEventListener('keydown', (event) => {
   navBrand.addEventListener("focusin", function () {
     document.querySelector(".menu__item").classList.remove('focus')
     })
-  body.addEventListener("click", function () {
-    document.querySelector(".menu__item").classList.remove('focus')
-    })
+  // body.addEventListener("click", function () {
+  //   document.querySelector(".menu__item").classList.remove('focus')
+  //   })
 
     // toggle Dropdown menu on button click
-navDdbtn.addEventListener("click", function () {
-  console.log("navDdbtn")
-  console.log(navDdbtn)
-  console.log("navDdbtn.parentElement")
-  console.log(navDdbtn.parentElement)
-  document.querySelector(".menu__item").classList.add("focus");
-  // if (navDdbtn.parentElement.classList.contains("focus")) {
-  //   navDdbtn.parentElement.classList.remove("focus");
-  // } else {
-  //   navDdbtn.parentElement.classList.add("focus");
-  //   // document.querySelector(".nav__dd-item>.nav__link").focus();
-  // }
+subMenuBtn.addEventListener("click", function () {
+  if (subMenuBtn.parentElement.classList.contains("focus")) {
+    subMenuBtn.parentElement.classList.remove("focus");
+  } else {
+    subMenuBtn.parentElement.classList.add("focus");
+
+  }
+//     if (subMenuBtn.parentElement.queryselector("li:not(.focus)")) {
+    
+//     subMenuBtn.parentElement.classList.add("focus");
+//     document.querySelector(".submenu__link").focus();
+//   }
+// }
   });
  

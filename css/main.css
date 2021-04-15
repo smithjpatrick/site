@@ -1118,7 +1118,8 @@ section.codepen {
   position: relative;
   display: inline-block;
   padding: 1rem 0.75rem;
-  vertical-align: middle; }
+  vertical-align: middle;
+  cursor: auto; }
   @media all and (min-width: 600px) {
     .nav .submenu__button {
       padding: 0.75rem 0.25rem; } }
@@ -1151,8 +1152,6 @@ section.codepen {
   padding: 0;
   left: 0;
   z-index: 99; }
-  .nav .submenu:focus-within {
-    display: block; }
   @media all and (min-width: 600px) {
     .nav .submenu {
       display: none;
@@ -1163,17 +1162,16 @@ section.codepen {
       text-align: left;
       background-color: #fff;
       border-radius: 4px;
-      box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07); } }
-  @media all and (min-width: 600px) {
-    .nav .submenu::before {
-      position: absolute;
-      top: -1rem;
-      left: 0;
-      display: block;
-      content: "";
-      width: 50%;
-      height: 1rem;
-      z-index: 1; } }
+      box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035), 0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07); }
+      .nav .submenu::before {
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        display: block;
+        content: "";
+        width: 50%;
+        height: 1rem;
+        z-index: 1; } }
   .nav .submenu__link {
     display: inline-block;
     min-width: 48px;
