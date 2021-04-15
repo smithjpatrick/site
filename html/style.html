@@ -112,68 +112,73 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             </svg>
           </span>
         </button>
-        <ul class="nav__menu">
-          <li class="nav__item">
-            <a href="#work" class="nav__link nav__link--icon"
-              >Work
-              <svg
-                class="nav__icon"
-                version="1.1"
-                id="chevron"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                width="24px"
-                height="24px"
-                viewBox="0 0 24 24"
-                enable-background="new 0 0 24 24"
-                xml:space="preserve"
-              >
-                <g id="chevron_1_">
-                  <rect
-                    x="9.95"
-                    y="11"
-                    transform="matrix(0.7072 -0.7071 0.7071 0.7072 -4.228 13.7916)"
-                    width="9.171"
-                    height="2"
-                  />
-                  <rect
-                    x="4.879"
-                    y="11"
-                    transform="matrix(-0.7072 -0.7071 0.7071 -0.7072 7.6725 27.1777)"
-                    width="9.171"
-                    height="2"
-                  />
-                </g>
-              </svg>
-            </a>
-            <ul class="nav__dd-menu">
-              <li class="nav__dd-item">
-                <a class="nav__link" href="html/toast.html">Toast</a>
-              </li>
-              <li class="nav__dd-item">
-                <a class="nav__link" href="html/waltham-mills.html"
-                  >Waltham Mills</a
+        <div class="menu-wrapper">
+          <ul class="menu">
+            <li class="menu__item menu__item--dd">
+              <a href="../index.html#work" class="menu__link menu__link--icon"
+                >Work
+              </a>
+              <button tabindex="-1" class="btn submenu__button">
+                <svg
+                  class="nav__icon expand"
+                  version="1.1"
+                  id="chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="24px"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  enable-background="new 0 0 24 24"
+                  xml:space="preserve"
                 >
-              </li>
-              <li class="nav__dd-item">
-                <a class="nav__link" href="html/canton-public-library.html"
-                  >Canton Public Library</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="nav__item">
-            <a href="html/about.html" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="html/contact.html" class="nav__link">Contact</a>
-          </li>
-          <li class="nav__item">
-            <a href="html/about.html#resume" class="nav__link">Resume</a>
-          </li>
-        </ul>
+                  <g id="chevron_1_">
+                    <rect
+                      x="9.95"
+                      y="11"
+                      transform="matrix(0.7072 -0.7071 0.7071 0.7072 -4.228 13.7916)"
+                      width="9.171"
+                      height="2"
+                    />
+                    <rect
+                      x="4.879"
+                      y="11"
+                      transform="matrix(-0.7072 -0.7071 0.7071 -0.7072 7.6725 27.1777)"
+                      width="9.171"
+                      height="2"
+                    />
+                  </g>
+                </svg>
+              </button>
+
+              <ul class="submenu">
+                <li class="submenu__item">
+                  <a class="submenu__link" href="toast.html">Toast</a>
+                </li>
+                <li class="submenu__item">
+                  <a class="submenu__link" href="waltham-mills.html"
+                    >Waltham Mills</a
+                  >
+                </li>
+                <li class="submenu__item">
+                  <a class="submenu__link" href="canton-public-library.html"
+                    >Canton Public Library</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="menu__item">
+              <a href="about.html" class="menu__link">About</a>
+            </li>
+            <li class="menu__item">
+              <a href="contact.html" class="menu__link">Contact</a>
+            </li>
+            <li class="menu__item">
+              <a href="about.html#resume" class="menu__link">Resume</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
 
@@ -386,24 +391,22 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
           <p class="footer__bio">
             I'm Jeff. I love designing accessible, useful, &amp; fun experiences
             for people. Also I like baking bread.
-            <a href="html/about.html" class="footer__link"
-              >Here's more about me.</a
-            >
+            <a href="about.html" class="footer__link">Here's more about me.</a>
           </p>
         </div>
         <div class="footer__content">
           <ul class="footer__menu">
             <li class="footer__item">
-              <a href="#work" class="footer__link">Work</a>
+              <a href="../index.html#work" class="footer__link">Work</a>
             </li>
             <li class="footer__item">
-              <a href="html/contact.html" class="footer__link">Contact Me</a>
+              <a href="contact.html" class="footer__link">Contact Me</a>
             </li>
             <li class="footer__item">
               <a href="#start" class="footer__link">Back to top &uarr;</a>
             </li>
             <li class="footer__item">
-              <a href="style.html" class="footer__link">Styles</a>
+              <a href="#start" class="footer__link">Styles</a>
             </li>
           </ul>
           <p class="footer__copyright">
