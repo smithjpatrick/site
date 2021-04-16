@@ -48,7 +48,6 @@ function menuToggle() {
 function menuClose() {
   if (page.classList.contains("mobile")) {
     page.classList.remove("mobile");
-    subMenuBtn.classList.remove("expanded");
     navBurgerText.innerHTML = "Menu";
   }
 };
@@ -90,7 +89,6 @@ function navScroll() {
     } else {
       navWrap.classList.remove("nav--scrolled");
       navBrand.classList.remove("nav__logo-link--small");
-      console.log("scrolled up")
     }
   };
 
@@ -140,24 +138,20 @@ document.addEventListener('keydown', (event) => {
   // https://www.a11ywithlindsey.com/blog/create-accessible-dropdown-navigation
   // Also used this resource:
   // https://gomakethings.com/how-to-get-all-of-an-elements-siblings-with-vanilla-js/
+  // and
+  // https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700#:~:text=tab%2C%20shift%20%2B%20tab%20and%20enter,pressing%20tab%20key%20multiple%20times.
 
+  
+  
   const topLevelLinks = document.querySelectorAll('.nav__logo-link, .menu__link');
-
-  const  focusableElements = 'button, [href], input, select, textarea';
-  const navFocusableContent = nav.querySelectorAll(focusableElements);
-const pageFocusElements = body.querySelectorAll(focusableElements); // select the modal by it's id
-console.log(navFocusableContent.length)
-console.log(pageFocusElements.length)
-console.log(pageFocusElements[navFocusableContent.length])
-
-
-
+    
   topLevelLinks.forEach(link => {
+
+    const subMenu = link.parentElement.lastElementChild
+    const subMenuLinks = subMenu.querySelectorAll('a')
+    const lastLinkIndex = subMenuLinks.length - 1
+    const lastLink = subMenuLinks[lastLinkIndex]
     if (link.nextElementSibling) {
-      const subMenu = link.parentElement.lastElementChild
-      const subMenuLinks = subMenu.querySelectorAll('a')
-      const lastLinkIndex = subMenuLinks.length - 1
-      const lastLink = subMenuLinks[lastLinkIndex]
       link.addEventListener('focus', function() {
         this.parentElement.classList.add('focus')
         subMenuLinks.forEach( function(number) {
@@ -168,8 +162,7 @@ console.log(pageFocusElements[navFocusableContent.length])
       lastLink.addEventListener('blur', function() {
           link.parentElement.classList.remove('focus')
           subMenuLinks.forEach( function(number) {
-            console.log("number")
-            console.log(number)
+            
             number.setAttribute("tabindex", "-1")
           })
       })
@@ -178,6 +171,11 @@ console.log(pageFocusElements[navFocusableContent.length])
     document.addEventListener('keydown', function(e) {
         let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
       
+        const  focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const navFocusableContent = nav.querySelectorAll(focusableElements);
+const pageFocusElements = body.querySelectorAll(focusableElements); // select the modal by it's id
+
+
         if (!isTabPressed) {
           return;
         }
@@ -205,20 +203,17 @@ console.log(pageFocusElements[navFocusableContent.length])
       else {
         // if shift key pressed for shift + tab combination
         if (e.shiftKey) { 
-          if (document.activeElement === pageFocusElements[navFocusableContent.length]) {
+          if (document.activeElement === pageFocusElements[navFocusableContent.length+1]) {
             // navFocusableContent[1].focus(); // add focus for the last focusable element
-            console.log('test')
-            console.log(navFocusableContent[0])
-            console.log(navFocusableContent[1])
-            console.log(navFocusableContent[2])
-            navFocusableContent[1].focus();
+            console.log(navFocusableContent[1]);
+            topLevelLinks[4].focus() || navFocusableContent[1].focus() ;
             e.preventDefault();
 
           }
         } 
         else { // if tab key is pressed
           if (document.activeElement === navFocusableContent[1]) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-            pageFocusElements[navFocusableContent.length].focus(); // add focus for the first focusable element
+            pageFocusElements[navFocusableContent.length+1].focus(); // add focus for the first focusable element
             e.preventDefault();
           }
         }
@@ -229,6 +224,12 @@ console.log(pageFocusElements[navFocusableContent.length])
 
   navBrand.addEventListener("focus", function () {
     document.querySelector(".menu__item").classList.remove('focus')
+    var subMenuLinks = document.querySelectorAll(".nav .submenu__link")
+    subMenuLinks.forEach( function(number) {
+      console.log("number")
+      console.log(number)
+      number.setAttribute("tabindex", "-1")
+    })
   })
   navToggle.addEventListener("focus", function () {
     document.querySelector(".menu__item").classList.remove('focus')
@@ -236,7 +237,6 @@ console.log(pageFocusElements[navFocusableContent.length])
 
   subMenuBtn.addEventListener("blur", function () {
     document.querySelector(".menu__item").classList.remove('focus')
-    console.log("click")
   })
 
     // toggle Dropdown menu on button click
