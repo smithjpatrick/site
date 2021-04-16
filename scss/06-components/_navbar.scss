@@ -3,6 +3,25 @@ $navbar-height--small: 4rem; /*-- see variables-widths.scss */
 
 $nav-color: hsla(0, 0%, 100%, 1);
 
+//for visually hidden elements still visible to screen readers
+@mixin viz-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+}
+@mixin non-viz-hidden {
+  clip: auto;
+    clip-path: none;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+
+
 ////////////////////////////////////
 // || Typography
 ////////////////////////////////////
@@ -135,6 +154,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
 .nav {
   & .menu-wrapper {
+   @include viz-hidden();
+
     text-align: center;
     background: $nav-color;
     position: fixed;
@@ -144,12 +165,13 @@ $nav-color: hsla(0, 0%, 100%, 1);
     overflow: hidden;
     width: 100%;
     order: 2;
-    height: 0;
-    transition: height 0.2s ease-out, overflow 0s 0.2s ease-out, visibility 0.2s;
-    visibility: hidden;
+    // height: 0;
+    transition: height 0.2s ease-out, overflow 0s 0.2s ease-out,;
     z-index: 99;
+    
 
     @media all and (min-width: $tablet) {
+    @include non-viz-hidden();
       display: flex;
       justify-content: start;
       align-items: center;
@@ -165,7 +187,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
   & .menu {
     margin-top: 30vh;
-    z-index: 100;
+    z-index: 99;
     display: inline-block;
     position: relative;
 
@@ -275,18 +297,16 @@ $nav-color: hsla(0, 0%, 100%, 1);
 ///////////////
 .nav {
   & .submenu {
-    display: none;
     position: relative;
     margin-bottom: 0;
     text-align: center;
     font-size: 100%;
     line-height: 100%;
-    padding: 0;
     left: 0;
     z-index: 99;
 
+
     @media all and (min-width: $tablet) {
-      display: none;
       position: absolute;
       left: -1.5rem;
       top: 4rem;
@@ -418,12 +438,23 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //
 //////////////////
 
-.mobile {
+.mobile .nav {
   & .menu-wrapper {
-    visibility: visible;
+    @include non-viz-hidden()
     overflow: auto;
     height: 100vh;
-    transition: height 0.2s ease-out, overflow 0s 1s;
+    width: 100%;
+    margin: 0;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   z-index: 100;
+    // }
   }
 }
 
@@ -438,11 +469,9 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //////////////////
 
 body > *:not(:first-child) {
-  visibility: visible;
 }
 .mobile body > *:not(:first-child) {
-  visibility: hidden;
-  transition: visibility 0s 0.2s;
+  // visibility: hidden;
 }
 
 //////////////////////
@@ -507,9 +536,34 @@ body > *:not(:first-child) {
 // .nav .menu__item:hover .submenu,
 .nav .menu__item.focus {
   & .submenu {
-    display: block;
   }
   & #chevron {
     transform: rotate(180deg);
   }
 }
+
+
+.nav .invisible {
+  display: block;
+  clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+  }
+  
+  .focus .invisible {
+  clip: auto;
+    clip-path: none;
+    height: auto;
+    width: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 1.5rem;
+    
+
+}
+
+

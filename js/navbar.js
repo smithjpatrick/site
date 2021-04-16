@@ -143,31 +143,101 @@ document.addEventListener('keydown', (event) => {
 
   const topLevelLinks = document.querySelectorAll('.nav__logo-link, .menu__link');
 
+  const  focusableElements = 'button, [href], input, select, textarea';
+  const navFocusableContent = nav.querySelectorAll(focusableElements);
+const pageFocusElements = body.querySelectorAll(focusableElements); // select the modal by it's id
+console.log(navFocusableContent.length)
+console.log(pageFocusElements.length)
+console.log(pageFocusElements[navFocusableContent.length])
+
+
+
   topLevelLinks.forEach(link => {
     if (link.nextElementSibling) {
-    link.addEventListener('focus', function() {
-      console.log("button click")
-      this.parentElement.classList.add('focus')
-    })  
-        const subMenu = link.parentElement.lastElementChild
-        const subMenuLinks = subMenu.querySelectorAll('a')
-        const lastLinkIndex = subMenuLinks.length - 1
-        const lastLink = subMenuLinks[lastLinkIndex]
-
-        lastLink.addEventListener('blur', function() {
-          link.parentElement.classList.remove('focus')
+      const subMenu = link.parentElement.lastElementChild
+      const subMenuLinks = subMenu.querySelectorAll('a')
+      const lastLinkIndex = subMenuLinks.length - 1
+      const lastLink = subMenuLinks[lastLinkIndex]
+      link.addEventListener('focus', function() {
+        this.parentElement.classList.add('focus')
+        subMenuLinks.forEach( function(number) {
+          number.setAttribute("tabindex", "0")
         })
+      })  
+
+      lastLink.addEventListener('blur', function() {
+          link.parentElement.classList.remove('focus')
+          subMenuLinks.forEach( function(number) {
+            console.log("number")
+            console.log(number)
+            number.setAttribute("tabindex", "-1")
+          })
+      })
+    }
+      
+    document.addEventListener('keydown', function(e) {
+        let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+      
+        if (!isTabPressed) {
+          return;
+        }
+      
+        if (page.classList.contains('mobile')) {
+        // if shift key pressed for shift + tab combination
+          if (e.shiftKey) { 
+          if (document.activeElement === topLevelLinks[0]) {
+            // add focus for the last focusable element
+            topLevelLinks[topLevelLinks.length-1].focus(); 
+            e.preventDefault();
+          }
+        } 
+        // if tab key is pressed
+        else { 
+          // if focused has reached to last focusable element then focus first focusable element after pressing tab
+          if (document.activeElement === topLevelLinks[topLevelLinks.length-1]) { 
+            // add focus for the first focusable element
+            topLevelLinks[0].focus(); 
+            e.preventDefault();
+          }
+        }
+      } 
+      // IF MOBILE nav window isn't down
+      else {
+        // if shift key pressed for shift + tab combination
+        if (e.shiftKey) { 
+          if (document.activeElement === pageFocusElements[navFocusableContent.length]) {
+            // navFocusableContent[1].focus(); // add focus for the last focusable element
+            console.log('test')
+            console.log(navFocusableContent[0])
+            console.log(navFocusableContent[1])
+            console.log(navFocusableContent[2])
+            navFocusableContent[1].focus();
+            e.preventDefault();
+
+          }
+        } 
+        else { // if tab key is pressed
+          if (document.activeElement === navFocusableContent[1]) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+            pageFocusElements[navFocusableContent.length].focus(); // add focus for the first focusable element
+            e.preventDefault();
+          }
+        }
+
       }
+    });
   })
 
   navBrand.addEventListener("focus", function () {
     document.querySelector(".menu__item").classList.remove('focus')
-    })
+  })
+  navToggle.addEventListener("focus", function () {
+    document.querySelector(".menu__item").classList.remove('focus')
+  })
 
-    subMenuBtn.addEventListener("blur", function () {
+  subMenuBtn.addEventListener("blur", function () {
     document.querySelector(".menu__item").classList.remove('focus')
     console.log("click")
-    })
+  })
 
     // toggle Dropdown menu on button click
 subMenuBtn.addEventListener("click", function () {
@@ -175,16 +245,6 @@ subMenuBtn.addEventListener("click", function () {
     subMenuBtn.parentElement.classList.remove("focus");
   } else {
     subMenuBtn.parentElement.classList.add("focus");
-
   }
-//     if (subMenuBtn.parentElement.queryselector("li:not(.focus)")) {
-    
-//     subMenuBtn.parentElement.classList.add("focus");
-//     document.querySelector(".submenu__link").focus();
-//   }
-// }
-  });
- 
-  subMenuBtn.addEventListener("mouseover", function () {
-    console.log("hover")
-  });
+})
+

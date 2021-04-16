@@ -8,6 +8,7 @@
     hsla(220, 66, 29, 1) 9.69%,
     hsla(220, 71, 18, 1) 87.23%
   );
+  z-index: 1;
 }
 
 .footer__link {
@@ -39,7 +40,6 @@
   // @include spacer(p, 2, rl);
   padding-top: 2rem;
   padding-bottom: 1rem;
-  position: relative;
 
   &__logo {
     line-height: 0;
