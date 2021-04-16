@@ -15,6 +15,7 @@
     <title>Jeff Smith | About Me</title>
   </head>
   <body>
+    <a href="#content" class="sr-only skip-to-content">Skip to content</a>
     <!-- NAVIGATION -->
     <div class="nav-wrapper">
       <nav class="nav container">
@@ -115,13 +116,13 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             </svg>
           </span>
         </button>
-        <div class="menu-wrapper">
+        <div 
+        id="menu-wrapper"
+        class="menu-wrapper">
           <ul class="menu">
             <li class="menu__item menu__item--dd">
-              <a href="../index.html#work" class="menu__link menu__link--icon"
-                >Work
-              </a>
-              <button tabindex="-1" class="btn submenu__button">
+              <a href="../index.html#work" class="menu__link menu__link--icon">Work </a>
+              <button aria-hidden="true" tabindex="-1" class="btn submenu__button">
                 <svg
                   class="nav__icon expand"
                   version="1.1"
@@ -155,17 +156,20 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
                 </svg>
               </button>
 
-              <ul class="submenu">
+              <ul class="submenu invisible">
                 <li class="submenu__item">
-                  <a class="submenu__link" href="toast.html">Toast</a>
+                  <a tabindex="-1" class="submenu__link submenu__link--active" href="toast.html">Toast</a>
                 </li>
                 <li class="submenu__item">
-                  <a class="submenu__link" href="waltham-mills.html"
+                  <a tabindex="-1" class="submenu__link " href="waltham-mills.html"
                     >Waltham Mills</a
                   >
                 </li>
                 <li class="submenu__item">
-                  <a class="submenu__link" href="canton-public-library.html"
+                  <a
+                    tabindex="-1"
+                    class="submenu__link"
+                    href="canton-public-library.html"
                     >Canton Public Library</a
                   >
                 </li>
@@ -178,7 +182,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
               <a href="contact.html" class="menu__link">Contact</a>
             </li>
             <li class="menu__item">
-              <a href="#resume" class="menu__link">Resume</a>
+              <a href="about.html#resume" class="menu__link">Resume</a>
             </li>
           </ul>
         </div>
