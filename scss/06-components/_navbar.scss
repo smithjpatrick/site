@@ -42,6 +42,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   top: 0;
   left: 0;
   transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 100;
 }
 .nav--scrolled {
   box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035),
@@ -465,11 +466,11 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //
 //////////////////
 
-body > *:not(:first-child) {
-}
-.mobile body > *:not(:first-child) {
-  // visibility: hidden;
-}
+// body > *:not(:first-child) {
+// }
+// .mobile body > *:not(:first-child) {
+//   // visibility: hidden;
+// }
 
 //////////////////////
 //  || States
@@ -532,8 +533,8 @@ body > *:not(:first-child) {
 
 // .nav .menu__item:hover .submenu,
 .nav .menu__item.focus {
-  & .submenu {
-  }
+  // & .submenu {
+  // }
   & #chevron {
     transform: rotate(180deg);
   }

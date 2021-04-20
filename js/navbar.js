@@ -79,6 +79,7 @@ var navHide = 100; //scroll distance that nav hides
 
 window.onscroll = function() {
     navScroll();
+    // console.log('scrolling');
 }
 
 function navScroll() {
