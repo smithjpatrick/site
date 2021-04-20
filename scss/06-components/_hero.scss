@@ -1,41 +1,45 @@
 .hero {
-    margin: 30vh 0;
-    color: $color-primary-dark;
+  margin: 30vh 0;
+  color: $color-primary-dark;
+  font-family: $secondary-type;
+
+  &__title {
+    font-weight: 700;
+
+    &--small {
+      font-size: 2rem;
+      line-height: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__description {
     font-family: $secondary-type;
+    font-size: 1.125rem;
+    max-width: (400 / 16) * 1em;
+  }
 
-    &__title {
-        font-weight: 700;
+  &__link {
+    padding: 0.5rem;
+    margin: -0.5rem;
+    color: $color-primary-dark;
+    font-size: 1.125rem;
+    background-image: linear-gradient(
+      $color-primary-default,
+      $color-primary-default
+    );
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    transition: background-size 0.2s ease;
+    display: inline;
 
-        &--small {
-            font-size: 2rem;
-            line-height: 100%;
-            margin-bottom: .5rem;
-        }
+    &:hover {
+      background-size: 100% 4px;
     }
-    
-    &__description {
-        font-family: $secondary-type;
-        font-size: 1.125rem;
-        max-width: (400 / 16) * 1em;
+
+    &:focus {
+      @include link-focus;
     }
-    
-    &__link {
-        color: $color-primary-dark;
-        font-size: 1.125rem;
-        background-image: linear-gradient(
-        $color-primary-default,
-        $color-primary-default
-         );
-        background-position: 0% 100%;
-        background-repeat: no-repeat;
-        background-size: 100% 4px;
-        transition: background-size 0.2s ease;
-        display: inline;
-    
-        &:hover {
-            background-size: 100% 4px;
-        }
-    }
+  }
 }
-
-

@@ -3,10 +3,14 @@ a {
 }
 
 a:focus {
-  border: none;
-  outline: none;
+  @include link-focus;
 }
 
 a {
   color: $color-txt-primary;
+}
+
+//clickable area
+a {
+  background-color: hsla(0, 0, 0, 0.1);
 }
