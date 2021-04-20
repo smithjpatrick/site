@@ -58,15 +58,15 @@ body {
 $base-font-size: $gh;
 $scale: 1.333;
 $font-size: (
-  xs: pow($scale, -2) * 100%,
-  s: pow($scale, -1) * 100%,
-  h6: pow($scale, 1) * 100%,
-  h5: pow($scale, 2) * 100%,
-  h4: pow($scale, 3) * 100%,
-  h3: pow($scale, 4) * 100%,
-  h2: pow($scale, 5) * 100%,
-  h1: pow($scale, 6) * 100%,
-  hero: pow($scale, 7) * 100%,
+  xs: pow($scale, -2),
+  s: pow($scale, -1),
+  h6: pow($scale, 1),
+  h5: pow($scale, 2),
+  h4: pow($scale, 3),
+  h3: pow($scale, 4),
+  h2: pow($scale, 5),
+  h1: pow($scale, 6),
+  hero: pow($scale, 7),
 );
 
 $line-height: (
@@ -121,62 +121,70 @@ h6 {
 
 .hero-type,
 .h-xxxl {
-  font-size: map-get($font-size, hero);
+  font-size: map-get($font-size, hero) * 60%;
   line-height: 100%;
 
   @media all and (max-width: 30em) {
-    font-size: map-get($font-size, hero) * 0.6;
+    font-size: map-get($font-size, hero) * 100%;
   }
   @media all and (min-width: $tablet) {
-    font-size: map-get($font-size, hero);
+    font-size: map-get($font-size, hero)  * 100%;
   }
 }
 
 h1,
 .h-xxl {
   // font-size: ceil(72.5) * 1px;
-  font-size: map-get($font-size, h1);
+  font-size: map-get($font-size, h1)  * 90%;
   line-height: 100%;
 
   @media all and (max-width: 20rem) {
-    font-size: map-get($font-size, h1) * 0.5;
+    font-size: map-get($font-size, h1) * 100%;
   }
   @media all and (min-width: $tablet) {
-    font-size: map-get($font-size, h1);
+    font-size: map-get($font-size, h1)  * 100%;
   }
 }
 
 h2,
 .h-xl {
-  font-size: map-get($font-size, h2);
+  font-size: map-get($font-size, h2)  * 90%;
   line-height: 100%;
+  font-weight: 700;
 }
 
 h3,
 .h-l {
-  font-size: map-get($font-size, h3);
+  font-size: map-get($font-size, h3)  * 90%;
   line-height: 100%;
 }
 
 h4,
 .h-med {
-  font-size: map-get($font-size, h4);
+  font-size: map-get($font-size, h4) * 90%;
   line-height: 100%;
 }
 
 h5,
 .h-small {
-  font-size: map-get($font-size, h5);
+  font-size: map-get($font-size, h5) * 90%;
   line-height: 100%;
 }
 
 h6,
-small,
+.h-xsmall,
 .text_small {
-  font-size: map-get($font-size, h6);
+  font-size: map-get($font-size, h6) * 90%;
   line-height: 100%;
 }
 
 .section__heading {
   text-align: center;
+}
+
+h1 > .h-small {
+  font-size: 25%;
+}
+
+#work h2 {
 }
