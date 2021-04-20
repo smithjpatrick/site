@@ -160,3 +160,21 @@
 //     background-image: linear-gradient(180deg, transparent 10%, color(toast) 0);
 //   }
 // }
+
+.case {
+
+  &__img {
+    position: relative;
+    display: block;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  &__card {
+    position: relative;
+    top: -1rem;
+    background-color: $color-white;
+    padding: 1rem;
+  }
+}
