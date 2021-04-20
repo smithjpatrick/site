@@ -338,9 +338,6 @@ a:focus {
 a {
   color: #333; }
 
-a {
-  background-color: rgba(0, 0, 0, 0.1); }
-
 #home #work {
   padding: 6rem 0;
   background-color: rgba(204, 225, 240, 0.3); }
