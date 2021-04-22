@@ -12,7 +12,7 @@
 }
 
 .case__card {
-  top: 80%;
+  top: 70%;
   width: 100%;
   position: absolute;
 
@@ -36,18 +36,20 @@
 .case__card-content {
   padding: 1rem;
   position: relative;
-  // border: 4px solid #005490;
   width: calc(100% - 2rem);
-  // height: 10rem;
   background-color: white;
-  // margin: 0 auto;
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  // opacity: 10%;
+  z-index: 1;
+  
+  & > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
 }
+
 
 .case__dropshadow,
 .case__dropshadow::before,
@@ -94,75 +96,69 @@
   transition: transform 0.1s ease-out;
 }
 
-.shadows {
-  box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035),
-    0 0px 24.1px rgba(0, 0, 0, 0.046), 0 0px 80px rgba(0, 0, 0, 0.07);
-}
-
 .case__title {
   position: relative;
   font-weight: 700;
   color: $color-primary-dark;
   display: block;
+  z-index: 3;
 }
 .case__description {
   position: relative;
   // font-weight: 700;
-  // color: $color-primary-dark;
+  color: $color-primary-dark;
   display: block;
+  z-index: 3;
 }
 
-.case__card-content > *:not(:last-child) {
-  margin-bottom: 0.5rem;
-}
+
 
 .case__link {
-  padding: 1rem 0.5rem;
-  margin: -1rem -0.5rem;
+  color: $color-primary-dark;
+  line-height: 1.5;
+  display: inline-flex;
+  padding: .5rem 0;
+  margin: -.5rem 0;
   background-image: linear-gradient(
     $color-primary-default,
     $color-primary-default
   );
-  background-position: 50% 70%;
+  background-position: 50% 80%;
   background-repeat: no-repeat;
-  background-size: 90% 2px;
+  background-size: 100% 3px;
   transition: background-size 0.2s ease;
-  display: inline;
   // position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    // outline: 1px red solid;
-    // background-color: gold;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+  //////////////////////////////
+  // expand clickable link size
+  //////////////////////////////
+  @media all and (max-width: 26em) {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 4;
+    }
   }
 
-  &:hover {
-    background-size: 90% 2px;
-  }
 }
 
-.case__card-content {
-  z-index: 1;
+.case__icon {
+  fill: $color-primary-dark;
+  line-height: 100%;
+  display: inline;
+  margin-left: .5rem;
+  margin-top: .25px;
+  width: 20px;
+  height: 24px;
 }
 
-.case__title {
-  z-index: 3;
-}
-.case__description {
-  z-index: 3;
-}
-.case__link {
-}
-.case__link::before {
-  z-index: 4;
-}
-
+<<<<<<< HEAD
 .card {
   position: relative;
   max-width: 100%;
@@ -245,3 +241,9 @@
     outline-offset: -0.5rem;
   }
 }
+=======
+.case__card-content * {
+  // outline: 1px solid gray;
+
+}
+>>>>>>> main
