@@ -37,6 +37,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 }
 
 .nav-wrapper {
+  background: $nav-color;
   width: 100%;
   position: fixed;
   top: 0;
@@ -50,7 +51,6 @@ $nav-color: hsla(0, 0%, 100%, 1);
 }
 
 .nav {
-  background: $nav-color;
   max-width: $website-width - 2rem;
   width: 100%;
   display: flex;
@@ -130,6 +130,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
     margin-left: 1rem;
     line-height: 100%;
     font-size: 150%;
+    font-weight: 500;
 
     @media all and (min-width: $desktop) {
       display: inline-block;

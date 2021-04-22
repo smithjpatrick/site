@@ -163,6 +163,85 @@
   z-index: 4;
 }
 
-.case__card-content {
-  // background-color: gray;
+.card {
+  position: relative;
+  max-width: 100%;
+  background-color: $color-white;
+  border: 4px solid $color-primary-dark;
+  margin-bottom: 10rem;
+  color: $color-primary-dark;
+}
+.card,
+.card__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__text {
+  flex-grow: 1;
+  order: 1;
+  padding: 1rem;
+
+  & > * + * {
+    margin: 0;
+    margin-top: 0.75rem;
+  }
+}
+
+.card__title {
+  position: relative;
+  font-weight: 700;
+  display: block;
+}
+
+.card__link {
+  color: $color-primary-dark;
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.card__cta {
+  background-image: linear-gradient(
+    $color-primary-default,
+    $color-primary-default
+  );
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  background-size: 90% 2px;
+  transition: background-size 0.2s ease;
+}
+
+.card__img {
+  height: 20rem;
+}
+
+.card__img img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card a:focus {
+  @include link-focus;
+  text-decoration: underline;
+}
+
+.card:focus-within {
+  box-shadow: 0 0 0 0.25rem;
+}
+
+.card:focus-within {
+  & .card__link {
+    outline: none;
+    text-decoration: none;
+  }
+  & .card__text {
+    @include link-focus;
+    outline-offset: -0.5rem;
+  }
 }
