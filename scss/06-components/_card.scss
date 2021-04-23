@@ -1,155 +1,21 @@
-.case {
-  position: relative;
-  margin-bottom: 16rem;
-
-  &__img {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: calc(100vw * 9 / 16);
-  }
-}
-
-.case__card {
-  top: 70%;
-  width: 100%;
-  position: absolute;
-
-  &:hover,
-  &:focus-within {
-    .case__card-content {
-      transform: translateX(-50%) translateY(-1rem);
-    }
-    .case__dropshadow {
-      transform: translateX(-50%) translateY(0.25rem);
-    }
-    .case__dropshadow::before {
-      transform: translateX(-50%) translateY(-0.42rem);
-    }
-    .case__dropshadow::after {
-      transform: translateX(-50%) translateY(-0.84rem);
-    }
-  }
-}
-
-.case__card-content {
-  padding: 1rem;
-  position: relative;
-  width: calc(100% - 2rem);
-  background-color: white;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 1;
-
-  & > *:not(:last-child) {
-    margin-bottom: 0.5rem;
-  }
-}
-
-.case__dropshadow,
-.case__dropshadow::before,
-.case__dropshadow::after {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.case__dropshadow {
-  bottom: 0;
-  margin: 0 auto;
-  width: calc(100% - 5rem);
-  height: 4rem;
-  background-color: rgba(204, 225, 240, 0.52);
-
-  &::before {
-    content: "";
-    background-color: #99c3e1;
-    height: 4rem;
-    bottom: 0;
-    width: calc(100% + 1rem);
-
-    // outline: 1px solid gray;
-  }
-
-  &::after {
-    content: "";
-    background-color: #3387c3;
-    height: 4rem;
-    bottom: 0;
-    width: calc(100% + 2rem);
-
-    // outline: 1px solid gray;
-  }
-}
-
-.case__card-content,
-.case__dropshadow,
-.case__dropshadow::after,
-.case__dropshadow::before {
-  transition: transform 0.1s ease-out;
-}
-
-.case__title {
-  position: relative;
-  font-weight: 700;
-  color: $color-primary-dark;
-  display: block;
-  z-index: 3;
-}
-.case__description {
-  position: relative;
-  // font-weight: 700;
-  color: $color-primary-dark;
-  display: block;
-  z-index: 3;
-}
-
-.case__link {
-  color: $color-primary-dark;
-  line-height: 1.5;
-  display: inline-flex;
-  padding: 0.5rem 0;
-  margin: -0.5rem 0;
-  background-image: linear-gradient(
-    $color-primary-default,
-    $color-primary-default
-  );
-  background-position: 50% 80%;
-  background-repeat: no-repeat;
-  background-size: 100% 3px;
-  transition: background-size 0.2s ease;
-  // position: relative;
-
-  //////////////////////////////
-  // expand clickable link size
-  //////////////////////////////
-  @media all and (max-width: 26em) {
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 4;
-    }
-  }
-}
-
 .card {
   position: relative;
   max-width: 100%;
   background-color: $color-white;
-  border: 4px solid $color-primary-dark;
+  border: 4px solid map-get($color-primary, 600);
   margin-bottom: 10rem;
-  color: $color-primary-dark;
+  color: map-get($color-primary, 600);
+  box-shadow: 0 0px 0 -8px map-get($color-primary, 500),
+    0 0px 0 -16px map-get($color-primary, 300),
+    0 0px 0 -24px map-get($color-primary, 100);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
+      0 32px 0 -16px map-get($color-primary, 300),
+      0 48px 0 -24px map-get($color-primary, 100);
+  }
 }
 .card,
 .card__text {
@@ -173,7 +39,7 @@
 }
 
 .card__link {
-  color: $color-primary-dark;
+  color: map-get($color-primary, 600);
 
   &::after {
     content: "";
@@ -201,7 +67,7 @@
 }
 
 .card__cta-icon {
-  fill: $color-primary-dark;
+  fill: map-get($color-primary, 600);
   line-height: 100%;
   display: inline;
   margin-left: 0.25rem;
@@ -226,7 +92,9 @@
 }
 
 .card:focus-within {
-  box-shadow: 0 0 0 0.25rem;
+  box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
+    0 32px 0 -16px map-get($color-primary, 300),
+    0 48px 0 -24px map-get($color-primary, 100);
 }
 
 .card:focus-within {
@@ -237,5 +105,27 @@
   & .card__text {
     @include link-focus;
     outline-offset: -0.5rem;
+  }
+}
+
+.card.shadow {
+  &--top-right {
+    box-shadow: -8px 8px 0 0px map-get($color-primary, 200);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      transform: translateY(-20px);
+      box-shadow: -16px 16px 0 0px map-get($color-primary, 100);
+    }
+  }
+
+  &--top {
+    box-shadow: 0px 4px 0 4px map-get($color-primary, 200);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      transform: translateY(-20px);
+      box-shadow: -16px 16px 0 0px map-get($color-primary, 100);
+    }
   }
 }
