@@ -44,12 +44,11 @@
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 1;
-  
+
   & > *:not(:last-child) {
     margin-bottom: 0.5rem;
   }
 }
-
 
 .case__dropshadow,
 .case__dropshadow::before,
@@ -111,14 +110,12 @@
   z-index: 3;
 }
 
-
-
 .case__link {
   color: $color-primary-dark;
   line-height: 1.5;
   display: inline-flex;
-  padding: .5rem 0;
-  margin: -.5rem 0;
+  padding: 0.5rem 0;
+  margin: -0.5rem 0;
   background-image: linear-gradient(
     $color-primary-default,
     $color-primary-default
@@ -128,7 +125,6 @@
   background-size: 100% 3px;
   transition: background-size 0.2s ease;
   // position: relative;
-
 
   //////////////////////////////
   // expand clickable link size
@@ -145,20 +141,8 @@
       z-index: 4;
     }
   }
-
 }
 
-.case__icon {
-  fill: $color-primary-dark;
-  line-height: 100%;
-  display: inline;
-  margin-left: .5rem;
-  margin-top: .25px;
-  width: 20px;
-  height: 24px;
-}
-
-<<<<<<< HEAD
 .card {
   position: relative;
   max-width: 100%;
@@ -185,14 +169,14 @@
 }
 
 .card__title {
-  position: relative;
   font-weight: 700;
-  display: block;
 }
 
 .card__link {
   color: $color-primary-dark;
+
   &::after {
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -201,15 +185,29 @@
   }
 }
 
+.card__description {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
 .card__cta {
-  background-image: linear-gradient(
-    $color-primary-default,
-    $color-primary-default
-  );
-  background-position: 50% 70%;
-  background-repeat: no-repeat;
-  background-size: 90% 2px;
-  transition: background-size 0.2s ease;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.125rem;
+  font-family: $secondary-type;
+  font-weight: 500;
+  letter-spacing: (1/20) * 1rem;
+}
+
+.card__cta-icon {
+  fill: $color-primary-dark;
+  line-height: 100%;
+  display: inline;
+  margin-left: 0.25rem;
+  // margin-top: 0.25px;
+  width: 20px;
+  height: 24px;
 }
 
 .card__img {
@@ -241,9 +239,3 @@
     outline-offset: -0.5rem;
   }
 }
-=======
-.case__card-content * {
-  // outline: 1px solid gray;
-
-}
->>>>>>> main
