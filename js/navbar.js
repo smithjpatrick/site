@@ -1,4 +1,4 @@
-
+var mobileBP = 600
 var page = document.querySelector("html");
 var body = document.querySelector("body");
 var navWrap = document.querySelector(".nav-wrapper");
@@ -61,7 +61,7 @@ window.addEventListener("resize", function () {
 w = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
-  if (w > 600) {
+  if (w > mobileBP) {
     page.classList.remove("mobile");
     navBurgerText.innerHTML = "Menu";
     navWrap.classList.remove("hidden-nav");
@@ -75,43 +75,38 @@ w = window.innerWidth
 // control appearance of nav bar:
 //    shrink vs hide, etc
 
-var navHide = 100; //scroll distance that nav hides
-
-window.onscroll = function() {
-    navScroll();
-    // console.log('scrolling');
-}
-
-function navScroll() {
-  
-    if (document.body.scrollTop > navHide || document.documentElement.scrollTop > navHide) {
-      navBrand.classList.add("nav__logo-link--small");
-      navWrap.classList.add("nav--scrolled");
-    } else {
-      navWrap.classList.remove("nav--scrolled");
-      navBrand.classList.remove("nav__logo-link--small");
-    }
-  };
-
 
 var lastScrollTop = 0;
 
 // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
 window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+  
+  var rect = document.querySelector('.hero__title').getBoundingClientRect();
+  var navHide = rect.top - navWrap.offsetHeight; //scroll distance that nav hides
+  
 
    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-
-   if ((w <= 600)) {
-   if (st > lastScrollTop && st > navHide ){
-    // downscroll code 
-
-    navWrap.classList.add("hidden-nav");
-
-  } else {
-      // upscroll code
-      navWrap.classList.remove("hidden-nav");
-   }
-  }
+   
+   if (st > lastScrollTop && navHide < 0 ){
+     // downscroll code 
+     navBrand.classList.add("nav__logo-link--small");
+     navWrap.classList.add("nav--scrolled");
+     if ((w <= mobileBP)) {
+         // on mobile, hide navbar 
+         
+         navWrap.classList.add("hidden-nav");
+         
+        }
+      } else {
+        // upscroll code
+        navWrap.classList.remove("hidden-nav");
+        if (lastScrollTop < navHide) {
+          // Expand navbar at top of page
+  
+          navBrand.classList.remove("nav__logo-link--small");
+            navWrap.classList.remove("nav--scrolled");
+        }
+ }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
@@ -206,7 +201,6 @@ const pageFocusElements = body.querySelectorAll(focusableElements); // select th
         if (e.shiftKey) { 
           if (document.activeElement === pageFocusElements[navFocusableContent.length+1]) {
             // navFocusableContent[1].focus(); // add focus for the last focusable element
-            console.log(navFocusableContent[1]);
             topLevelLinks[4].focus() || navFocusableContent[1].focus() ;
             e.preventDefault();
 
@@ -227,8 +221,6 @@ const pageFocusElements = body.querySelectorAll(focusableElements); // select th
     document.querySelector(".menu__item").classList.remove('focus')
     var subMenuLinks = document.querySelectorAll(".nav .submenu__link")
     subMenuLinks.forEach( function(number) {
-      console.log("number")
-      console.log(number)
       number.setAttribute("tabindex", "-1")
     })
   })

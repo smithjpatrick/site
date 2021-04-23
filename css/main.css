@@ -510,12 +510,7 @@ a {
   background-color: #fff;
   border: 4px solid #1b496a;
   margin-bottom: 10rem;
-  color: #1b496a;
-  box-shadow: 0 0px 0 -8px #276b9b, 0 0px 0 -16px #64a8d8, 0 0px 0 -24px #c6dff1;
-  transition: transform 0.2s, box-shadow 0.2s; }
-  .card:hover {
-    transform: translateY(-20px);
-    box-shadow: 0 16px 0 -8px #276b9b, 0 32px 0 -16px #64a8d8, 0 48px 0 -24px #c6dff1; }
+  color: #1b496a; }
 
 .card,
 .card__text {
@@ -565,7 +560,7 @@ a {
   height: 24px; }
 
 .card__img {
-  height: 20rem; }
+  height: 16rem; }
 
 .card__img img {
   object-fit: cover;
@@ -587,19 +582,29 @@ a {
   outline: 3px dotted;
   outline-offset: -0.5rem; }
 
+.card.shadow--accordion {
+  box-shadow: 0 12px 0 -8px #276b9b, 0 24px 0 -16px #64a8d8, 0 36px 0 -24px #c6dff1;
+  transition: transform 0.2s, box-shadow 0.2s; }
+  .card.shadow--accordion:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 16px 0 -8px #276b9b, 0 32px 0 -16px #64a8d8, 0 48px 0 -24px #c6dff1; }
+
 .card.shadow--top-right {
-  box-shadow: -8px 8px 0 0px #95c3e4;
+  outline: none;
+  border: none;
+  box-shadow: -4px 4px 0 0px #1b496a, -8px 8px 0 0px #338ccc;
   transition: transform 0.2s, box-shadow 0.2s; }
   .card.shadow--top-right:hover {
     transform: translateY(-20px);
-    box-shadow: -16px 16px 0 0px #c6dff1; }
+    box-shadow: -16px 16px 0 0px #c6dff1;
+    box-shadow: -8px 8px 0 0px #338ccc, -16px 16px 0 0px #95c3e4; }
 
 .card.shadow--top {
-  box-shadow: 0px 4px 0 4px #95c3e4;
+  box-shadow: -8px 8px 0 0px #338ccc;
   transition: transform 0.2s, box-shadow 0.2s; }
   .card.shadow--top:hover {
     transform: translateY(-20px);
-    box-shadow: -16px 16px 0 0px #c6dff1; }
+    box-shadow: -24px 24px 0 0px #95c3e4; }
 
 section.codepen {
   background-color: lightgrey;
@@ -827,7 +832,8 @@ section.codepen {
   color: #233876;
   font-family: "Poppins", Helvetica, Verdana, sans-serif; }
   .hero__title {
-    font-weight: 700; }
+    font-weight: 700;
+    margin-bottom: 1.5rem; }
     .hero__title--small {
       font-size: 2rem;
       line-height: 100%;
