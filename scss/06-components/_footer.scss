@@ -60,10 +60,6 @@
     flex-grow: 1;
     padding: 0;
     margin-bottom: 0;
-    & > .footer__link {
-      display: inline;
-      padding: 0;
-    }
   }
 
   /////////////////////
@@ -101,6 +97,7 @@
     display: inline-block;
     color: $color-white;
     padding: 0.5rem 0;
+    margin: -0.5rem 0;
   }
 
   &__copyright {
@@ -116,42 +113,19 @@
   }
 }
 
-.footer__link,
-.footer__link:link,
-.footer__link:visited {
+.footer__link span,
+.footer__link:link span,
+.footer__link:visited span {
   background-image: linear-gradient(hsla(220, 66, 95, 1), hsla(220, 66, 95, 1));
-  background-size: 100% 0.1em;
+  background-size: 100% 2px;
   // background-position-x: 100%;
-  background-position-y: 100%;
+  background-position: 50% 100%;
   background-repeat: no-repeat;
   transition: all 0.1s ease-in-out;
-
-  &:hover,
-  &:focus {
-    background-size: 100% 100%;
-    color: hsla(220, 66, 29, 1);
-    // font-weight: 500;
-    // background-position-x: 0%;
-    // animation: link-underline 0.4s;
-  }
+}
+.footer__link:hover span,
+.footer__link:focus span {
+  background-size: 100% 100%;
+  color: hsla(220, 66, 29, 1);
 }
 
-@keyframes link-underline {
-  0% {
-    background-size: 100% 0.1em;
-  }
-
-  40% {
-    background-position-x: 100%;
-    background-size: 0% 0.1em;
-  }
-  60% {
-    background-position-x: 0%;
-    background-size: 0% 0.1em;
-  }
-
-  100% {
-    background-position-x: 0%;
-    background-size: 100% 0.1em;
-  }
-}

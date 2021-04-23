@@ -507,7 +507,6 @@ a {
 .card {
   position: relative;
   max-width: 100%;
-  background-color: #fff;
   border: 4px solid #1b496a;
   margin-bottom: 10rem;
   color: #1b496a; }
@@ -518,6 +517,7 @@ a {
   flex-direction: column; }
 
 .card__text {
+  background-color: #fff;
   flex-grow: 1;
   order: 1;
   padding: 1rem; }
@@ -560,7 +560,8 @@ a {
   height: 24px; }
 
 .card__img {
-  height: 16rem; }
+  height: 16rem;
+  overflow: hidden; }
 
 .card__img img {
   object-fit: cover;
@@ -605,6 +606,60 @@ a {
   .card.shadow--top:hover {
     transform: translateY(-20px);
     box-shadow: -24px 24px 0 0px #95c3e4; }
+
+@media all and (min-width: 600px) {
+  .card {
+    position: relative;
+    flex-direction: row;
+    border: none;
+    align-content: center;
+    margin-bottom: 12rem; }
+    .card[class*='shadow'] {
+      box-shadow: none; }
+      .card[class*='shadow']:hover {
+        transform: none;
+        box-shadow: none; }
+  li.card:nth-child(2n+2) .card__text {
+    right: 0; }
+  li.card:nth-child(2n+2) .card__img {
+    margin-left: 0;
+    margin-right: auto; }
+  .card__text {
+    background-color: #fff;
+    position: absolute;
+    border: 4px solid #1b496a;
+    flex-grow: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 50%; }
+  .card__img {
+    margin-left: auto;
+    height: auto;
+    max-height: 24rem;
+    max-width: calc((2/3) * 100%); }
+  .card__img img {
+    transition: transform .2s; }
+  .shadow--accordion .card__text {
+    z-index: 1;
+    box-shadow: 0 12px 0 -8px #276b9b, 0 24px 0 -16px #64a8d8, 0 36px 0 -24px #c6dff1;
+    transition: transform 0.2s, box-shadow 0.2s; }
+    .shadow--accordion .card__text:hover {
+      transform: translateY(-55%);
+      box-shadow: 0 16px 0 -8px #276b9b, 0 32px 0 -16px #64a8d8, 0 48px 0 -24px #c6dff1; }
+  .shadow--top-right .card__text {
+    z-index: 1;
+    box-shadow: -8px 8px 0 0px #1b496a, -16px 16px 0 0px #338ccc;
+    transition: transform 0.2s, box-shadow 0.2s; }
+    .shadow--top-right .card__text:hover {
+      transform: translateY(-55%);
+      box-shadow: -12px 12px 0 0px #338ccc, -24px 24px 0 0px #95c3e4; }
+  .shadow--top .card__text {
+    z-index: 1;
+    box-shadow: -12px 12px 0 0px rgba(27, 73, 106, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s; }
+    .shadow--top .card__text:hover {
+      transform: translateY(-55%);
+      box-shadow: -20px 20px 0 0px rgba(51, 140, 204, 0.6); } }
 
 section.codepen {
   background-color: lightgrey;
@@ -762,9 +817,6 @@ section.codepen {
     flex-grow: 1;
     padding: 0;
     margin-bottom: 0; }
-    .footer__bio > .footer__link {
-      display: inline;
-      padding: 0; }
   @media all and (min-width: 600px) {
     .footer__content {
       display: flex;
@@ -787,7 +839,8 @@ section.codepen {
   .footer__link {
     display: inline-block;
     color: #fff;
-    padding: 0.5rem 0; }
+    padding: 0.5rem 0;
+    margin: -0.5rem 0; }
   .footer__copyright {
     display: inline-block;
     padding: 0;
@@ -798,34 +851,19 @@ section.codepen {
         right: 0;
         bottom: 0; } }
 
-.footer__link,
-.footer__link:link,
-.footer__link:visited {
+.footer__link span,
+.footer__link:link span,
+.footer__link:visited span {
   background-image: linear-gradient(#eaeffb, #eaeffb);
-  background-size: 100% 0.1em;
-  background-position-y: 100%;
+  background-size: 100% 2px;
+  background-position: 50% 100%;
   background-repeat: no-repeat;
   transition: all 0.1s ease-in-out; }
-  .footer__link:hover, .footer__link:focus,
-  .footer__link:link:hover,
-  .footer__link:link:focus,
-  .footer__link:visited:hover,
-  .footer__link:visited:focus {
-    background-size: 100% 100%;
-    color: #193a7b; }
 
-@keyframes link-underline {
-  0% {
-    background-size: 100% 0.1em; }
-  40% {
-    background-position-x: 100%;
-    background-size: 0% 0.1em; }
-  60% {
-    background-position-x: 0%;
-    background-size: 0% 0.1em; }
-  100% {
-    background-position-x: 0%;
-    background-size: 100% 0.1em; } }
+.footer__link:hover span,
+.footer__link:focus span {
+  background-size: 100% 100%;
+  color: #193a7b; }
 
 .hero {
   margin: 30vh 0;
