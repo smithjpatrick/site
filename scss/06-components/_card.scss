@@ -1,6 +1,7 @@
 .card {
   position: relative;
-  max-width: 100%;
+  max-width: calc(100% - 1rem);
+  margin-left: auto;
   border: 4px solid map-get($color-primary, 600);
   margin-bottom: 10rem;
   color: map-get($color-primary, 600);
@@ -12,7 +13,7 @@
 }
 
 //////////////////////////////
-// || Card Text 
+// || Card Text
 //////////////////////////////
 
 .card__text {
@@ -74,7 +75,6 @@
   height: 24px;
 }
 
-
 //////////////////////////////
 // || Card image
 //////////////////////////////
@@ -118,40 +118,37 @@
 .card.shadow {
   &--accordion {
     box-shadow: 0 12px 0 -8px map-get($color-primary, 500),
-    0 24px 0 -16px map-get($color-primary, 300),
-    0 36px 0 -24px map-get($color-primary, 100);
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    transform: translateY(-20px);
-    box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
-      0 32px 0 -16px map-get($color-primary, 300),
-      0 48px 0 -24px map-get($color-primary, 100);
-  }
-  }
-  &--top-right {
-    outline: none;
-    border: none;
-    box-shadow: 
-    -4px 4px 0 0px map-get($color-primary, 600),
-    -8px 8px 0 0px map-get($color-primary, 400),
-    // -12px 12px 0 0px map-get($color-primary, 300)
-    ;
+      0 24px 0 -16px map-get($color-primary, 300),
+      0 36px 0 -24px map-get($color-primary, 100);
     transition: transform 0.2s, box-shadow 0.2s;
-    
+
     &:hover {
       transform: translateY(-20px);
-      box-shadow: -16px 16px 0 0px map-get($color-primary, 100);
-      box-shadow: 
-      -8px 8px 0 0px map-get($color-primary, 400),
-      -16px 16px 0 0px map-get($color-primary, 200),
-      // -18px 18px 0 0px map-get($color-primary, 100)
-      ;
+      box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
+        0 32px 0 -16px map-get($color-primary, 300),
+        0 48px 0 -24px map-get($color-primary, 100);
+    }
+  }
+  &--top-right {
+    // outline: none;
+    // border: none;
+    box-shadow: -8px 8px 0 0px map-get($color-primary, 600),
+      -16px 16px 0 0px map-get($color-primary, 400),
+      // -12px 12px 0 0px map-get($color-primary, 300)
+;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      transform: translateY(-20px);
+      box-shadow: -16px 16px 0 0px map-get($color-primary, 400),
+        -32px 32px 0 0px map-get($color-primary, 200),
+        // -18px 18px 0 0px map-get($color-primary, 100)
+;
     }
   }
 
   &--top {
-    box-shadow: -8px 8px 0 0px map-get($color-primary, 400);
+    box-shadow: -16px 16px 0 0px map-get($color-primary, 400);
     transition: transform 0.2s, box-shadow 0.2s;
 
     &:hover {
@@ -160,8 +157,11 @@
     }
   }
 }
+/////////////////////////////
+// || Media Queries
+/////////////////////////////
 
-@media all and (min-width: 600px) {
+@media all and (min-width: $desktop) {
   .card {
     position: relative;
     flex-direction: row;
@@ -169,7 +169,7 @@
     align-content: center;
     margin-bottom: 12rem;
 
-    &[class*='shadow'] {
+    &[class*="shadow"] {
       box-shadow: none;
 
       &:hover {
@@ -179,8 +179,7 @@
     }
   }
 
-  li.card:nth-child(2n+2) {
-    
+  li.card:nth-child(2n + 2) {
     & .card__text {
       right: 0;
     }
@@ -189,8 +188,7 @@
       margin-left: 0;
       margin-right: auto;
     }
-
-  } 
+  }
 
   .card__text {
     background-color: $color-white;
@@ -200,34 +198,28 @@
     top: 50%;
     transform: translateY(-50%);
     max-width: 50%;
-    
-
   }
   .card__title {
-
   }
 
-  .card__link{
-
+  .card__link {
   }
 
   .card__description {
-
   }
 
   .card__cta {
-
   }
 
   .card__img {
     margin-left: auto;
     height: auto;
-    max-height: 24rem;
-    max-width: calc((2/3) * 100%);
+    // max-height: 24rem;
+    max-width: calc((2 / 3) * 100%);
   }
 
   .card__img img {
-    transition: transform .2s;
+    transition: transform 0.2s;
   }
 
   .shadow {
@@ -238,41 +230,34 @@
         0 36px 0 -24px map-get($color-primary, 100);
       transition: transform 0.2s, box-shadow 0.2s;
 
-    &:hover {
-      transform: translateY(-55%);
-      box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
-        0 32px 0 -16px map-get($color-primary, 300),
-        0 48px 0 -24px map-get($color-primary, 100);
+      &:hover {
+        transform: translateY(-55%);
+        box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
+          0 32px 0 -16px map-get($color-primary, 300),
+          0 48px 0 -24px map-get($color-primary, 100);
+      }
+    }
+    &--top-right .card__text {
+      z-index: 1;
+      box-shadow: -8px 8px 0 0px map-get($color-primary, 600),
+        -16px 16px 0 0px map-get($color-primary, 400);
+      transition: transform 0.2s, box-shadow 0.2s;
 
-      
+      &:hover {
+        transform: translateY(-55%);
+        box-shadow: -12px 12px 0 0px map-get($color-primary, 400),
+          -24px 24px 0 0px map-get($color-primary, 200);
+      }
+    }
+    &--top .card__text {
+      z-index: 1;
+      box-shadow: -12px 12px 0 0px hsla(205, 60, 26, 0.6);
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+        transform: translateY(-55%);
+        box-shadow: -20px 20px 0 0px hsla(205, 60, 50, 0.6);
+      }
     }
   }
-  &--top-right .card__text {
-    z-index: 1;
-  box-shadow: 
-  -8px 8px 0 0px map-get($color-primary, 600),
-  -16px 16px 0 0px map-get($color-primary, 400);
-  transition: transform 0.2s, box-shadow 0.2s;
-  
-  &:hover {
-    transform: translateY(-55%);
-    box-shadow: 
-    -12px 12px 0 0px map-get($color-primary, 400),
-    -24px 24px 0 0px map-get($color-primary, 200);
-   
-} 
-}
-&--top .card__text {
-  z-index: 1;
-  box-shadow: -12px 12px 0 0px hsla(205, 60, 26, .6);
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    transform: translateY(-55%);
-    box-shadow: -20px 20px 0 0px hsla(205, 60, 50, .6);
-  
-  }
-} 
-
-}
 }
