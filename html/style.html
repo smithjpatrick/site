@@ -10,15 +10,22 @@
     <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
 
     <title>Jeff Smith | UX Design & Research</title>
+    <style>
+      main > * + * {
+        margin-top: 4rem;
+      }
+    </style>
   </head>
   <body>
     <a href="#content" class="sr-only skip-to-content">Skip to content</a>
     <!-- NAVIGATION -->
-    <div class="nav-wrapper">
+    <header class="nav-wrapper">
       <nav class="nav container">
         <div class="nav__logo">
           <a href="../index.html" class="nav__logo-link">
             <svg
+              role="img"
+              aria-labelledby="logoTitle logoDesc"
               class="nav__img"
               version="1.1"
               id="Layer_1"
@@ -30,6 +37,11 @@
               enable-background="new 7.999 9.5 48.002 72"
               xml:space="preserve"
             >
+              <title id="logoTitle">Cartoon of Jeff's face</title>
+              <desc id="logoDesc">
+                Vector illustration of Jeff's face, acting as brand logo and
+                link to home page.
+              </desc>
               <g>
                 <path
                   class="logo__img--eyebrows"
@@ -76,10 +88,16 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             <span class="nav__title">Jeff Smith</span>
           </a>
         </div>
-        <button class="nav__toggle">
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="menu-wrapper"
+        >
           <span class="nav__toggle-text">Menu</span>
           <span class="nav__burger">
             <svg
+              role="img"
+              aria-labelledby="burgerTitle"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               class="icon__burger"
@@ -88,6 +106,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
               width="24px"
               height="24px"
             >
+              <title id="burgerTitle">Hamburger Menu icon</title>
               <defs>
                 <clipPath id="_clipPath_AZLdtFmWS7t0XL3tfmMoxLM1QqgcSM0j">
                   <rect width="24" height="24" />
@@ -113,14 +132,25 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             </svg>
           </span>
         </button>
-        <div class="menu-wrapper">
+        <div id="menu-wrapper" class="menu-wrapper">
           <ul class="menu">
             <li class="menu__item menu__item--dd">
               <a href="../index.html#work" class="menu__link menu__link--icon"
                 >Work
               </a>
-              <button tabindex="-1" class="btn submenu__button">
+              <button
+                id="submenu-btn"
+                aria-expanded="false"
+                aria-controls="submenu"
+                aria-hidden="true"
+                tabindex="-1"
+                class="btn submenu__button"
+                type="button"
+              >
+                <span class="visually-hidden">Work Submenu</span>
                 <svg
+                  role="img"
+                  aria-labelledby="chevronTitle chevronDesc"
                   class="nav__icon expand"
                   version="1.1"
                   id="chevron"
@@ -134,6 +164,11 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
                   enable-background="new 0 0 24 24"
                   xml:space="preserve"
                 >
+                  <title id="chevronTitle">Toggle submenu</title>
+                  <desc id="chevronDesc">
+                    Downward chevron to signify expandable and contractable
+                    submenu
+                  </desc>
                   <g id="chevron_1_">
                     <rect
                       x="9.95"
@@ -153,17 +188,25 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
                 </svg>
               </button>
 
-              <ul class="submenu">
+              <ul id="submenu" class="submenu invisible">
                 <li class="submenu__item">
-                  <a class="submenu__link" href="toast.html">Toast</a>
+                  <a tabindex="-1" class="submenu__link" href="toast.html"
+                    >Toast</a
+                  >
                 </li>
                 <li class="submenu__item">
-                  <a class="submenu__link" href="waltham-mills.html"
+                  <a
+                    tabindex="-1"
+                    class="submenu__link"
+                    href="waltham-mills.html"
                     >Waltham Mills</a
                   >
                 </li>
                 <li class="submenu__item">
-                  <a class="submenu__link" href="canton-public-library.html"
+                  <a
+                    tabindex="-1"
+                    class="submenu__link"
+                    href="canton-public-library.html"
                     >Canton Public Library</a
                   >
                 </li>
@@ -181,40 +224,95 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
           </ul>
         </div>
       </nav>
-    </div>
+    </header>
 
     <main class="container sp-p-8-t">
-      <h1 class="hero-type">Hero Heading</h1>
-      <br />
-      <h1>H1 Heading<br />line</h1>
-      <br />
-      <h2>H2 Heading <br />line</h2>
-      <br />
-      <h3>H3 Heading <br />line</h3>
-      <br />
-      <h4>H4 Heading<br />line</h4>
-      <br />
-      <h5>H5 Heading<br />line</h5>
-      <br />
-      <h6>H6 Heading<br />line</h6>
-      <div style="margin-top: 3rem"></div>
-      <h3>Paragraph styles</h3>
-      <h4>Normal</h4>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        cupiditate in molestias quo quae, numquam molestiae id voluptates qui
-        beatae est voluptas earum recusandae consectetur sit quod omnis optio.
-        Aspernatur veritatis rem vel, reiciendis amet accusantium esse mollitia
-        ipsa modi?
-      </p>
-      <h4>Large</h4>
-      <p class="large">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        cupiditate in molestias quo quae, numquam molestiae id voluptates qui
-        beatae est voluptas earum recusandae consectetur sit quod omnis optio.
-        Aspernatur veritatis rem vel, reiciendis amet accusantium esse mollitia
-        ipsa modi?
-      </p>
+      <div>
+        <h1 class="h-xxl hero__title">Site styles</h1>
+        <p class="subheading hero__description">
+          This is a playground for the various color and typography styles I'm
+          trying out.
+        </p>
+      </div>
+      <section id="colors">
+        <h2 class="h-xl">Colors</h2>
+        <ul class="color-group">
+          <li class="color__item">
+            <div class="color0"></div>
+            <div class="color-name">Primary - 050</div>
+          </li>
+          <li class="color__item">
+            <div class="color1"></div>
+            <div class="color-name">Primary - 100</div>
+          </li>
+          <li class="color__item">
+            <div class="color2"></div>
+            <div class="color-name">Primary - 200</div>
+          </li>
+          <li class="color__item">
+            <div class="color3"></div>
+            <div class="color-name">Primary - 300</div>
+          </li>
+          <li class="color__item">
+            <div class="color4"></div>
+            <div class="color-name">Primary - 400</div>
+          </li>
+          <li class="color__item">
+            <div class="color5"></div>
+            <div class="color-name">Primary - 500</div>
+          </li>
+          <li class="color__item">
+            <div class="color6"></div>
+            <div class="color-name">Primary - 600</div>
+          </li>
+          <li class="color__item">
+            <div class="color7"></div>
+            <div class="color-name">Primary - 700</div>
+          </li>
+          <li class="color__item">
+            <div class="color8"></div>
+            <div class="color-name">Primary - 800</div>
+          </li>
+          <li class="color__item">
+            <div class="color9"></div>
+            <div class="color-name">Primary - 900</div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="h-xl">Typography</h2>
+        <span class="hero-type">Hero Heading</span>
+        <br />
+        <span class="h-xxl">H1 Heading</span>
+        <br />
+        <span class="h-xl">H2 Heading </span>
+        <br />
+        <span class="h-l">H3 Heading </span>
+        <br />
+        <span class="h-med">H4 Heading</span>
+        <br />
+        <span class="h-sm">H5 Heading</span>
+        <br />
+        <span class="h-xs">H6 Heading</span>
+        <div style="margin-top: 3rem"></div>
+        <h3>Paragraph styles</h3>
+        <h4>Normal</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+          cupiditate in molestias quo quae, numquam molestiae id voluptates qui
+          beatae est voluptas earum recusandae consectetur sit quod omnis optio.
+          Aspernatur veritatis rem vel, reiciendis amet accusantium esse
+          mollitia ipsa modi?
+        </p>
+        <h4>Large</h4>
+        <p class="large">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+          cupiditate in molestias quo quae, numquam molestiae id voluptates qui
+          beatae est voluptas earum recusandae consectetur sit quod omnis optio.
+          Aspernatur veritatis rem vel, reiciendis amet accusantium esse
+          mollitia ipsa modi?
+        </p>
+      </section>
     </main>
     <!-- HERO -->
     <!-- <section id="top" class="l-hero l-hero--home">

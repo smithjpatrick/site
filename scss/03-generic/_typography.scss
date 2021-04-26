@@ -128,34 +128,34 @@ h6 {
     font-size: map-get($font-size, hero) * 100%;
   }
   @media all and (min-width: $tablet) {
-    font-size: map-get($font-size, hero)  * 100%;
+    font-size: map-get($font-size, hero) * 100%;
   }
 }
 
 h1,
 .h-xxl {
   // font-size: ceil(72.5) * 1px;
-  font-size: map-get($font-size, h1)  * 90%;
+  font-size: map-get($font-size, h1) * 90%;
   line-height: 100%;
 
   @media all and (max-width: 20rem) {
     font-size: map-get($font-size, h1) * 100%;
   }
   @media all and (min-width: $tablet) {
-    font-size: map-get($font-size, h1)  * 100%;
+    font-size: map-get($font-size, h1) * 100%;
   }
 }
 
 h2,
 .h-xl {
-  font-size: map-get($font-size, h2)  * 90%;
+  font-size: map-get($font-size, h2) * 90%;
   line-height: 100%;
   font-weight: 700;
 }
 
 h3,
 .h-l {
-  font-size: map-get($font-size, h3)  * 90%;
+  font-size: map-get($font-size, h3) * 90%;
   line-height: 100%;
 }
 
@@ -166,13 +166,13 @@ h4,
 }
 
 h5,
-.h-small {
+.h-sm {
   font-size: map-get($font-size, h5) * 90%;
   line-height: 100%;
 }
 
 h6,
-.h-xsmall,
+.h-xs,
 .text_small {
   font-size: map-get($font-size, h6) * 90%;
   line-height: 100%;

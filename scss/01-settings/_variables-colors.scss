@@ -86,3 +86,20 @@ $color-primary: (
   800: hsl(204, 60%, 2%),
   900: hsl(204, 60%, 2%),
 );
+
+.color__item + .color__item {
+  margin-top: 0.1rem;
+}
+
+.color__item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.color__item > *:first-child {
+  height: 3rem;
+  width: 6rem;
+  margin-right: 0.5rem;
+  background-color: red;
+}
