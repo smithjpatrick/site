@@ -81,7 +81,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             <span class="nav__title">Jeff Smith</span>
           </a>
         </div>
-        <button class="nav__toggle">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="menu-wrapper">
           <span class="nav__toggle-text">Menu</span>
           <span class="nav__burger">
             <svg
@@ -124,7 +124,8 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
           <ul class="menu">
             <li class="menu__item menu__item--dd">
               <a href="#work" class="menu__link menu__link--icon">Work </a>
-              <button aria-hidden="true" tabindex="-1" class="btn submenu__button">
+              <button id="submenu-btn" aria-expanded="false" aria-controls="submenu" aria-hidden="true" tabindex="-1" class="btn submenu__button" type="button">
+                <span class="visually-hidden">Work Submenu</span>
                 <svg
                   class="nav__icon expand"
                   version="1.1"
@@ -158,7 +159,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
                 </svg>
               </button>
 
-              <ul class="submenu invisible">
+              <ul id="submenu" class="submenu invisible">
                 <li class="submenu__item">
                   <a tabindex="-1" class="submenu__link" href="html/toast.html">Toast</a>
                 </li>
@@ -191,7 +192,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
       </nav>
     </header>
 
-    <main>
+    <main id="content">
       <div class="hero container">
         <h1 class="hero__title h-xxl">
           <div class="hero__title--small h-xsmall">Hello, </div>

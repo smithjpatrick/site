@@ -18,7 +18,9 @@ var w = window.innerWidth
 
 //Toggle Mobile nav menu off
 navToggle.addEventListener("click", function () {
-menuToggle();
+  let expanded = this.getAttribute('aria-expanded') === 'true' || false;
+  this.setAttribute('aria-expanded', !expanded);
+  menuToggle();
 })
 navBrand.addEventListener("click", function () {
 menuClose();
@@ -36,6 +38,7 @@ document.addEventListener('keydown', (event) => {
 // Open the nav menu by adding or removing 
 // the .mobile class to html tag
 function menuToggle() {
+ 
   if (page.classList.contains("mobile")) {
     page.classList.remove("mobile");
     navBurgerText.innerHTML = "Menu";
@@ -46,9 +49,11 @@ function menuToggle() {
   }
 };
 function menuClose() {
+
   if (page.classList.contains("mobile")) {
     page.classList.remove("mobile");
     navBurgerText.innerHTML = "Menu";
+    navToggle.setAttribute('aria-expanded', 'false')
   }
 };
 
@@ -120,6 +125,7 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     menuClose();
     subMenuBtn.classList.remove("expanded");
+    subMenuBtn.setAttribute('aria-expanded', 'false')
   }
 });
 
@@ -234,6 +240,8 @@ const pageFocusElements = body.querySelectorAll(focusableElements); // select th
 
     // toggle Dropdown menu on button click
 subMenuBtn.addEventListener("click", function () {
+  let expanded = this.getAttribute('aria-expanded') === 'true' || false;
+  this.setAttribute('aria-expanded', !expanded);
   if (subMenuBtn.parentElement.classList.contains("focus")) {
     subMenuBtn.parentElement.classList.remove("focus");
   } else {

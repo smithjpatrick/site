@@ -866,9 +866,11 @@ section.codepen {
   color: #193a7b; }
 
 .hero {
-  margin: 30vh 0;
   color: #233876;
-  font-family: "Poppins", Helvetica, Verdana, sans-serif; }
+  font-family: "Poppins", Helvetica, Verdana, sans-serif;
+  margin: calc(30vh - 6rem) 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem; }
   .hero__title {
     font-weight: 700;
     margin-bottom: 1.5rem; }
@@ -2002,3 +2004,12 @@ section.codepen {
 
 .u-center-text {
   text-align: center; }
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
