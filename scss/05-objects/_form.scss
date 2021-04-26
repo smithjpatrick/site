@@ -1,19 +1,15 @@
 .form {
-  color: #333;
+  // color: #333;
   font-family: $secondary-type;
   font-size: 100%;
 
   @media all and (min-width: $desktop) {
     padding: 1.5rem;
-    border-radius: 8px;
-    background-color: bisque;
-    box-shadow:
-  0 1.8px 3.6px rgba(0, 0, 0, 0.024),
-  0 5px 10px rgba(0, 0, 0, 0.035),
-  0 12.1px 24.1px rgba(0, 0, 0, 0.046),
-  0 40px 80px rgba(0, 0, 0, 0.07)
-;
-
+    // border-radius: 8px;
+    background-color: map-get($map: $color-primary, $key: 50);
+    box-shadow: 0 16px 0 -8px map-get($color-primary, 300),
+      0 32px 0 -16px map-get($color-primary, 500),
+      0 48px 0 -24px map-get($color-primary, 700);
   }
 
   & > *:not(:last-child) {
@@ -29,11 +25,10 @@
 
   &__field {
     color: #333;
-    border: none;
+    border: 2px solid map-get($map: $color-primary, $key: 700);
 
     background-color: rgba(white, 0.85);
-    border-radius: 4px;
-    box-shadow: inset 0px 0px 0px 1px rgb(86, 86, 86);
+    // border-radius: 4px;
     padding: 0.5rem;
     display: block;
     width: 100%;
@@ -64,13 +59,15 @@
   //////////////////////
   &__submit {
     color: $color-white;
-    background-color: $color-secondary-default;
+    background-color: map-get($map: $color-primary, $key: 500);
     font-family: $secondary-type;
     font-size: $base-font-size;
     font-weight: $medium;
+    border-radius: 0;
+    transition: background-color 0.1s ease-out;
 
     &:hover {
-      background-color: $color-secondary-dark;
+      background-color: map-get($map: $color-primary, $key: 600);
     }
   }
 }

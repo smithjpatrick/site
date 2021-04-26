@@ -11,14 +11,16 @@
 
     <title>Jeff Smith | Contact Me</title>
   </head>
-  <body>
+  <body id="contact">
     <a href="#content" class="sr-only skip-to-content">Skip to content</a>
     <!-- NAVIGATION -->
-    <div class="nav-wrapper">
+    <header class="nav-wrapper">
       <nav class="nav container">
         <div class="nav__logo">
-          <a href="../index.html" class="nav__logo-link">
+          <a href="#start" class="nav__logo-link">
             <svg
+              role="img"
+              aria-labelledby="logoTitle logoDesc"
               class="nav__img"
               version="1.1"
               id="Layer_1"
@@ -30,6 +32,11 @@
               enable-background="new 7.999 9.5 48.002 72"
               xml:space="preserve"
             >
+              <title id="logoTitle">Cartoon of Jeff's face</title>
+              <desc id="logoDesc">
+                Vector illustration of Jeff's face, acting as brand logo and
+                link to home page.
+              </desc>
               <g>
                 <path
                   class="logo__img--eyebrows"
@@ -76,10 +83,16 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             <span class="nav__title">Jeff Smith</span>
           </a>
         </div>
-        <button class="nav__toggle">
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="menu-wrapper"
+        >
           <span class="nav__toggle-text">Menu</span>
           <span class="nav__burger">
             <svg
+              role="img"
+              aria-labelledby="burgerTitle"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               class="icon__burger"
@@ -88,6 +101,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
               width="24px"
               height="24px"
             >
+              <title id="burgerTitle">Hamburger Menu icon</title>
               <defs>
                 <clipPath id="_clipPath_AZLdtFmWS7t0XL3tfmMoxLM1QqgcSM0j">
                   <rect width="24" height="24" />
@@ -113,14 +127,25 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             </svg>
           </span>
         </button>
-        <div 
-        id="menu-wrapper"
-        class="menu-wrapper">
+        <div id="menu-wrapper" class="menu-wrapper">
           <ul class="menu">
             <li class="menu__item menu__item--dd">
-              <a href="../index.html#work" class="menu__link menu__link--icon">Work </a>
-              <button aria-hidden="true" tabindex="-1" class="btn submenu__button">
+              <a href="../index.html#work" class="menu__link menu__link--icon"
+                >Work
+              </a>
+              <button
+                id="submenu-btn"
+                aria-expanded="false"
+                aria-controls="submenu"
+                aria-hidden="true"
+                tabindex="-1"
+                class="btn submenu__button"
+                type="button"
+              >
+                <span class="visually-hidden">Work Submenu</span>
                 <svg
+                  role="img"
+                  aria-labelledby="chevronTitle chevronDesc"
                   class="nav__icon expand"
                   version="1.1"
                   id="chevron"
@@ -134,6 +159,11 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
                   enable-background="new 0 0 24 24"
                   xml:space="preserve"
                 >
+                  <title id="chevronTitle">Toggle submenu</title>
+                  <desc id="chevronDesc">
+                    Downward chevron to signify expandable and contractable
+                    submenu
+                  </desc>
                   <g id="chevron_1_">
                     <rect
                       x="9.95"
@@ -153,12 +183,17 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
                 </svg>
               </button>
 
-              <ul class="submenu invisible">
+              <ul id="submenu" class="submenu invisible">
                 <li class="submenu__item">
-                  <a tabindex="-1" class="submenu__link submenu__link--active" href="toast.html">Toast</a>
+                  <a tabindex="-1" class="submenu__link" href="toast.html"
+                    >Toast</a
+                  >
                 </li>
                 <li class="submenu__item">
-                  <a tabindex="-1" class="submenu__link " href="waltham-mills.html"
+                  <a
+                    tabindex="-1"
+                    class="submenu__link"
+                    href="waltham-mills.html"
                     >Waltham Mills</a
                   >
                 </li>
@@ -173,10 +208,10 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
               </ul>
             </li>
             <li class="menu__item">
-              <a href="#start" class="menu__link">About</a>
+              <a href="about.html" class="menu__link">About</a>
             </li>
             <li class="menu__item">
-              <a href="contact.html" class="menu__link menu__link--active">Contact</a>
+              <a href="#start" class="menu__link menu__link--active">Contact</a>
             </li>
             <li class="menu__item">
               <a href="about.html#resume" class="menu__link">Resume</a>
@@ -184,12 +219,15 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
           </ul>
         </div>
       </nav>
-    </div>
+    </header>
 
     <!-- HERO -->
-    <main class="l-contact container grid">
-      <h1 class="heading">Contact me</h1>
-      <p class="subheading">
+    <main id="content" class="l-contact container grid">
+      <h1 class="heading hero__title h-xxl">
+        <div class="hero__title--small h-xsmall">Let's</div>
+        <div>Get in touch.</div>
+      </h1>
+      <p class="subheading hero__description">
         Want to say hi? Collaborate on a project? Talk about design, dogs, the
         trials and/or tribulations of amateur bread-baking? Message me with this
         handy form!
@@ -261,6 +299,8 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
         <div class="footer__logo logo--dark-bg">
           <div>
             <svg
+              role="img"
+              aria-labelledby="footerTitle"
               class="footer__img"
               version="1.1"
               id="Layer_1"
@@ -272,6 +312,7 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
               enable-background="new 7.999 9.5 48.002 72"
               xml:space="preserve"
             >
+              <title id="footerTitle">Cartoon of Jeff's face</title>
               <g>
                 <path
                   class="logo__img--eyebrows"
