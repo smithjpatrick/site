@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io -->
 <svg 
+role="img"
+aria-labelledby="burgerTitle"
 xmlns="http://www.w3.org/2000/svg" 
 xmlns:xlink="http://www.w3.org/1999/xlink" 
 class="icon__burger"
 style="isolation:isolate" 
 viewBox="0 0 24 24" 
 width="24px" 
-height="24px"><defs>
+height="24px">
+<title id="burgerTitle">Hamburger Menu icon</title>
+<defs>
 <clipPath 
 id="_clipPath_AZLdtFmWS7t0XL3tfmMoxLM1QqgcSM0j">
 <rect 
