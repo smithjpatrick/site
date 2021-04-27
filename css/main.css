@@ -12,8 +12,37 @@
 .color__item > *:first-child {
   height: 3rem;
   width: 6rem;
-  margin-right: 0.5rem;
-  background-color: red; }
+  margin-right: 0.5rem; }
+
+.color0 {
+  background-color: #ebf4fa; }
+
+.color1 {
+  background-color: #d6e8f5; }
+
+.color2 {
+  background-color: #add1eb; }
+
+.color3 {
+  background-color: #85bae0; }
+
+.color4 {
+  background-color: #5ca3d6; }
+
+.color5 {
+  background-color: #338ccc; }
+
+.color6 {
+  background-color: #2970a3; }
+
+.color7 {
+  background-color: #1f547a; }
+
+.color8 {
+  background-color: #143852; }
+
+.color9 {
+  background-color: #0a1c29; }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -344,8 +373,8 @@ a {
 .l-contact {
   padding-top: 12rem;
   padding-bottom: 12rem;
-  background-color: #deecf7;
-  color: #0e2739; }
+  background-color: #ebf4fa;
+  color: #1f547a; }
   @media all and (min-width: 768px) {
     .l-contact {
       background-color: #fff; } }
@@ -450,8 +479,8 @@ a {
   @media all and (min-width: 768px) {
     .form {
       padding: 1.5rem;
-      background-color: #deecf7;
-      box-shadow: 0 16px 0 -8px #64a8d8, 0 32px 0 -16px #276b9b, 0 48px 0 -24px #0e2739; } }
+      background-color: #ebf4fa;
+      box-shadow: 0 16px 0 -8px #85bae0, 0 32px 0 -16px #338ccc, 0 48px 0 -24px #1f547a; } }
   .form > *:not(:last-child) {
     margin-bottom: 1.5rem; }
   .form__label {
@@ -461,7 +490,7 @@ a {
     margin-bottom: 0.25rem; }
   .form__field {
     color: #333;
-    border: 2px solid #0e2739;
+    border: 2px solid #1f547a;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 0.5rem;
     display: block;
@@ -480,14 +509,14 @@ a {
       background-color: white; }
   .form__submit {
     color: #fff;
-    background-color: #276b9b;
+    background-color: #338ccc;
     font-family: "Poppins", Helvetica, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 500;
     border-radius: 0;
     transition: background-color 0.1s ease-out; }
     .form__submit:hover {
-      background-color: #1b496a; }
+      background-color: #2970a3; }
 
 .form__group.error-item {
   color: #ba0000; }
@@ -524,9 +553,9 @@ a {
   position: relative;
   max-width: calc(100% - 1rem);
   margin-left: auto;
-  border: 4px solid #1b496a;
+  border: 4px solid #2970a3;
   margin-bottom: 10rem;
-  color: #1b496a; }
+  color: #2970a3; }
 
 .card,
 .card__text {
@@ -546,7 +575,7 @@ a {
   font-weight: 700; }
 
 .card__link {
-  color: #1b496a; }
+  color: #2970a3; }
   .card__link::after {
     content: "";
     position: absolute;
@@ -569,7 +598,7 @@ a {
   letter-spacing: 0.05rem; }
 
 .card__cta-icon {
-  fill: #1b496a;
+  fill: #2970a3;
   line-height: 100%;
   display: inline;
   margin-left: 0.25rem;
@@ -590,7 +619,7 @@ a {
   text-decoration: underline; }
 
 .card:focus-within {
-  box-shadow: 0 16px 0 -8px #276b9b, 0 32px 0 -16px #64a8d8, 0 48px 0 -24px #c6dff1; }
+  box-shadow: 0 16px 0 -8px #338ccc, 0 32px 0 -16px #85bae0, 0 48px 0 -24px #d6e8f5; }
 
 .card:focus-within .card__link {
   outline: none;
@@ -601,22 +630,22 @@ a {
   outline-offset: -0.5rem; }
 
 .shadow--accordion {
-  box-shadow: 0 16px 0 -8px #64a8d8, 0 32px 0 -16px #276b9b, 0 48px 0 -24px #0e2739;
+  box-shadow: 0 16px 0 -8px #85bae0, 0 32px 0 -16px #338ccc, 0 48px 0 -24px #1f547a;
   transition: transform 0.2s, box-shadow 0.2s; }
 
 .shadow--top-right {
-  box-shadow: -8px 8px 0 0px #1b496a, -16px 16px 0 0px #338ccc;
+  box-shadow: -8px 8px 0 0px #2970a3, -16px 16px 0 0px #5ca3d6;
   transition: transform 0.2s, box-shadow 0.2s; }
   .shadow--top-right:hover {
     transform: translateY(-20px);
-    box-shadow: -16px 16px 0 0px #338ccc, -32px 32px 0 0px #95c3e4; }
+    box-shadow: -16px 16px 0 0px #5ca3d6, -32px 32px 0 0px #add1eb; }
 
 .shadow--top {
-  box-shadow: -16px 16px 0 0px #338ccc;
+  box-shadow: -16px 16px 0 0px #5ca3d6;
   transition: transform 0.2s, box-shadow 0.2s; }
   .shadow--top:hover {
     transform: translateY(-20px);
-    box-shadow: -24px 24px 0 0px #95c3e4; }
+    box-shadow: -24px 24px 0 0px #add1eb; }
 
 @media all and (min-width: 768px) {
   .card {
@@ -638,7 +667,7 @@ a {
   .card__text {
     background-color: #fff;
     position: absolute;
-    border: 4px solid #1b496a;
+    border: 4px solid #2970a3;
     flex-grow: 1;
     top: 50%;
     transform: translateY(-50%);
@@ -651,18 +680,18 @@ a {
     transition: transform 0.2s; }
   .shadow--accordion .card__text {
     z-index: 1;
-    box-shadow: 0 12px 0 -8px #276b9b, 0 24px 0 -16px #64a8d8, 0 36px 0 -24px #c6dff1;
+    box-shadow: 0 12px 0 -8px #338ccc, 0 24px 0 -16px #85bae0, 0 36px 0 -24px #d6e8f5;
     transition: transform 0.2s, box-shadow 0.2s; }
     .shadow--accordion .card__text:hover {
       transform: translateY(-55%);
-      box-shadow: 0 16px 0 -8px #276b9b, 0 32px 0 -16px #64a8d8, 0 48px 0 -24px #c6dff1; }
+      box-shadow: 0 16px 0 -8px #338ccc, 0 32px 0 -16px #85bae0, 0 48px 0 -24px #d6e8f5; }
   .shadow--top-right .card__text {
     z-index: 1;
-    box-shadow: -8px 8px 0 0px #1b496a, -16px 16px 0 0px #338ccc;
+    box-shadow: -8px 8px 0 0px #2970a3, -16px 16px 0 0px #5ca3d6;
     transition: transform 0.2s, box-shadow 0.2s; }
     .shadow--top-right .card__text:hover {
       transform: translateY(-55%);
-      box-shadow: -12px 12px 0 0px #338ccc, -24px 24px 0 0px #95c3e4; }
+      box-shadow: -12px 12px 0 0px #5ca3d6, -24px 24px 0 0px #add1eb; }
   .shadow--top .card__text {
     z-index: 1;
     box-shadow: -12px 12px 0 0px rgba(27, 73, 106, 0.6);
