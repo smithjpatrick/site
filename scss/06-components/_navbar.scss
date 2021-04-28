@@ -90,7 +90,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   &__logo-link,
   &__logo-link:link,
   &__logo-link:visited {
-    color: $color-primary-dark;
+    color: $text-primary;
     height: 4rem;
     margin: 1rem 0;
     transition: height 0.2s, margin 0.2s;
@@ -98,10 +98,10 @@ $nav-color: hsla(0, 0%, 100%, 1);
 
   &__logo-link:hover,
   &__logo-link:focus {
-    color: $color-primary-default;
+    color: map-get($map: $color-primary, $key: 500);
 
     & .nav__img {
-      fill: $color-primary-default;
+      fill: map-get($map: $color-primary, $key: 500);
     }
 
     & .logo__img--eyebrows {
@@ -140,7 +140,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   &__img {
     height: 3rem;
     line-height: 100%;
-    fill: $color-primary-dark;
+    fill: $text-primary;
     transition: height 0.2s;
 
     @media all and (min-width: $desktop) {
@@ -221,7 +221,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   & .menu__link,
   & .submenu__link {
     vertical-align: middle;
-    color: $color-primary-dark;
+    color: $text-primary;
     font-size: 150%;
 
     @media all and (min-width: $tablet) {
@@ -230,8 +230,8 @@ $nav-color: hsla(0, 0%, 100%, 1);
     min-width: 48px;
     padding: 1rem 0;
     background-image: linear-gradient(
-      $color-primary-default,
-      $color-primary-default
+      map-get($map: $color-primary, $key: 500),
+      map-get($map: $color-primary, $key: 500)
     );
     background-position-y: 75%;
     background-repeat: no-repeat;
@@ -287,7 +287,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   }
 
   &__icon#chevron {
-    fill: $color-primary-dark;
+    fill: $text-primary;
     transition: transform 0.2s;
   }
 }
@@ -358,7 +358,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
 //////////////////
 .nav {
   &__toggle {
-    color: $color-primary-dark;
+    color: $text-primary;
     border: none;
     z-index: 100;
     display: flex;
@@ -380,7 +380,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
   }
 
   & .icon__burger {
-    fill: $color-primary-default;
+    fill: map-get($map: $color-primary, $key: 500);
     transform-origin: 50% 50%;
     transition: transform 0.5s;
 

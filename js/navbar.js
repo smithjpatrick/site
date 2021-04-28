@@ -154,7 +154,9 @@ document.addEventListener('keydown', (event) => {
     const lastLinkIndex = subMenuLinks.length - 1
     const lastLink = subMenuLinks[lastLinkIndex]
     if (link.nextElementSibling) {
+     
       link.addEventListener('focus', function() {
+        console.log("focus")
         this.parentElement.classList.add('focus')
         subMenuLinks.forEach( function(number) {
           number.setAttribute("tabindex", "0")
@@ -235,11 +237,13 @@ const pageFocusElements = body.querySelectorAll(focusableElements); // select th
   })
 
   subMenuBtn.addEventListener("blur", function () {
+    console.log("blur")
     document.querySelector(".menu__item").classList.remove('focus')
   })
 
     // toggle Dropdown menu on button click
 subMenuBtn.addEventListener("click", function () {
+  
   let expanded = this.getAttribute('aria-expanded') === 'true' || false;
   this.setAttribute('aria-expanded', !expanded);
   if (subMenuBtn.parentElement.classList.contains("focus")) {
@@ -247,5 +251,12 @@ subMenuBtn.addEventListener("click", function () {
   } else {
     subMenuBtn.parentElement.classList.add("focus");
   }
+})
+    // toggle Dropdown menu on button click
+navLink.addEventListener("mouseup", function () {
+  
+  
+    subMenuBtn.parentElement.classList.remove("focus");
+  
 })
 

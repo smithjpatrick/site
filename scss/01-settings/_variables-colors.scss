@@ -74,22 +74,80 @@ $color-error: #ba0000;
 $color-warning: #ba6c00;
 $color-success: #098100;
 
-$primary-base-h: 205;
-  $primary-base-s: 60;
-  $primary-base-l: 50;
-  $primary-base-hsl: hsl($primary-base-h, $primary-base-s, $primary-base-l);
+$primary-base-h: 225;
+$primary-base-s: 54;
+$primary-base-l: 50;
+$primary-base-hsl: hsl($primary-base-h, $primary-base-s, $primary-base-l);
 $color-primary: (
-  50: hsl($primary-base-h, $primary-base-s, $primary-base-l + ((100-$primary-base-l)/5)*4.5),
-  100: hsl($primary-base-h, $primary-base-s, $primary-base-l + ((100-$primary-base-l)/5)*4),
-  200: hsl($primary-base-h, $primary-base-s, $primary-base-l + ((100-$primary-base-l)/5)*3),
-  300: hsl($primary-base-h, $primary-base-s, $primary-base-l + ((100-$primary-base-l)/5)*2),
-  400: hsl($primary-base-h, $primary-base-s, $primary-base-l + ((100-$primary-base-l)/5)*1),
-  500: hsl($primary-base-h, $primary-base-s, $primary-base-l + ((100-$primary-base-l)/5)*0),
-  600: hsl($primary-base-h, $primary-base-s, $primary-base-l - (($primary-base-l)/5)*1),
-  700: hsl($primary-base-h, $primary-base-s, $primary-base-l - (($primary-base-l)/5)*2),
-  800: hsl($primary-base-h, $primary-base-s, $primary-base-l - (($primary-base-l)/5)*3),
-  900: hsl($primary-base-h, $primary-base-s, $primary-base-l - (($primary-base-l)/5)*4),
+  50:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l + ((100-$primary-base-l)/5) * 4.5
+    ),
+  100:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l + ((100-$primary-base-l)/5) * 4
+    ),
+  200:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l + ((100-$primary-base-l)/5) * 3
+    ),
+  300:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l + ((100-$primary-base-l)/5) * 2
+    ),
+  400:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l + ((100-$primary-base-l)/5) * 1
+    ),
+  500:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l + ((100-$primary-base-l)/5) * 0
+    ),
+  600:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l - (($primary-base-l)/5) * 1
+    ),
+  700:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l - (($primary-base-l)/5) * 2
+    ),
+  800:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l - (($primary-base-l)/5) * 3
+    ),
+  900:
+    hsl(
+      $primary-base-h,
+      $primary-base-s,
+      $primary-base-l - (($primary-base-l)/5) * 4
+    ),
 );
+
+$text-primary: map-get(
+  $map: $color-primary,
+  $key: 700,
+);
+table.color-group {
+  border: none;
+}
 
 .color__item + .color__item {
   margin-top: 0.1rem;
@@ -101,50 +159,90 @@ $color-primary: (
   align-items: center;
 }
 
-.color__item > *:first-child {
-  height: 3rem;
-  width: 6rem;
-  margin-right: 0.5rem;
-}
-
 .color0 {
   background-color: map-get($map: $color-primary, $key: 50);
-  // background-color: scale-color($primary-base-hsl, lightness, 100%);
 }
 .color1 {
   background-color: map-get($map: $color-primary, $key: 100);
-  // background-color: $primary-base-hsl
 }
 .color2 {
   background-color: map-get($map: $color-primary, $key: 200);
-  // background-color: $primary-base-hsl
 }
 .color3 {
   background-color: map-get($map: $color-primary, $key: 300);
-  // background-color: $primary-base-hsl
 }
 .color4 {
   background-color: map-get($map: $color-primary, $key: 400);
-  // background-color: $primary-base-hsl
 }
 .color5 {
   background-color: map-get($map: $color-primary, $key: 500);
-  // background-color: $primary-base-hsl
 }
 .color6 {
   background-color: map-get($map: $color-primary, $key: 600);
-  // background-color: $primary-base-hsl
 }
 .color7 {
   background-color: map-get($map: $color-primary, $key: 700);
-  // background-color: $primary-base-hsl
 }
 .color8 {
   background-color: map-get($map: $color-primary, $key: 800);
-  // background-color: $primary-base-hsl
 }
 .color9 {
   background-color: map-get($map: $color-primary, $key: 900);
-  // background-color: $primary-base-hsl
 }
 
+td.color0 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 50);
+}
+td.color1 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 100);
+}
+td.color2 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 200);
+}
+td.color3 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 300);
+}
+td.color4 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 400);
+}
+td.color5 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 500);
+}
+td.color6 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 600);
+}
+td.color7 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 700);
+}
+td.color8 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 800);
+}
+td.color9 {
+  background-color: inherit;
+  color: map-get($map: $color-primary, $key: 900);
+}
+
+.color__item * {
+  background-color: initial;
+  padding: 1rem 0;
+  min-width: 55px;
+  text-align: center;
+}
+.color__item * + * {
+  margin-left: 2rem;
+}
+
+.color__item th {
+  font-weight: 700;
+  font-family: "Poppins";
+  background-color: $color-white;
+}

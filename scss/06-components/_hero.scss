@@ -1,5 +1,5 @@
 .hero {
-  color: $color-primary-dark;
+  color: $text-primary;
   font-family: $secondary-type;
   margin: calc(30vh - 6rem) 0;
   padding-top: 6rem;
@@ -25,15 +25,15 @@
   &__link {
     padding: 0.25rem 0;
     margin: -0.25rem 0;
-    color: $color-primary-dark;
+    color: $text-primary;
     font-size: 1.125rem;
     background-image: linear-gradient(
-      $color-primary-default,
-      $color-primary-default
+      map-get($color-primary, 500),
+      map-get($color-primary, 500)
     );
     background-position: 50% 90%;
     background-repeat: no-repeat;
-    background-size: 100% 3px;
+    background-size: 100% 4px;
     transition: background-size 0.2s ease;
     display: inline;
 
