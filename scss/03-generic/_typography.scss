@@ -116,6 +116,16 @@ h6 {
   font-family: $secondary-type;
   font-weight: $medium;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  color: $text-primary;
+}
 
 // @import url("https://fonts.googleapis.com/css?family=Poppins:400");
 

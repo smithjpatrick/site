@@ -1,3 +1,8 @@
-.l-home-main {
-  // background-color: red;
+main {
+  & > * + * {
+    margin-top: 2em;
+  }
+  & section > * + * {
+    margin-top: 1.5em;
+  }
 }

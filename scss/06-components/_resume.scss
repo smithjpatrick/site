@@ -1,0 +1,61 @@
+.resume {
+  border: 4px solid $text-primary;
+  padding: 2rem;
+  max-width: 56rem;
+  margin-bottom: 10rem;
+}
+
+.resume__section {
+  margin-bottom: 2rem;
+}
+.resume__heading {
+  margin-bottom: 1.5rem;
+}
+
+.resume__subsection {
+  margin-bottom: 1.5rem;
+
+  &__title {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.resume__position {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+
+  & .role {
+    font-style: italic;
+  }
+}
+
+.resume__list {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+
+  &-item {
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  &--inline .resume__list-item {
+    display: inline;
+
+    &::after {
+      content: ",";
+    }
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-between {
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  &-left {
+    justify-content: left;
+  }
+}

@@ -13,8 +13,8 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-}
 
-.readable-container {
-  max-width: 525px;
+  & .readable {
+    max-width: 600px;
+  }
 }
