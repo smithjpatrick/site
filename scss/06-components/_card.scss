@@ -4,7 +4,7 @@
   margin-left: auto;
   border: 4px solid map-get($color-primary, 600);
   margin-bottom: 10rem;
-  color: $text-primary;
+  color: $text-lite-bg;
 }
 .card,
 .card__text {
@@ -33,8 +33,6 @@
 }
 
 .card__link {
-  color: $text-primary;
-
   &::after {
     content: "";
     position: absolute;
@@ -66,7 +64,7 @@
 //   outline: 2px solid map-get($color-primary, 600);
 // }
 .card__cta-icon {
-  fill: $text-primary;
+  fill: currentcolor;
   line-height: 100%;
   display: inline;
   margin-left: 0.25rem;
@@ -186,7 +184,7 @@
   .card__text {
     background-color: $color-white;
     position: absolute;
-    border: 4px solid $text-primary;
+    border: 4px solid currentColor;
     flex-grow: 1;
     top: 50%;
     transform: translateY(-50%);

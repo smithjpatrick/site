@@ -1,12 +1,9 @@
 .hero {
-  color: $text-primary;
-  font-family: $secondary-type;
   margin: calc(30vh - 6rem) 0;
   padding-top: 6rem;
   padding-bottom: 6rem;
 
   &__title {
-    font-weight: 700;
     margin-bottom: 1.5rem;
 
     &--small {
@@ -17,32 +14,13 @@
   }
 
   &__description {
-    font-family: $secondary-type;
     font-size: 1.125rem;
     max-width: (400 / 16) * 1em;
   }
+}
 
-  &__link {
-    padding: 0.25rem 0;
-    margin: -0.25rem 0;
-    color: $text-primary;
-    font-size: 1.125rem;
-    background-image: linear-gradient(
-      map-get($color-primary, 500),
-      map-get($color-primary, 500)
-    );
-    background-position: 50% 90%;
-    background-repeat: no-repeat;
-    background-size: 100% 4px;
-    transition: background-size 0.2s ease;
-    display: inline;
-
-    &:hover {
-      background-size: 100% 4px;
-    }
-
-    &:focus {
-      @include link-focus;
-    }
-  }
+#about .hero {
+  padding-top: 6rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }

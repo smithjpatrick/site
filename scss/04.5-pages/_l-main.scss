@@ -1,8 +1,11 @@
 main {
   & > * + * {
-    margin-top: 2em;
   }
-  & section > * + * {
-    margin-top: 1.5em;
+  & section > * + *:not(ul) {
+    margin-top: 1em;
   }
+}
+
+section {
+  padding-bottom: 3rem;
 }

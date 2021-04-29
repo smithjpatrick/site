@@ -1,16 +1,3 @@
-.l-hero {
-  &--home {
-    height: 90vh;
-    min-height: 640px;
-    width: 100%;
-    background-color: $test-2;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: $navbar-height;
-    @include spacer(m, 4, b);
-  }
-}
+
 
 

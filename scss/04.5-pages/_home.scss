@@ -1,11 +1,9 @@
 #home {
-  color: $color-primary-dark;
-  
   & #work {
     padding: 6rem 0;
     background-color: hsla(205, 55%, 87%, 0.3);
   }
-  
+
   & .section-title {
     margin-bottom: 6rem;
   }

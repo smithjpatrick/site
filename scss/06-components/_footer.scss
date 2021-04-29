@@ -11,10 +11,6 @@
   z-index: 1;
 }
 
-.footer__link {
-  color: $color-white;
-}
-
 ////////////////////////
 // || Typography
 ////////////////////////
@@ -51,6 +47,7 @@
   }
 
   &__img {
+    fill: currentColor;
     width: 3rem;
     height: calc(72 / 48 * 3rem);
     flex-grow: 0;
@@ -96,7 +93,6 @@
 
   &__link {
     display: inline-block;
-    color: $color-white;
     padding: 0.5rem 0;
     margin: -0.5rem 0;
   }
@@ -123,9 +119,4 @@
   background-position: 50% 100%;
   background-repeat: no-repeat;
   transition: all 0.1s ease-in-out;
-}
-.footer__link:hover span,
-.footer__link:focus span {
-  background-size: 100% 100%;
-  color: map-get($color-primary, 700);
 }

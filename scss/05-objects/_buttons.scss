@@ -1,10 +1,32 @@
+button {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
 .btn {
   border-radius: $gh/2;
   border: none;
   padding: (1 * $gh) (1.5 * $gh);
   line-height: 1;
   background-color: $color-white;
-  color: $color-txt-primary;
+  color: $text-lite-bg;
   cursor: pointer;
   font-size: 100%;
+  font-family: $secondary-type;
+}
+
+.btn--primary {
+  color: $color-white;
+  background-color: map-get($map: $color-primary, $key: 500);
+  font-weight: $medium;
+  border-radius: 0;
+  transition: background-color 0.1s ease-out;
+
+  &:hover {
+    background-color: map-get($map: $color-primary, $key: 600);
+  }
 }

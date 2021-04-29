@@ -1,8 +1,13 @@
 .resume {
-  border: 4px solid $text-primary;
+  border: 4px solid currentColor;
   padding: 2rem;
   max-width: 56rem;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
+
+  box-shadow: -8px 8px 0 0px map-get($color-primary, 600),
+    -16px 16px 0 0px map-get($color-primary, 400); //double shadow
+
+  // box-shadow: -16px 16px 0 0px map-get($color-primary, 400); //single shadow
 }
 
 .resume__section {
