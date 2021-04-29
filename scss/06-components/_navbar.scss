@@ -161,7 +161,7 @@ $nav-color: hsla(0, 0%, 100%, 1);
     @include viz-hidden();
 
     text-align: center;
-    background: inherit;
+    background-color: $nav-color;
     position: fixed;
     left: 0;
     top: 0;

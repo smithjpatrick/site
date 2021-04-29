@@ -981,7 +981,7 @@ a:focus {
   .link:focus {
     outline: 3px dotted currentColor; }
 
-.skip-to-content {
+a.skip-to-content {
   position: absolute;
   color: #fff;
   top: -70px;
@@ -1171,7 +1171,7 @@ a:focus {
   overflow: hidden;
   padding: 0;
   text-align: center;
-  background: inherit;
+  background-color: white;
   position: fixed;
   left: 0;
   top: 0;
