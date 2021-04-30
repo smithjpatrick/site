@@ -29,4 +29,24 @@ button {
   &:hover {
     background-color: map-get($map: $color-primary, $key: 600);
   }
+
+  &:focus {
+    @include link-focus;
+    outline-offset: 4px;
+    outline-color: map-get($map: $color-primary, $key: 600);
+  }
+}
+
+a.btn--primary,
+a:link.btn--primary,
+a:visited.btn--primary {
+  color: $color-white;
+  text-align: center;
+
+  @media all and (min-width: $tablet) {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

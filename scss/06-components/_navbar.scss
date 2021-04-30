@@ -1,7 +1,7 @@
 $navbar-height: 6rem; /*-- see variables-widths.scss */
 $navbar-height--small: 4rem; /*-- see variables-widths.scss */
 
-$nav-color: hsla(0, 0%, 100%, 1);
+$nav-color: hsla(0, 0%, 100%, 100);
 
 //for visually hidden elements still visible to screen readers
 @mixin viz-hidden {

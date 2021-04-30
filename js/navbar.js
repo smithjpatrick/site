@@ -236,10 +236,10 @@ const pageFocusElements = body.querySelectorAll(focusableElements); // select th
     document.querySelector(".menu__item").classList.remove('focus')
   })
 
-  subMenuBtn.addEventListener("blur", function () {
-    console.log("blur")
-    document.querySelector(".menu__item").classList.remove('focus')
-  })
+  // subMenuBtn.addEventListener("blur", function () {
+  //   console.log("blur")
+  //   document.querySelector(".menu__item").classList.remove('focus')
+  // })
 
     // toggle Dropdown menu on button click
 subMenuBtn.addEventListener("click", function () {
@@ -252,11 +252,25 @@ subMenuBtn.addEventListener("click", function () {
     subMenuBtn.parentElement.classList.add("focus");
   }
 })
-    // toggle Dropdown menu on button click
-navLink.addEventListener("mouseup", function () {
-  
-  
-    subMenuBtn.parentElement.classList.remove("focus");
-  
-})
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.submenu__button')) {
+    var dropdowns = document.getElementsByClassName("submenu");
+    console.log(document.getElementsByClassName("submenu"))
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      console.log("openDropdown: " + openDropdown)
+      if (openDropdown.parentElement.classList.contains('focus')) {
+        console.log("contains focus")
+        openDropdown.parentElement.classList.remove('focus');
+      }
+    }
+  }
+}
+
+document.getElementById("menu").addEventListener('click',function(event){
+  event.stopPropagation();
+});
 

@@ -94,12 +94,6 @@
 }
 
 .card:focus-within {
-  box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
-    0 32px 0 -16px map-get($color-primary, 300),
-    0 48px 0 -24px map-get($color-primary, 100);
-}
-
-.card:focus-within {
   & .card__link {
     outline: none;
     text-decoration: none;

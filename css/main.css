@@ -517,6 +517,24 @@ button {
   transition: background-color 0.1s ease-out; }
   .btn--primary:hover {
     background-color: #2f4a9d; }
+  .btn--primary:focus {
+    outline: 3px dotted;
+    outline-offset: 4px;
+    outline-color: #2f4a9d; }
+
+a.btn--primary,
+a:link.btn--primary,
+a:visited.btn--primary {
+  color: #fff;
+  text-align: center; }
+  @media all and (min-width: 600px) {
+    a.btn--primary,
+    a:link.btn--primary,
+    a:visited.btn--primary {
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%); } }
 
 .o-dropdown {
   list-style: none;
@@ -661,9 +679,6 @@ button {
 .card a:focus {
   outline: 3px dotted;
   text-decoration: underline; }
-
-.card:focus-within {
-  box-shadow: 0 16px 0 -8px #3b5dc4, 0 32px 0 -16px #899edc, 0 48px 0 -24px #d8dff3; }
 
 .card:focus-within .card__link {
   outline: none;
@@ -942,9 +957,7 @@ section.codepen {
   transition: all 0.1s ease-in-out; }
 
 .hero {
-  margin: calc(30vh - 6rem) 0;
-  padding-top: 6rem;
-  padding-bottom: 6rem; }
+  padding: calc(28vh) 0; }
   .hero__title {
     margin-bottom: 1.5rem; }
     .hero__title--small {
@@ -955,10 +968,30 @@ section.codepen {
     font-size: 1.125rem;
     max-width: 25em; }
 
-#about .hero {
-  padding-top: 6rem;
-  padding-bottom: 0;
-  margin-bottom: 0; }
+#about .hero,
+.case-study .hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14vh; }
+  #about .hero__text,
+  .case-study .hero__text {
+    flex-grow: 2; }
+  #about .hero__img,
+  .case-study .hero__img {
+    height: 20rem;
+    overflow: hidden;
+    width: 50%;
+    box-shadow: -16px 16px 0 0px #899edc; }
+  #about .hero__img img,
+  .case-study .hero__img img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    width: 100%; }
+
+.content > *:not(:last-child) {
+  margin-bottom: 1.5rem; }
 
 a,
 a:link,
@@ -1498,8 +1531,8 @@ a.skip-to-content {
   max-width: 36rem; }
 
 .centered {
-  margin-left: 0 auto;
-  margin-right: 0 auto; }
+  margin-left: auto;
+  margin-right: auto; }
 
 .u-center-X {
   margin: 0 auto; }

@@ -14,7 +14,7 @@
 
     <title>Jeff Smith | Toast Case Study</title>
   </head>
-  <body>
+  <body id="#toast">
     <a href="#content" class="sr-only skip-to-content">Skip to content</a>
     <!-- NAVIGATION -->
     <div class="nav-wrapper">
@@ -116,13 +116,17 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             </svg>
           </span>
         </button>
-        <div 
-        id="menu-wrapper"
-        class="menu-wrapper">
+        <div id="menu-wrapper" class="menu-wrapper">
           <ul class="menu">
             <li class="menu__item menu__item--dd">
-              <a href="../index.html#work" class="menu__link menu__link--icon">Work </a>
-              <button aria-hidden="true" tabindex="-1" class="btn submenu__button">
+              <a href="../index.html#work" class="menu__link menu__link--icon"
+                >Work
+              </a>
+              <button
+                aria-hidden="true"
+                tabindex="-1"
+                class="btn submenu__button"
+              >
                 <svg
                   class="nav__icon expand"
                   version="1.1"
@@ -158,10 +162,18 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
 
               <ul class="submenu invisible">
                 <li class="submenu__item">
-                  <a tabindex="-1" class="submenu__link submenu__link--active" href="#start">Toast</a>
+                  <a
+                    tabindex="-1"
+                    class="submenu__link submenu__link--active"
+                    href="#start"
+                    >Toast</a
+                  >
                 </li>
                 <li class="submenu__item">
-                  <a tabindex="-1" class="submenu__link " href="waltham-mills.html"
+                  <a
+                    tabindex="-1"
+                    class="submenu__link"
+                    href="waltham-mills.html"
                     >Waltham Mills</a
                   >
                 </li>
@@ -189,145 +201,64 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
       </nav>
     </div>
 
-    <main class="container">
-      <h1>TOAST</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        cupiditate in molestias quo quae, numquam molestiae id voluptates qui
-        beatae est voluptas earum recusandae consectetur sit quod omnis optio.
-        Aspernatur veritatis rem vel, reiciendis amet accusantium esse mollitia
-        ipsa modi?
-      </p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        cupiditate in molestias quo quae, numquam molestiae id voluptates qui
-        beatae est voluptas earum recusandae consectetur sit quod omnis optio.
-        Aspernatur veritatis rem vel, reiciendis amet accusantium esse mollitia
-        ipsa modi?
-      </p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
-        cupiditate in molestias quo quae, numquam molestiae id voluptates qui
-        beatae est voluptas earum recusandae consectetur sit quod omnis optio.
-        Aspernatur veritatis rem vel, reiciendis amet accusantium esse mollitia
-        ipsa modi?
-      </p>
-    </main>
-    <!-- HERO -->
-    <!-- <section id="top" class="l-hero l-hero--home">
-      <div class="container">
-        <div class="o-sbs c-card plumber-grid">
-          <div class="o-sbs__child c-card__media">
-            <img
-              class="o-sbs__img c-card__img"
-              src="../img/placeholder.png"
-              alt="placeholder image"
-            />
-          </div>
-          <div class="o-sbs__child c-card__details">
-            <h1 class="c-card__heading">
-              <span class="c-card__title h-xxl">Hi, I'm Jeff</span>
-              <span class="c-card__subtitle h-med"
-                >UX Designer & Researcher</span
-              >
+    <main id="content" class="case-study">
+      <section class="container">
+        <div class="hero">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              <!-- <div class="hero__title--small"></div> -->
+              <div>Toast</div>
             </h1>
-            <p class="c-card__details">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea aut
-              quibusdam harum, consequuntur sed mollitia aliquam saepe sunt
-              labore quas officiis dolorem sequi quia magni nesciunt consequatur
-              explicabo odio est?
+            <p class="hero__description">
+              My team and I designed a self-service kiosk interface for
+              fast-casual restaurants backed by research from interviews and
+              usability tests.
             </p>
-            <a href="#" class="c-card__link"
-              >Learn more about me! <span class="link-icon">&rarr;</span>
-            </a>
+          </div>
+          <div class="hero__img">
+            <img src="/img/pie_jeff.jpg" alt="Jeff holding two fresh pies" />
           </div>
         </div>
-      </div>
-    </section> -->
-
-    <!-- WORK SECTION -->
-    <!-- <main class="l-home-main container card-list plumber-grid">
-      <h2 class="section__heading">Recent Projects</h2>
-
-      <div class="o-sbs c-card c-card--toast">
-        <div class="o-sbs__child c-card__media">
-          <img
-            class="o-sbs__img c-card__img"
-            src="../img/placeholder.png"
-            alt="placeholder image"
-          />
-        </div>
-        <div class="o-sbs__child c-card__details">
-          <h3 class="c-card__title h-l">Toast</h3>
-          <h4 class="c-card__subtitle h-small">
-            Redesigning a self-service kiosk
-          </h4>
-
-          <p class="c-card__details">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea aut
-            quibusdam harum, consequuntur sed mollitia aliquam saepe sunt labore
-            quas officiis dolorem sequi quia magni nesciunt consequatur
-            explicabo odio est?
+        <div class="content readable centered">
+          <p>
+            I started my design career as a civil engineer, devising system
+            improvements for a natural gas utility. I gained a lot of experience
+            and skills from this role that have helped me as a UX designer,
+            like:
           </p>
-          <a href="#" class="c-card__link c-card__link--toast">
-            View the Toast case study <span class="link-icon">&rarr;</span>
-            
-          </a>
-        </div>
-      </div>
-
-      <div class="o-sbs c-card c-card--wmos">
-        <div class="o-sbs__child c-card__media">
-          <img
-            class="o-sbs__img c-card__img"
-            src="../img/placeholder.png"
-            alt="placeholder image"
-          />
-        </div>
-        <div class="o-sbs__child c-card__details">
-          <h3 class="c-card__title h-l">Waltham Mills Open Studios</h3>
-          <h4 class="c-card__subtitle h-small">
-            Usability testing for an art show website
-          </h4>
-          <p class="c-card__details">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea aut
-            quibusdam harum, consequuntur sed mollitia aliquam saepe sunt labore
-            quas officiis dolorem sequi quia magni nesciunt consequatur
-            explicabo odio est?
+          <ul>
+            <li>breaking down a problem.</li>
+            <li>gathering data and using it to inform decision-making.</li>
+            <li>iterating through ideas based on stakeholder feedback.</li>
+            <li>
+              communicating the value of my work effectively to
+              multi-disciplinary teams.
+            </li>
+          </ul>
+          <p>
+            As a creative outlet from this work, I messed around in Illustrator
+            and Photoshop creating things for my friends and family (gifts,
+            posters, t-shirt designs, etc). It was fun to learn about
+            typography, color theory, composition and spacing and what not, but
+            it was mostly to create things that got people smiling or excited.
           </p>
-          <a href="#" class="c-card__link">
-            View the Waltham Mills case study
-            <span class="link-icon">&rarr;</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="o-sbs c-card c-card--canton">
-        <div class="o-sbs__child c-card__media">
-          <img
-            class="o-sbs__img c-card__img"
-            src="../img/placeholder.png"
-            alt="placeholder image"
-          />
-        </div>
-        <div class="o-sbs__child c-card__details">
-          <h3 class="c-card__title h-l">Canton Public Library</h3>
-          <h4 class="c-card__subtitle h-small">
-            Updating information architecture
-          </h4>
-          <p class="c-card__details">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea aut
-            quibusdam harum, consequuntur sed mollitia aliquam saepe sunt labore
-            quas officiis dolorem sequi quia magni nesciunt consequatur
-            explicabo odio est?
+          <p>
+            I was drawn to UX design as a career because it sounded like this
+            perfect combination of my engineering work and graphic design:
+            designing for utility (pun <em>very much</em> intended) and emotion.
+            In 2018 I enrolled in Bentley’s Human Factors in Information Design
+            program full-time. It gave me a strong foundation in UX principles
+            and helped me learn how to leverage my previous experience through a
+            human-centered perspective.
           </p>
-          <a href="#top" class="c-card__link">
-            View the Canton Library case study
-            <span class="link-icon">&rarr;</span>
-          </a>
+          <p>
+            Outside of design, I coach ultimate frisbee, work on my green thumb,
+            and try to bake the perfect loaf of sourdough bread. It still eludes
+            me, but I'm close.
+          </p>
         </div>
-      </div>
-    </main> -->
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-wrapper">
