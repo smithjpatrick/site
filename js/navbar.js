@@ -236,11 +236,6 @@ const pageFocusElements = body.querySelectorAll(focusableElements); // select th
     document.querySelector(".menu__item").classList.remove('focus')
   })
 
-  // subMenuBtn.addEventListener("blur", function () {
-  //   console.log("blur")
-  //   document.querySelector(".menu__item").classList.remove('focus')
-  // })
-
     // toggle Dropdown menu on button click
 subMenuBtn.addEventListener("click", function () {
   
@@ -253,7 +248,7 @@ subMenuBtn.addEventListener("click", function () {
   }
 })
 
-
+ // close Dropdown menu on click-away
 window.onclick = function(event) {
   if (!event.target.matches('.submenu__button')) {
     var dropdowns = document.getElementsByClassName("submenu");

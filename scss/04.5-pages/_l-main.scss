@@ -1,11 +1,6 @@
-main {
-  & > * + * {
-  }
-  & section > * + *:not(ul) {
-    margin-top: 1em;
-  }
-}
-
-section {
+article section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
   padding-bottom: 3rem;
 }
