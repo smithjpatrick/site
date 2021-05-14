@@ -1,6 +1,40 @@
+$title-column: 1;
+$content-column: 5;
+$grid-gap: 3;
+
 article section {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   padding-bottom: 3rem;
+  gap: $grid-gap;
+}
+
+.section__title {
+  grid-column: $title-column / span 3;
+  justify-self: end;
+  text-align: right;
+}
+
+.section__content {
+  grid-column: $content-column / end;
+}
+
+.section__list {
+   display: flex;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+}
+.section__list-item {
+  width: 40%;
+  margin-right: 1.5rem;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.list__icon {
+  display: block;
+  margin: 0 auto;
+  width: 4rem;
+  height: 4rem;
 }

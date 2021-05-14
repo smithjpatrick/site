@@ -85,6 +85,7 @@ $line-height: (
 p {
   font-size: 100%;
   line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 p.large {
   font-size: map-get($font-size, h6) * 100%;
@@ -176,4 +177,7 @@ h1 > .h-small {
 
 em {
   font-style: italic;
+}
+strong {
+  font-weight: 700;
 }
