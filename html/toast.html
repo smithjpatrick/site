@@ -14,7 +14,7 @@
 
     <title>Jeff Smith | Toast Case Study</title>
   </head>
-  <body>
+  <body id="#toast" class="case-study">
     <a href="#content" class="sr-only skip-to-content">Skip to content</a>
     <!-- NAVIGATION -->
     <div class="nav-wrapper">
@@ -116,13 +116,17 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
             </svg>
           </span>
         </button>
-        <div 
-        id="menu-wrapper"
-        class="menu-wrapper">
+        <div id="menu-wrapper" class="menu-wrapper">
           <ul class="menu">
             <li class="menu__item menu__item--dd">
-              <a href="../index.html#work" class="menu__link menu__link--icon">Work </a>
-              <button aria-hidden="true" tabindex="-1" class="btn submenu__button">
+              <a href="../index.html#work" class="menu__link menu__link--icon"
+                >Work
+              </a>
+              <button
+                aria-hidden="true"
+                tabindex="-1"
+                class="btn submenu__button"
+              >
                 <svg
                   class="nav__icon expand"
                   version="1.1"
@@ -158,10 +162,18 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
 
               <ul class="submenu invisible">
                 <li class="submenu__item">
-                  <a tabindex="-1" class="submenu__link submenu__link--active" href="#start">Toast</a>
+                  <a
+                    tabindex="-1"
+                    class="submenu__link submenu__link--active"
+                    href="#start"
+                    >Toast</a
+                  >
                 </li>
                 <li class="submenu__item">
-                  <a tabindex="-1" class="submenu__link " href="waltham-mills.html"
+                  <a
+                    tabindex="-1"
+                    class="submenu__link"
+                    href="waltham-mills.html"
                     >Waltham Mills</a
                   >
                 </li>
@@ -189,213 +201,120 @@ c18.468,0,20.56-27.361,21.174-31.625c0.347-2.415,2.415-9.638,2.59-16.646C56.126,
       </nav>
     </div>
 
-    <main id="content">
-      <section>
-        <div class="hero container">
-          <h1 class="hero__title h-xxl">
-            <div class="hero__title--small h-xsmall">Here's a bit</div>
-            <div>About me.</div>
-          </h1>
-          <p class="hero__description">
-            I’m from Canton, MA. I enjoy transforming user research into
-            products that make a difference. Also, baking bread. You can
-          </p>
-        </div>
-      </section>
+    <main id="content" class="case-study">
       <section class="container">
-        <h2 id="resume">Resume</h2>
-        <p class="readable">
-          This part is pretty dry, but also pretty important it seems.
-          Unfortunately I can't squeeze in the full breadth and depth of my
-          experience, but I'm always happy to
-          <a href="contact.html" class="hero__link">talk more</a> about any of
-          that if you are interested!
-        </p>
-        <div id="resume" class="resume shadow--top-right">
-          <div class="resume__section">
-            <h3 class="resume__heading h-sm">Experience</h3>
-            <div class="resume__subsection">
-              <h4 class="resume__subsection__title h-xs">JobStep</h4>
-              <div class="resume__position">
-                <div class="role">UX/UI Design Contractor</div>
-                <date class="dates">February 2021 - April 2021</date>
-              </div>
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  Incorporated customer feedback into wireframes, mock ups, and
-                  prototype to support the rebuild of JobStep’s on-boarding
-                  form.
+        <div class="hero">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              <!-- <div class="hero__title--small"></div> -->
+              <div>Toast</div>
+            </h1>
+            <p class="hero__description">
+              My team and I designed a self-ordering kiosk interface to help
+              Toast generate revenue through increased adoption of their kiosk
+              product. From research with stakeholders and usability testing, we
+              designed a solution that helps patrons save time and delivers key
+              features requested by restaurants.
+            </p>
+          </div>
+          <div class="hero__img">
+            <img src="/img/pie_jeff.jpg" alt="Jeff holding two fresh pies" />
+          </div>
+        </div>
+        <div class="content">
+          <div class="section">
+            <h2 class="section__title h-l">Client Challenge</h2>
+            <div class="section__content readable">
+              <p>
+                Toast, Inc. is a producer of point-of-sale hardware and software
+                systems for restaurants. They wanted to increase the adoption of
+                their self-order kiosks to capitalize on the growing demand for
+                kiosk technology in the food service industry. In order to
+                increase restaurant adoption and generate revenue, Toast
+                enlisted the help of my team and me to understand the needs of
+                both restaurants and patrons with respect to kiosk usage and
+                deliver a solution to address them.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <h2 class="section__title h-l">Our Solution</h2>
+            <div class="section__content readable">
+              <p>
+                After an initial client meeting and interviews with a restaurant
+                manager and patrons, my team learned that a successful design
+                needed to support the goals of not just the end user, but also
+                the actual customer of the kiosk itself - the restaurant owner
+                or manager. To that end, our design focused on delivering
+                improvements in the following areas:
+              </p>
+              <ul>
+                <li>
+                  <strong>Time-savings.</strong> One of the primary reasons one
+                  may use a kiosk to order is to skip a long line and save
+                  themselves time, so our kiosk helps patrons get in and out
+                  more quickly.
                 </li>
-                <li class="resume__list-item">
-                  Iterated through early design concepts for desktop and mobile
-                  web from low to high fidelity.
+                <li>
+                  <strong>Personalization.</strong> A preferred method of
+                  ordering is using one’s own mobile device. It’s more personal
+                  and allows users to act upon set preferences. We wanted to
+                  take advantage of purchasing history from repeat customers to
+                  provide a level of personalization on a public device.
                 </li>
-                <li class="resume__list-item">
-                  Conceptualized and designed new feature to help users quickly
-                  and easily find and fix issues
+                <li>
+                  <strong>Item modification.</strong> One of the top requests
+                  from restaurants is improved menu modifications, to cater to
+                  patron needs and also help generate revenue for restaurants.
                 </li>
-                <li class="resume__list-item">
-                  Streamlined the form experience by only displaying the
-                  questions that are relevant to each user
+                <li>
+                  <strong>Upselling.</strong> Kiosks have a higher potential to
+                  increase average check sizes, so we wanted to implement
+                  upselling opportunities that were appropriate and did not feel
+                  overly obtrusive.
                 </li>
               </ul>
             </div>
-            <div class="resume__subsection">
-              <h4 class="resume__subsection__title h-xs">Yummly</h4>
-              <div class="resume__position">
-                <div class="role">UX Research Consultant</div>
-                <div class="dates">July 2020 - September 2020</div>
-              </div>
+          </div>
 
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  Collaborated with product team to optimize research plan and
-                  align it with research objectives
-                </li>
-                <li class="resume__list-item">
-                  Moderated 18 customer interviews and led post-interview
-                  debriefs with note taker(s).
-                </li>
-                <li class="resume__list-item">
-                  Synthesized data and distilled research insights into
-                  actionable recommendations to improve discovery and usability
-                  of Yummly’s paid features.
-                </li>
-              </ul>
-            </div>
-            <div class="resume__subsection">
-              <h4 class="resume__subsection__title h-xs">National Grid</h4>
-              <div class="resume__position">
-                <div class="role">Lead Planning Engineer</div>
-                <div class="dates">June 2018 - November 2018</div>
-              </div>
-              <div class="resume__position">
-                <div class="role">Senior Planning Engineer</div>
-                <div class="dates">June 2016 - June 2018</div>
-              </div>
-              <div class="resume__position">
-                <div class="role">Planning Engineer</div>
-                <div class="dates">June 2011 - June 2016</div>
-              </div>
-
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  Improved service to thousands of customers annually by
-                  designing pipelines that increase overall system performance.
-                </li>
-                <li class="resume__list-item">
-                  Built, maintained, and operated gas system prototypes to A/B
-                  test and validate design decisions for all gas engineering
-                  departments.
-                </li>
-                <li class="resume__list-item">
-                  Secured millions of dollars in funding for projects by
-                  effectively communicating design options and customer benefits
-                  to cross-functional teams and executive stakeholders.
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h2>Our Solution</h2>
+            <p>
+              After an initial client meeting and interviews with a restaurant
+              manager and patrons, my team learned that a successful design
+              needed to support the goals of not just the end user, but also the
+              actual customer of the kiosk itself - the restaurant owner or
+              manager. To that end, our design focused on delivering
+              improvements in the following areas:
+            </p>
           </div>
-          <div class="resume__section">
-            <h3 class="resume__heading h-sm">Education</h3>
-            <div class="resume__subsection">
-              <div class="flex flex-left">
-                <h4 class="resume__subsection__title h-xs">
-                  Bentley University McCallum Graduate School of Business
-                </h4>
-                <span class="location h-xs">, Waltham, MA</span>
-              </div>
-              <div class="resume__position">
-                <div class="role">
-                  MS Human Factors in Information Design, GPA: 3.88
-                </div>
-                <div class="dates">May 2020</div>
-              </div>
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  Beta Gamma Sigma Honor Society
-                </li>
-              </ul>
-            </div>
-            <div class="resume__subsection">
-              <div class="flex flex-left">
-                <h4 class="resume__subsection__title h-xs">
-                  Duke University Pratt School of Engineering
-                </h4>
-                <span class="location h-xs">, Durham, NC</span>
-              </div>
-              <div class="resume__position">
-                <div class="role">BS Civil Engineering</div>
-                <div class="dates">June 2008</div>
-              </div>
-            </div>
-          </div>
-          <div class="resume__section">
-            <h3 class="resume__heading h-sm">Community & Achievements</h3>
-            <div class="resume__subsection">
-              <div class="flex flex-between">
-                <h4 class="resume__subsection__title h-xs">PegAssist</h4>
-                <div class="dates">February 2021 - April 2021</div>
-              </div>
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  Built new prototype and collaborated with developer to update
-                  existing interface components to improve usability and
-                  accessibility.
-                </li>
-                <li class="resume__list-item">
-                  Developed user feedback survey to support ongoing user
-                  research and future product updates.
-                </li>
-              </ul>
-            </div>
-            <div class="resume__subsection">
-              <div class="flex flex-between">
-                <h4 class="resume__subsection__title h-xs">MA Judiciary</h4>
-                <div class="dates">February 2021 - April 2021</div>
-              </div>
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  Audited online survey and provided recommendations to improve
-                  usability and responder engagement.
-                </li>
-              </ul>
-            </div>
-            <div class="resume__subsection">
-              <div class="flex flex-between">
-                <h4 class="resume__subsection__title h-xs">
-                  Boston Children's Hospital Hacking Pediatrics
-                </h4>
-                <div class="dates">April 2020</div>
-              </div>
-              <ul class="resume__list">
-                <li class="resume__list-item">
-                  First place – Best overall design for a communication app
-                  prototype for patients to combat social isolation while
-                  hospitalized.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="resume__section">
-            <h3 class="resume__heading h-sm">Technical Skills</h3>
-            <div class="resume__subsection">
-              <ul class="resume__list resume__list--inline">
-                <li class="resume__list-item">Figma</li>
-                <li class="resume__list-item">HTML</li>
-                <li class="resume__list-item">CSS</li>
-                <li class="resume__list-item">Illustrator</li>
-                <li class="resume__list-item">InVision</li>
-                <li class="resume__list-item">MS Office</li>
-                <li class="resume__list-item">Photoshop</li>
-                <li class="resume__list-item">Sketch</li>
-                <li class="resume__list-item">UserTesting.com</li>
-              </ul>
-            </div>
+          <div>
+            <h2>My Role</h2>
+            <p>
+              Throughout the project, I was actively involved with each stage of
+              our research and design efforts:
+            </p>
+            <ul>
+              <li>
+                Conducting field interviews with restaurant manager and patrons
+              </li>
+              <li>SWOT analysis</li>
+              <li>Sketching and creating low-fidelity wireframes</li>
+              <li>Usability testing our paper prototype</li>
+              <li>Creating high-fidelity interactive prototype</li>
+              <li>Presenting our design solution to the client group</li>
+            </ul>
+            <p>
+              During the project, I took the lead developing the interview
+              script and conducting the interview with the restaurant manager,
+              developing the item customization prototype, and delivering the
+              final presentation and design walkthrough to the clients.
+            </p>
           </div>
         </div>
       </section>
     </main>
+
     <!-- FOOTER -->
     <footer class="footer-wrapper">
       <div class="footer container">

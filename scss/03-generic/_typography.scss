@@ -8,9 +8,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;900&display=swap");
 
 $primary-type: "Work Sans", Helvetica, Verdana, sans-serif;
-$primary-baseline: 0.158203; //https://jamonserrano.github.io/plumber-sass/baselines/
+
 $secondary-type: "Poppins", Helvetica, Verdana, sans-serif;
-$secondary-baseline: 0.15; //https://jamonserrano.github.io/plumber-sass/baselines/
 $mono: "Source Code Pro", Courier, mono;
 $accent-type: "Oswald", Helvetica, Verdana, sans-serif;
 
@@ -21,14 +20,8 @@ $normal: 400;
 $medium: 500;
 $bold: 700;
 
-/*/----------------------------\\
-      Setting baseline grid
--------------------------------\\*/
-
 $gh: 1rem; // SETS UP ENTIRE GRID AS WELL AS TYPOGRAPHY BASE - grid size is $gh/2
 
-$base-font-size: 16;
-$base-font-size-rem: ($base-font-size * 2) / 16;
 $base-line-height: 1.5; // line height for body, 150%
 $magic-number: $gh * $base-line-height;
 
@@ -36,10 +29,13 @@ html {
   font-size: 16 / 16 * 100%;
   font-family: $primary-type;
   font-weight: $normal;
-  color: $color-txt-primary;
+  color: $text-lite-bg;
 
   @media all and (min-width: $tablet) {
     font-size: 18 / 16 * 100%;
+  }
+  @media all and (min-width: $desktop) {
+    font-size: 20 / 16 * 100%;
   }
 }
 
@@ -48,8 +44,7 @@ body {
   // font-weight: $normal;
   // font-size: 100%;
   background-color: $body-bg;
-  // -webkit-text-size-adjust: 100%;
-  // line-height: $base-line-height;
+  color: $text-lite-bg;
 }
 
 /*/----------------------------\\
@@ -85,15 +80,6 @@ $line-height: (
   TYPE
 *------------------------------------*/
 
-@include plumber-set-defaults(
-  $grid-height: $gh,
-  $baseline: $primary-baseline,
-  $font-size: 1,
-  $line-height: $base-line-height,
-  $leading-bottom: 1.5,
-  // $use-baseline-origin: true
-);
-
 /*--- PARAGRAPHS ---*/
 
 p {
@@ -101,8 +87,8 @@ p {
   line-height: 1.5;
 }
 p.large {
-  font-size: map-get($font-size, h6);
-  line-height: 1.5;
+  font-size: map-get($font-size, h6) * 100%;
+  font-weight: 400;
 }
 
 /*--- HEADINGS ---*/
@@ -114,20 +100,9 @@ h4,
 h5,
 h6 {
   font-family: $secondary-type;
-  font-weight: $medium;
+  font-weight: $bold;
+  margin-bottom: 1.5rem;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  color: $text-primary;
-}
-
-// @import url("https://fonts.googleapis.com/css?family=Poppins:400");
 
 .hero-type,
 .h-xxxl {
@@ -197,4 +172,8 @@ h1 > .h-small {
 }
 
 #work h2 {
+}
+
+em {
+  font-style: italic;
 }

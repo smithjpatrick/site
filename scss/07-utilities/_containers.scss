@@ -13,8 +13,13 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+}
 
-  & .readable {
-    max-width: 600px;
-  }
+.readable {
+  max-width: 36rem;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
 }

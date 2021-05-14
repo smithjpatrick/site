@@ -1,8 +1,6 @@
-main {
-  & > * + * {
-    margin-top: 2em;
-  }
-  & section > * + * {
-    margin-top: 1.5em;
-  }
+article section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  padding-bottom: 3rem;
 }

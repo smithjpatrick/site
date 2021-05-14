@@ -1,56 +1,9 @@
 // COLORS
 // https://material.io/design/color/the-color-system.html#color-theme-creation
 
-$test-1: rgb(174, 255, 174);
-$test-2: #fff47a;
-$test-3: rgb(108, 211, 255);
-
 $color-secondary-default: #e05452;
 $color-secondary-light: #e37d7b;
 $color-secondary-dark: #bf0805;
-
-$color-primary-default: hsl(225, 54%, 50%);
-$color-primary-light: hsla(225, 65%, 70%, 100%);
-$color-primary-dark: hsla(225, 54%, 30%, 100%);
-
-$color-toast-default: #e58e42;
-$color-toast-light: #f1b37d;
-$color-toast-dark: #d26403;
-
-$color-wmos-default: #dc35c3;
-$color-wmos-light: #e897dc;
-$color-wmos-dark: #a90f92;
-
-$color-canton-default: #2fb8ba;
-$color-canton-light: #86e0e1;
-$color-canton-dark: #0d8284;
-
-$default-theme: (
-  //key: value
-  primary: $color-primary-default,
-  secondary: $color-secondary-default,
-  toast: $color-toast-default,
-  wmos: $color-wmos-default,
-  canton: $color-canton-default
-);
-
-$light-theme: (
-  //key: value
-  primary: $color-primary-light,
-  secondary: $color-secondary-light,
-  toast: $color-toast-light,
-  wmos: $color-wmos-light,
-  canton: $color-canton-light
-);
-
-$dark-theme: (
-  //key: value
-  primary: $color-primary-dark,
-  secondary: $color-secondary-dark,
-  toast: $color-toast-dark,
-  wmos: $color-wmos-dark,
-  canton: $color-canton-dark
-);
 
 $color-black: #000;
 $color-white: #fff;
@@ -67,8 +20,6 @@ $grey-800: #424242;
 $grey-900: #212121;
 
 $body-bg: $color-white;
-$color-txt-primary: #333;
-
 $color-error: #ba0000;
 
 $color-warning: #ba6c00;
@@ -141,10 +92,18 @@ $color-primary: (
     ),
 );
 
-$text-primary: map-get(
+$text-primary: red;
+
+$text-lite-bg: map-get(
   $map: $color-primary,
   $key: 700,
 );
+
+$text-dark-bg: map-get(
+  $map: $color-primary,
+  $key: 050,
+);
+
 table.color-group {
   border: none;
 }

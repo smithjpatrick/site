@@ -58,17 +58,6 @@
   // || Button
   //////////////////////
   &__submit {
-    color: $color-white;
-    background-color: map-get($map: $color-primary, $key: 500);
-    font-family: $secondary-type;
-    font-size: $base-font-size;
-    font-weight: $medium;
-    border-radius: 0;
-    transition: background-color 0.1s ease-out;
-
-    &:hover {
-      background-color: map-get($map: $color-primary, $key: 600);
-    }
   }
 }
 
