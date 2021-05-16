@@ -25,7 +25,7 @@ $color-error: #ba0000;
 $color-warning: #ba6c00;
 $color-success: #098100;
 
-$primary-base-h: 225;
+$primary-base-h: 205;
 $primary-base-s: 54;
 $primary-base-l: 50;
 $primary-base-hsl: hsl($primary-base-h, $primary-base-s, $primary-base-l);
@@ -205,3 +205,16 @@ td.color9 {
   font-family: "Poppins";
   background-color: $color-white;
 }
+
+
+body {
+  // font-family: $primary-type;
+  // font-weight: $normal;
+  // font-size: 100%;
+  background-color: $body-bg;
+  color: $text-lite-bg;
+}
+
+$border-primary: $text-lite-bg;
+
+

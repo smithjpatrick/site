@@ -2,9 +2,19 @@
   position: relative;
   max-width: calc(100% - 1rem);
   margin-left: auto;
-  border: 8px solid map-get($color-primary, 600);
+  border: 8px solid $border-primary;
   margin-bottom: 10rem;
-  color: $text-lite-bg;
+  @include shadows(2,"normal");
+  transition: box-shadow .2s;
+
+  &:hover {
+    @include shadows(2, "hover");
+
+    & .card__img img {
+      transform: scale(1.02);
+    }
+  }
+  
 }
 .card,
 .card__text {
@@ -26,7 +36,7 @@
 
 .card__title {
   font-weight: 700;
-  margin-bottom: .25rem;
+  margin-bottom: .5rem;
 }
 
 .card__link {
@@ -37,11 +47,12 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 3;
   }
 }
 
 .card__method-list {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .card__method-item {
@@ -58,7 +69,6 @@
 
 .card__description {
   font-family: $secondary-type;
-  font-size: 1.125rem;
   font-weight: 400;
 }
 
@@ -92,14 +102,27 @@
 //////////////////////////////
 
 .card__img {
+  position: relative;
   height: 16rem;
   overflow: hidden;
+  &::after {
+    background-color: map-get($map: $color-primary, $key: 800);
+    opacity: 60%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .card__img img {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  transition: transform .2s ease;
+
 }
 
 .card a:focus {
@@ -117,45 +140,7 @@
     outline-offset: -0.5rem;
   }
 }
-////////////////////////
-// || Card shadow styles
-////////////////////////
 
-.shadow {
-  &--accordion {
-    box-shadow: 0 16px 0 -8px map-get($color-primary, 300),
-      0 32px 0 -16px map-get($color-primary, 500),
-      0 48px 0 -24px map-get($color-primary, 700);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  &--top-right {
-    // outline: none;
-    // border: none;
-    box-shadow: -8px 8px 0 0px map-get($color-primary, 600),
-      -16px 16px 0 0px map-get($color-primary, 400),
-      // -12px 12px 0 0px map-get($color-primary, 300)
-;
-    transition: transform 0.2s, box-shadow 0.2s;
-
-    &:hover {
-      transform: translateY(-20px);
-      box-shadow: -16px 16px 0 0px map-get($color-primary, 400),
-        -32px 32px 0 0px map-get($color-primary, 200),
-        // -18px 18px 0 0px map-get($color-primary, 100)
-;
-    }
-  }
-
-  &--top {
-    box-shadow: -16px 16px 0 0px map-get($color-primary, 400);
-    transition: transform 0.2s, box-shadow 0.2s;
-
-    &:hover {
-      transform: translateY(-20px);
-      box-shadow: -24px 24px 0 0px map-get($color-primary, 200);
-    }
-  }
-}
 /////////////////////////////
 // || Media Queries
 /////////////////////////////
@@ -166,18 +151,21 @@
     flex-direction: row;
     
     align-content: center;
-    margin-bottom: 12rem;    
+    margin-bottom: 12rem;
+    max-height: 26rem;
   }
 
   .card__text {
+    
     justify-content: center;
     order: 0;
     background-color: $color-white;
     flex-grow: 1;
     // width: 50%;
     // max-width: 28rem;
-    // min-width: 10rem;
+    min-width: 20rem;
     width: 50%;
+    // background-color: lightcoral;
   }
 
   li.card:nth-child(2n + 2) {
@@ -214,43 +202,4 @@
   .card__img img {
     transition: transform 0.2s;
   }
-
-  // .shadow {
-  //   &--accordion .card__text {
-  //     z-index: 1;
-  //     box-shadow: 0 12px 0 -8px map-get($color-primary, 500),
-  //       0 24px 0 -16px map-get($color-primary, 300),
-  //       0 36px 0 -24px map-get($color-primary, 100);
-  //     transition: transform 0.2s, box-shadow 0.2s;
-
-  //     &:hover {
-  //       transform: translateY(-55%);
-  //       box-shadow: 0 16px 0 -8px map-get($color-primary, 500),
-  //         0 32px 0 -16px map-get($color-primary, 300),
-  //         0 48px 0 -24px map-get($color-primary, 100);
-  //     }
-  //   }
-  //   &--top-right .card__text {
-  //     z-index: 1;
-  //     box-shadow: -8px 8px 0 0px map-get($color-primary, 600),
-  //       -16px 16px 0 0px map-get($color-primary, 400);
-  //     transition: transform 0.2s, box-shadow 0.2s;
-
-  //     &:hover {
-  //       transform: translateY(-55%);
-  //       box-shadow: -12px 12px 0 0px map-get($color-primary, 400),
-  //         -24px 24px 0 0px map-get($color-primary, 200);
-  //     }
-  //   }
-  //   &--top .card__text {
-  //     z-index: 1;
-  //     box-shadow: -12px 12px 0 0px hsla(205, 60, 26, 0.6);
-  //     transition: transform 0.2s, box-shadow 0.2s;
-
-  //     &:hover {
-  //       transform: translateY(-55%);
-  //       box-shadow: -20px 20px 0 0px hsla(205, 60, 50, 0.6);
-  //     }
-  //   }
-  // }
 }

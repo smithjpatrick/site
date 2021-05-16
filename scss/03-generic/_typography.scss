@@ -32,20 +32,14 @@ html {
   color: $text-lite-bg;
 
   @media all and (min-width: $tablet) {
-    font-size: 18 / 16 * 100%;
+    font-size: 17 / 16 * 100%;
   }
   @media all and (min-width: $desktop) {
-    font-size: 20 / 16 * 100%;
+    font-size: 18 / 16 * 100%;
   }
 }
 
-body {
-  // font-family: $primary-type;
-  // font-weight: $normal;
-  // font-size: 100%;
-  background-color: $body-bg;
-  color: $text-lite-bg;
-}
+
 
 /*/----------------------------\\
         Modular Scaling
@@ -91,6 +85,10 @@ p.large {
   font-size: map-get($font-size, h6) * 100%;
   font-weight: 400;
 }
+p.smaller, .text-smaller {
+  font-size: 12 / 16 * 100%;
+  // font-weight: 400;
+}
 
 /*--- HEADINGS ---*/
 
@@ -99,13 +97,21 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h-hero,
+.h-xxxl,
+.h-xxl,
+.h-xl,
+.h-l,
+.h-med,
+.h-sm,
+.h-xs {
   font-family: $secondary-type;
   font-weight: $bold;
   margin-bottom: 1.5rem;
 }
 
-.hero-type,
+.h-hero,
 .h-xxxl {
   font-size: map-get($font-size, hero) * 60%;
   line-height: 100%;
@@ -123,6 +129,7 @@ h1,
   // font-size: ceil(72.5) * 1px;
   font-size: map-get($font-size, h1) * 90%;
   line-height: 100%;
+  
 
   @media all and (max-width: 20rem) {
     font-size: map-get($font-size, h1) * 100%;
@@ -134,20 +141,20 @@ h1,
 
 h2,
 .h-xl {
-  font-size: map-get($font-size, h2) * 90%;
+  font-size: map-get($font-size, h2) * 100%;
   line-height: 100%;
-  font-weight: 700;
+  
 }
 
 h3,
 .h-l {
-  font-size: map-get($font-size, h3) * 90%;
+  font-size: map-get($font-size, h3) * 100%;
   line-height: 100%;
 }
 
 h4,
 .h-med {
-  font-size: map-get($font-size, h4) * 90%;
+  font-size: map-get($font-size, h4) * 100%;
   line-height: 100%;
 }
 
@@ -170,9 +177,6 @@ h6,
 
 h1 > .h-small {
   font-size: 25%;
-}
-
-#work h2 {
 }
 
 em {

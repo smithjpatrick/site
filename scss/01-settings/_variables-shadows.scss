@@ -1,2 +1,45 @@
 // Nav bar shadows
 // box-shadow: 0 0.05rem 1rem rgba($color-black, 0.1);
+
+@mixin shadows($status,$qty) {
+
+}
+$box-shadow-1: map-get($map: $color-primary, $key: 600);
+$box-shadow-2: map-get($map: $color-primary, $key: 400);
+$box-shadow-1-hover: map-get($map: $color-primary, $key: 400);
+$box-shadow-2-hover: map-get($map: $color-primary, $key: 200);
+
+
+@mixin shadows($qty, $status) {
+
+    @if $qty == 2 {
+        box-shadow: -8px 8px 0 0px $box-shadow-1,
+      -16px 16px 0 0px $box-shadow-2;
+
+        @if $status == "hover" {
+            box-shadow: -16px 16px 0 0px $box-shadow-1-hover,
+      -32px 32px 0 0px $box-shadow-2-hover;
+    }
+}
+
+@else if $qty == 1 {
+    box-shadow: -12px 12px 0 0px $box-shadow-1;
+    
+    @if $status == "hover" {
+        box-shadow: -24px 24px 0 0px $box-shadow-1;
+
+    }
+}
+@else if $qty == "" {
+    box-shadow: -8px 8px 0 0px $box-shadow-1,
+      -16px 16px 0 0px $box-shadow-2;
+
+        @if $status == "hover" {
+            box-shadow: -16px 16px 0 0px $box-shadow-1,
+      -32px 32px 0 0px $box-shadow-2;
+    }
+}
+}
+    
+  
+    
