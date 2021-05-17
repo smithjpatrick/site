@@ -29,6 +29,17 @@ $primary-base-h: 205;
 $primary-base-s: 54;
 $primary-base-l: 50;
 $primary-base-hsl: hsl($primary-base-h, $primary-base-s, $primary-base-l);
+$primary-l-050: $primary-base-l + ((100-$primary-base-l)/5) * 4.5;
+$primary-l-100: $primary-base-l + ((100-$primary-base-l)/5) * 4;
+$primary-l-200: $primary-base-l + ((100-$primary-base-l)/5) * 3;
+$primary-l-300: $primary-base-l + ((100-$primary-base-l)/5) * 2;
+$primary-l-400: $primary-base-l + ((100-$primary-base-l)/5) * 1;
+$primary-l-500: $primary-base-l + ((100-$primary-base-l)/5) * 0;
+$primary-l-600: $primary-base-l - (($primary-base-l)/5) * 1;
+$primary-l-700: $primary-base-l - (($primary-base-l)/5) * 2;
+$primary-l-800: $primary-base-l - (($primary-base-l)/5) * 3;
+$primary-l-900: $primary-base-l - (($primary-base-l)/5) * 4;
+
 $color-primary: (
   50:
     hsl(
@@ -206,7 +217,6 @@ td.color9 {
   background-color: $color-white;
 }
 
-
 body {
   // font-family: $primary-type;
   // font-weight: $normal;
@@ -217,4 +227,4 @@ body {
 
 $border-primary: $text-lite-bg;
 
-
+$hero-overlay: hsla($primary-base-h, $primary-base-s, $primary-l-900, 0.9);

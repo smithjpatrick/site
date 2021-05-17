@@ -1000,8 +1000,25 @@ section.codepen {
   background-repeat: no-repeat;
   transition: all 0.1s ease-in-out; }
 
+.hero__wrapper {
+  position: relative;
+  background-color: #17384f;
+  /* Used if the image is unavailable */
+  height: 80vh;
+  /* You must set a specified height */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */ }
+
+#toast .hero__wrapper {
+  background: linear-gradient(rgba(12, 28, 39, 0.9), rgba(12, 28, 39, 0.9)), url("/img/Home-page/restaurant-full.jpg") center/cover no-repeat;
+  /* The image used */ }
+
 .hero {
-  padding: calc(28vh) 0; }
+  color: #ebf3f9; }
   .hero__title {
     margin-bottom: 1.5rem; }
     .hero__title--small {
@@ -1012,27 +1029,23 @@ section.codepen {
     font-size: 1.125rem;
     max-width: 25em; }
 
-#about .hero,
-.case-study .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 14vh; }
-  #about .hero__text,
-  .case-study .hero__text {
-    flex-grow: 2; }
-  #about .hero__img,
-  .case-study .hero__img {
-    height: 20rem;
-    overflow: hidden;
-    width: 50%;
-    box-shadow: -16px 16px 0 0px #89b9dc; }
-  #about .hero__img img,
-  .case-study .hero__img img {
-    object-fit: cover;
-    object-position: top;
-    height: 100%;
-    width: 100%; }
+#about .hero__text,
+.case-study .hero__text {
+  flex-grow: 2; }
+
+#about .hero__img,
+.case-study .hero__img {
+  height: 20rem;
+  overflow: hidden;
+  width: 50%;
+  box-shadow: -16px 16px 0 0px #89b9dc; }
+
+#about .hero__img img,
+.case-study .hero__img img {
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+  width: 100%; }
 
 .content > *:not(:last-child) {
   margin-bottom: 1.5rem; }

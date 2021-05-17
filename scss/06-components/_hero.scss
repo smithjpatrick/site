@@ -1,6 +1,21 @@
+.hero__wrapper {
+  position: relative;
+  background-color: map-get(
+    $map: $color-primary,
+    $key: 800
+  ); /* Used if the image is unavailable */
+  height: 80vh; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#toast .hero__wrapper {
+  background: linear-gradient($hero_overlay, $hero-overlay),
+    url("/img/Home-page/restaurant-full.jpg") center / cover no-repeat; /* The image used */
+}
 .hero {
-  // margin: calc(30vh - 6rem) 0;
-  padding: calc(28vh) 0;
+  color: $text-dark-bg;
 
   &__title {
     margin-bottom: 1.5rem;
@@ -20,14 +35,16 @@
 
 #about .hero,
 .case-study .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 14vh;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // padding-bottom: 14vh;
+
   &__text {
     flex-grow: 2;
     // flex-basis: 1;
   }
+
   &__img {
     // flex-shrink: 1;
     height: 20rem;
