@@ -718,7 +718,8 @@ a:visited.btn--primary {
   display: inline-block;
   margin-right: .5rem;
   font-family: "Poppins", Helvetica, Verdana, sans-serif;
-  opacity: 60%; }
+  opacity: 60%;
+  font-size: 87.5%; }
 
 .card__method-item:not(:last-child):after {
   content: "|";
@@ -1006,19 +1007,24 @@ section.codepen {
   /* Used if the image is unavailable */
   height: 80vh;
   /* You must set a specified height */
+  min-height: 40rem;
   background-position: center;
   /* Center the image */
   background-repeat: no-repeat;
   /* Do not repeat the image */
   background-size: cover;
-  /* Resize the background image to cover the entire container */ }
+  /* Resize the background image to cover the entire container */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
 
 #toast .hero__wrapper {
   background: linear-gradient(rgba(12, 28, 39, 0.9), rgba(12, 28, 39, 0.9)), url("/img/Home-page/restaurant-full.jpg") center/cover no-repeat;
   /* The image used */ }
 
 .hero {
-  color: #ebf3f9; }
+  color: #ebf3f9;
+  flex-grow: 1; }
   .hero__title {
     margin-bottom: 1.5rem; }
     .hero__title--small {
@@ -1218,8 +1224,6 @@ a.skip-to-content {
 
 .nav__logo-link:hover, .nav__logo-link:focus {
   color: #3b8bc4; }
-  .nav__logo-link:hover .nav__img, .nav__logo-link:focus .nav__img {
-    fill: #3b8bc4; }
   .nav__logo-link:hover .logo__img--eyebrows, .nav__logo-link:focus .logo__img--eyebrows {
     transform: translateY(-4px); }
 
@@ -1525,6 +1529,37 @@ a.skip-to-content {
   overflow: hidden;
   padding: 1.5rem; }
 
+.mobile .case-study .transparent .nav__logo, .mobile .case-study .transparent .nav__toggle {
+  color: #235376;
+  fill: #ebf3f9;
+  transition: color .2s; }
+
+.case-study .transparent {
+  background: none; }
+  .case-study .transparent .nav__logo,
+  .case-study .transparent .nav__toggle {
+    color: #ebf3f9;
+    fill: #ebf3f9;
+    transition: color .2s; }
+
+@media all and (min-width: 600px) {
+  .case-study .transparent .nav .menu-wrapper {
+    background-color: unset;
+    color: #ebf3f9; }
+  .case-study .transparent .nav .nav__logo-link:hover,
+  .case-study .transparent .nav .nav__logo-link:focus {
+    color: #b0d1e8;
+    fill: #b0d1e8; }
+  .case-study .transparent .nav .menu__link {
+    background-image: linear-gradient(#ebf3f9, #ebf3f9); }
+  .case-study .transparent .nav .submenu__item {
+    color: #235376; }
+  .case-study .transparent .nav .submenu__button {
+    background-color: unset; }
+    .case-study .transparent .nav .submenu__button .nav__icon {
+      color: #ebf3f9;
+      fill: #ebf3f9; } }
+
 .resume {
   border: 4px solid currentColor;
   padding: 2rem;
@@ -1583,6 +1618,9 @@ a.skip-to-content {
     .container {
       padding-left: 1.5rem;
       padding-right: 1.5rem; } }
+  .container.uncentered {
+    margin-left: 0;
+    margin-right: 0; }
 
 .readable {
   max-width: 36rem; }

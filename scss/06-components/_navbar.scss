@@ -44,6 +44,7 @@ $nav-color: hsla(0, 0%, 100%, 100);
   left: 0;
   transition: transform 0.3s, box-shadow 0.3s;
   z-index: 100;
+
 }
 .nav--scrolled {
   box-shadow: 0 0px 3.6px rgba(0, 0, 0, 0.024), 0 0px 10px rgba(0, 0, 0, 0.035),
@@ -71,6 +72,7 @@ $nav-color: hsla(0, 0%, 100%, 100);
   left: 0;
   right: 0;
 }
+
 
 /////////////
 // || Logo
@@ -103,9 +105,6 @@ $nav-color: hsla(0, 0%, 100%, 100);
   &__logo-link:focus {
     color: map-get($map: $color-primary, $key: 500);
 
-    & .nav__img {
-      fill: map-get($map: $color-primary, $key: 500);
-    }
 
     & .logo__img--eyebrows {
       transform: translateY(-4px);
@@ -199,6 +198,7 @@ $nav-color: hsla(0, 0%, 100%, 100);
     }
   }
 }
+
 
 //////////////////
 // || Menu Items
@@ -550,4 +550,62 @@ $nav-color: hsla(0, 0%, 100%, 100);
   margin: 0;
   overflow: hidden;
   padding: 1.5rem;
+}
+
+
+/////////////////////////////
+// || TRANSPARENT NAV
+/////////////////////////////
+
+.mobile .case-study .transparent {
+  & .nav__logo, .nav__toggle {
+    color: $text-lite-bg;
+    fill: $text-dark-bg;
+    transition: color .2s;
+  } 
+}
+
+.case-study .transparent {
+  background: none;
+  & .nav__logo,
+  & .nav__toggle {
+    color: $text-dark-bg;
+    fill: $text-dark-bg;
+    transition: color .2s;
+  }
+  
+}
+
+.case-study .transparent .nav {
+  @media all and (min-width: $tablet) {
+    & .menu-wrapper {
+      background-color: unset;
+      color: $text-dark-bg;
+
+  }
+
+    & .nav__logo-link:hover, 
+    & .nav__logo-link:focus {
+      color: map-get($map: $color-primary, $key: 200);
+      fill: map-get($map: $color-primary, $key: 200);
+    }
+
+    & .menu__link {
+      background-image: linear-gradient($text-dark-bg, $text-dark-bg);
+    }
+
+    & .submenu__item {
+      color: $text-lite-bg;
+    }
+
+    & .submenu__button {
+      background-color: unset;
+
+      & .nav__icon {
+        color: $text-dark-bg;
+        fill: $text-dark-bg;
+      }
+    }
+
+  }
 }

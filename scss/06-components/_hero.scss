@@ -5,9 +5,14 @@
     $key: 800
   ); /* Used if the image is unavailable */
   height: 80vh; /* You must set a specified height */
+  min-height: 40rem;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #toast .hero__wrapper {
@@ -16,6 +21,7 @@
 }
 .hero {
   color: $text-dark-bg;
+  flex-grow: 1;
 
   &__title {
     margin-bottom: 1.5rem;

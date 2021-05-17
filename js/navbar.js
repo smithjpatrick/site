@@ -96,20 +96,22 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
      // downscroll code 
      navBrand.classList.add("nav__logo-link--small");
      navWrap.classList.add("nav--scrolled");
+     navWrap.classList.remove("transparent");
      if ((w <= mobileBP)) {
-         // on mobile, hide navbar 
-         
-         navWrap.classList.add("hidden-nav");
-         
-        }
-      } else {
-        // upscroll code
-        navWrap.classList.remove("hidden-nav");
-        if (lastScrollTop < navHide) {
-          // Expand navbar at top of page
-  
-          navBrand.classList.remove("nav__logo-link--small");
-            navWrap.classList.remove("nav--scrolled");
+       // on mobile, hide navbar 
+       
+       navWrap.classList.add("hidden-nav");
+       
+      }
+    } else {
+      // upscroll code
+      navWrap.classList.remove("hidden-nav");
+      if (lastScrollTop < navHide) {
+        // Expand navbar at top of page
+        
+        navBrand.classList.remove("nav__logo-link--small");
+        navWrap.classList.remove("nav--scrolled");
+        navWrap.classList.add("transparent");
         }
  }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
