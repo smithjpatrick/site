@@ -8,7 +8,8 @@ button {
 }
 
 .btn {
-  border-radius: $gh/2;
+  // border-radius: $gh/2;
+  display: inline-block;
   border: none;
   padding: (1 * $gh) (1.5 * $gh);
   line-height: 1;
@@ -48,5 +49,31 @@ a:visited.btn--primary {
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+.btn--secondary {
+  border: 4px solid $text-lite-bg;
+  font-weight: 500;
+
+  &:hover {
+    @include shadows(1, "");
+  }
+}
+
+.btn__icon {
+  height: 24px;
+  width: 24px;
+  margin-left: 1rem;
+}
+
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+  // line-height: 100%;
+
+  & > span {
+    line-height: 100%;
+    // font-size: 24px;
   }
 }
