@@ -57,7 +57,6 @@ a:visited.btn--primary {
   font-weight: 500;
 
   &:hover {
-    @include shadows(1, "");
   }
 }
 
@@ -65,7 +64,10 @@ a:visited.btn--primary {
   height: 24px;
   width: 24px;
   margin-left: 1rem;
+  fill: $text-lite-bg;
 }
+
+
 
 .btn--icon {
   display: inline-flex;

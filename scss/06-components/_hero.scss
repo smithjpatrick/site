@@ -4,8 +4,8 @@
     $map: $color-primary,
     $key: 800
   ); /* Used if the image is unavailable */
-  height: 80vh; /* You must set a specified height */
-  min-height: 40rem;
+  height: 85vh; /* You must set a specified height */
+  min-height: 28rem;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -17,7 +17,7 @@
 
 #toast .hero__wrapper {
   background: linear-gradient($hero_overlay, $hero-overlay),
-    url("/img/Home-page/restaurant-full.jpg") center / cover no-repeat; /* The image used */
+    url("../img/Home-page/restaurant-full.jpg") center / cover no-repeat; /* The image used */
 }
 .hero {
   color: $text-dark-bg;

@@ -13,6 +13,11 @@ article section {
   gap: 0rem;
 
   margin-bottom: 3rem;
+
+  @media all and (min-width: $tablet) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+  }
 }
 
 .section__title {
@@ -63,19 +68,37 @@ article section {
 }
 
 .list__card-item {
+  // margin-right: 2rem;
+  width: 100%;
+  display: inline;
+  margin-bottom: 1.5rem;
+
   @media all and (min-width: $phone-xl) {
-    width: 45%;
+    max-width: 13rem;
     margin-right: 1rem;
   }
-
   @media all and (min-width: $desktop) {
-    width: 30%;
+    max-width: none;
+    width: auto;
     margin-right: 1rem;
   }
 
-  @media all and (min-width: $l-desktop) {
-    width: 23%;
-    margin-right: 1rem;
+  & p {
+
+    @media all and (min-width: $phone-xl) {
+      max-width: 13rem;
+      margin: 0 auto;
+    }
+    
+    @media all and (min-width: $desktop) {
+      max-width: 12rem;
+      margin: 0 auto;
+    }
+  
+    @media all and (min-width: $l-desktop) {
+      // width: 23%;
+      margin: 0 auto;
+    }
   }
 
   & > *:not(:last-child) {
@@ -102,6 +125,8 @@ article section {
   & img {
     display: block;
     margin-bottom: 1.5rem;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
+    
   }
 }
