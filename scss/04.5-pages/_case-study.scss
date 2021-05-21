@@ -6,7 +6,8 @@ article {
   padding: 4rem 0;
 }
 
-article section {
+article .section,
+.section > .section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
@@ -20,6 +21,10 @@ article section {
   }
 }
 
+.section > .section {
+  grid-column: 1 /end;
+}
+
 .section__title {
   grid-row: 1;
   grid-column: 1 / end;
@@ -28,6 +33,19 @@ article section {
 .section__content {
   grid-row: 2;
   grid-column: 1 / end;
+  
+  @media all and (min-width: $tablet) {
+    grid-column: 1 / end;
+
+  }
+
+
+  
+}
+
+.section__subsection {
+  grid-column: 1 / end;
+  margin-bottom: 3;
 }
 
 .case__details {
@@ -69,6 +87,7 @@ article section {
 
 .list__card-item {
   // margin-right: 2rem;
+  position: relative;
   width: 100%;
   display: inline;
   margin-bottom: 1.5rem;

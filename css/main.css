@@ -405,7 +405,7 @@ h6,
 .h-xs,
 .text_small {
   font-size: 125%;
-  line-height: 100%; }
+  line-height: 150%; }
 
 .h-xxs {
   font-size: 100%;
@@ -426,16 +426,21 @@ strong {
 article {
   padding: 4rem 0; }
 
-article section {
+article .section,
+.section > .section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 0rem;
   margin-bottom: 3rem; }
   @media all and (min-width: 600px) {
-    article section {
+    article .section,
+    .section > .section {
       grid-template-columns: repeat(12, 1fr);
       column-gap: 2rem; } }
+
+.section > .section {
+  grid-column: 1 /end; }
 
 .section__title {
   grid-row: 1;
@@ -444,6 +449,13 @@ article section {
 .section__content {
   grid-row: 2;
   grid-column: 1 / end; }
+  @media all and (min-width: 600px) {
+    .section__content {
+      grid-column: 1 / end; } }
+
+.section__subsection {
+  grid-column: 1 / end;
+  margin-bottom: 3; }
 
 .case__details {
   grid-column: 1 / end;
@@ -472,6 +484,7 @@ article section {
   flex-wrap: wrap; }
 
 .list__card-item {
+  position: relative;
   width: 100%;
   display: inline;
   margin-bottom: 1.5rem; }
@@ -1132,12 +1145,11 @@ a:focus {
 .link {
   padding: 0.25rem 0;
   margin: -0.25rem 0;
-  background-image: linear-gradient(#3b8bc4, #3b8bc4);
-  background-position: 50% 90%;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 50% 80%;
   background-repeat: no-repeat;
   background-size: 100% 3px;
-  transition: background-size 0.2s ease;
-  display: inline; }
+  transition: background-size 0.2s ease; }
   .link:focus {
     outline: 3px dotted currentColor; }
 

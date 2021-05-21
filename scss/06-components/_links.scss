@@ -17,14 +17,14 @@ a:focus {
   padding: 0.25rem 0;
   margin: -0.25rem 0;
   background-image: linear-gradient(
-    map-get($color-primary, 500),
-    map-get($color-primary, 500)
+    currentColor,
+    currentColor
   );
-  background-position: 50% 90%;
+  background-position: 50% 80%;
   background-repeat: no-repeat;
   background-size: 100% 3px;
   transition: background-size 0.2s ease;
-  display: inline;
+  // display: inline;
 
   &:focus {
     @include link-focus;
